@@ -1,0 +1,15 @@
+.bg-dark{
+  background-color:black !important;
+  }
+  .nav-link:hover {
+    color: #32ed22 !important;
+  }
+  .green:hover {
+    color: #32ed22 !important;
+  }
+  .btn{
+    background-color:black !important;
+  }
+  .btn:hover{
+    background-color:#32ed22 !important;
+  }
