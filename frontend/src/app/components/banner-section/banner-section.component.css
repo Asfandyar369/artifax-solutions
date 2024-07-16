@@ -1,0 +1,6 @@
+.btn {
+  background-color: #32ed22 !important;
+}
+.btn:hover {
+  background-color: transparent !important;
+}

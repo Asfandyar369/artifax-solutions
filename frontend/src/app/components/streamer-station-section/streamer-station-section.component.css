@@ -1,0 +1,37 @@
+.btn {
+  background-color: #32ed22 !important;
+}
+.btn:hover {
+  background-color: transparent !important;
+}
+.bg-black {
+  background-color: #101010 !important;
+  padding-top: 9%;
+}
+.sub-title {
+  background: linear-gradient(
+    120deg,
+    #32ed22 20.69%,
+    #26b21a 50.19%,
+    #1a6d0b 79.69%
+  );
+  -webkit-background-clip: text;
+
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="var(--color-primary)",endColorstr="var(--color-secondary)",GradientType=1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  line-height: 18px;
+  font-size: 16px;
+  border-radius: 4px;
+  margin-bottom: 12px;
+}
+.grey,
+.elementor-element p {
+  color: rgba(198, 201, 216, 0.75);
+}
+.elementor-heading-title {
+  color: #32ed22;
+}

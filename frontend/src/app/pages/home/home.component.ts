@@ -2,11 +2,23 @@ import { Component } from '@angular/core';
 import { HeaderComponent } from "../../components/header/header.component";
 import { NgbModule, NgbSlideEvent } from '@ng-bootstrap/ng-bootstrap';
 import { NgFor } from '@angular/common';
+import { BannerSectionComponent } from "../../components/banner-section/banner-section.component";
+import { StreamerStationSectionComponent } from "../../components/streamer-station-section/streamer-station-section.component";
+import { WhatWeCanDoForYouSectionComponent } from "../../components/what-we-can-do-for-you-section/what-we-can-do-for-you-section.component";
+import { AcquireSectionComponent } from "../../components/acquire-section/acquire-section.component";
+import { CounterCardSectionComponent } from "../../components/counter-card-section/counter-card-section.component";
+import { ExpertsSectionComponent } from "../../components/experts-section/experts-section.component";
+import { ShopNowSectionComponent } from "../../components/shop-now-section/shop-now-section.component";
+import { BlogHubSectionComponent } from "../../components/blog-hub-section/blog-hub-section.component";
+import { SocialSectionComponent } from "../../components/social-section/social-section.component";
+import { StreamingCreativitySectionComponent } from "../../components/streaming-creativity-section/streaming-creativity-section.component";
+import { BuildStreamSectionComponent } from "../../components/build-stream-section/build-stream-section.component";
+import { FooterSectionComponent } from "../../components/footer-section/footer-section.component";
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [HeaderComponent, NgbModule, NgFor],
+  imports: [HeaderComponent, NgbModule, NgFor, BannerSectionComponent, StreamerStationSectionComponent, WhatWeCanDoForYouSectionComponent, AcquireSectionComponent, CounterCardSectionComponent, ExpertsSectionComponent, ShopNowSectionComponent, BlogHubSectionComponent, SocialSectionComponent, StreamingCreativitySectionComponent, BuildStreamSectionComponent, FooterSectionComponent],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })

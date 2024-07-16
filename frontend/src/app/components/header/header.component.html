@@ -1,9 +1,12 @@
-<nav class="navbar navbar-dark navbar-expand-lg bg-dark sticky-top">
+<nav
+  class="navbar navbar-dark navbar-expand-lg bg-dark sticky-top"
+  *ngIf="navbar"
+>
   <div class="container-fluid">
-    <a class="navbar-brand" routerLink="/">
+    <a *ngIf="navbar.url" routerLink="/" class="navbar-brand">
       <img
         alt="Streamer Station"
-        src="https://cdn-gepmfkb.nitrocdn.com/WYEremhYGNlHzmKefSTYSkktLYZvoCNY/assets/images/optimized/rev-421e137/streamerstation.com/wp-content/uploads/2023/10/Logos-05-copy.png"
+        [src]="navbar.url"
         class="img-fluid"
         width="200"
         height="200"
@@ -22,81 +25,70 @@
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-        <li class="nav-item pe-3">
-          <a
-            class="nav-link text-center text-white"
-            routerLink="/"
-            routerLinkActive="active"
-            >Home</a
-          >
-        </li>
-        <li class="nav-item pe-3">
-          <a
-            class="nav-link text-center text-white"
-            routerLink="/portfolio"
-            routerLinkActive="active"
-            >Our Portfolio</a
-          >
-        </li>
-        <li class="nav-item pe-3">
-          <a
-            class="nav-link text-center text-white"
-            routerLink="/services"
-            routerLinkActive="active"
-            >Our Services</a
-          >
-        </li>
-        <li class="nav-item pe-3">
-          <a
-            class="nav-link text-center text-white"
-            routerLink="/shop"
-            routerLinkActive="active"
-            >Shop</a
-          >
-        </li>
-        <li class="nav-item pe-3">
-          <a
-            class="nav-link text-center text-white"
-            routerLink="/about"
-            routerLinkActive="active"
-            >About</a
-          >
-        </li>
-        <li class="nav-item pe-3">
-          <a
-            class="nav-link text-center text-white"
-            routerLink="/blogs"
-            routerLinkActive="active"
-            >Blogs</a
-          >
-        </li>
-        <li class="nav-item pe-3">
-          <a
-            class="nav-link text-center text-white"
-            routerLink="/contact"
-            routerLinkActive="active"
-            >Contact</a
-          >
-        </li>
-        <li class="nav-item pe-3 d-flex align-items-center">
-          <div class="position-relative">
-            <i
-              class="bi bi-cart green"
-              style="font-size: 1.5rem; color: white"
-            ></i>
-            <span
-              class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-success"
+        <li
+          class="nav-item pe-3"
+          *ngFor="let item of navbar?.navbarMenus"
+          [ngSwitch]="
+            item.link.includes('/cart') ||
+            item.name.includes('bi bi-') ||
+            item.name === 'Verify Designers'
+          "
+          [class.dropdown]="item.nestedMenus?.length"
+        >
+          <!-- For regular menu items -->
+          <ng-container *ngSwitchCase="false">
+            <a
+              class="nav-link text-center text-white"
+              [routerLink]="item.link"
+              routerLinkActive="active"
             >
-              0
-            </span>
-          </div>
-        </li>
-        <li class="nav-item pe-5">
-          <button
-            class="btn rounded-pill btn-dark text-white fw-bolder border ms-2 px-5 py-2 text-uppercase"
-          >
-            Verify Designers
-          </button>
+              {{ item.name }}
+            </a>
+            <ul
+              *ngIf="item.nestedMenus?.length"
+              class="dropdown-menu bg-dark p-2"
+            >
+              <li *ngFor="let nested of item.nestedMenus">
+                <a
+                  class="dropdown-item px-3 py-2 rounded text-secondary"
+                  [routerLink]="nested.link"
+                  >{{ nested.name }}</a
+                >
+              </li>
+            </ul>
+          </ng-container>
+
+          <!-- For cart icon item -->
+          <ng-container *ngSwitchCase="true">
+            <div
+              *ngIf="
+                item.link.includes('/cart') && item.name.includes('bi bi-')
+              "
+            >
+              <a class="position-relative" [routerLink]="item.link">
+                <i
+                  [class]="item.name"
+                  style="font-size: 1.5rem; color: white"
+                ></i>
+                <span
+                  class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-success"
+                  >0</span
+                >
+              </a>
+            </div>
+          </ng-container>
+
+          <!-- For button item -->
+          <ng-container *ngSwitchCase="true">
+            <div *ngIf="item.name === 'Verify Designers'">
+              <button
+                class="btn rounded-pill btn-dark text-white fw-bolder border ms-2 px-5 py-2 text-uppercase"
+                [routerLink]="item.link"
+              >
+                {{ item.name }}
+              </button>
+            </div>
+          </ng-container>
         </li>
       </ul>
     </div>

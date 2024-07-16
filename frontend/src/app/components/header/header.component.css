@@ -1,15 +1,23 @@
-.bg-dark{
-  background-color:black !important;
-  }
-  .nav-link:hover {
-    color: #32ed22 !important;
-  }
-  .green:hover {
-    color: #32ed22 !important;
-  }
-  .btn{
-    background-color:black !important;
-  }
-  .btn:hover{
-    background-color:#32ed22 !important;
-  }
+.bg-dark {
+  background-color: black !important;
+}
+.nav-link:hover {
+  color: #32ed22 !important;
+}
+.green:hover {
+  color: #32ed22 !important;
+}
+.btn {
+  background-color: black !important;
+}
+.btn:hover {
+  background-color: #32ed22 !important;
+}
+/* Custom CSS for dropdown on hover */
+.navbar-nav .dropdown:hover .dropdown-menu {
+  display: block;
+}
+.dropdown-item:hover {
+  color: #32ed22 !important;
+  background-color: rgb(24, 23, 23) !important;
+}
