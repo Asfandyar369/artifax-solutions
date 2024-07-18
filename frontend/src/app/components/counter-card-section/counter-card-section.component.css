@@ -60,12 +60,6 @@
   text-decoration: underline !important;
   text-decoration-color: #32ed22 !important;
 }
-.bg-image {
-  background-image: url("/images/homepage-banner.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-}
 .wow {
   background-image: linear-gradient(-224deg, #32ed22, #101010);
 }

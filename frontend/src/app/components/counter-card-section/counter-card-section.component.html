@@ -1,35 +1,27 @@
-<div class="container-fluid bg-image">
-  <div
-    class="row justify-content-center"
-    style="padding-top: 7%; padding-bottom: 7%"
-  >
-    <div class="col-2 mx-4 text-center">
+<!-- counter cards section -->
+<div
+  *ngIf="counterCardsSection"
+  class="container-fluid"
+  [style.background-image]="'url(' + counterCardsSection.imageUrl + ')'"
+  style="background-size: cover; background-repeat: no-repeat; background-attachment: fixed;"
+>
+  <div class="row justify-content-center" style="padding-top: 7%; padding-bottom: 7%">
+    <div class="col-2 mx-4 text-center" *ngFor="let counter of counterCardsSection.counterCards">
       <div class="card bg-card py-5" style="width: 17rem">
-        <i class="bi bi-people elementor-heading-title fs-1"></i>
-        <h2 class="counter text-white">800</h2>
-        <p class="grey">Satisfied Streamers</p>
+        <i class="{{ counter.icon }} elementor-heading-title fs-1"></i>
+        <h2 class="counter text-white">{{ counter.countValue }}</h2>
+        <p class="grey">{{ counter.label }}</p>
       </div>
     </div>
-    <div class="col-2 mx-4 text-center">
-      <div class="card bg-card py-5" style="width: 17rem">
-        <i class="bi bi-people elementor-heading-title fs-1"></i>
-        <h2 class="counter text-white">800</h2>
-        <p class="grey">Satisfied Streamers</p>
-      </div>
-    </div>
-    <div class="col-2 mx-4 text-center">
-      <div class="card bg-card py-5" style="width: 17rem">
-        <i class="bi bi-people elementor-heading-title fs-1"></i>
-        <h2 class="counter text-white">800</h2>
-        <p class="grey">Satisfied Streamers</p>
-      </div>
-    </div>
-    <div class="col-2 mx-4 text-center">
-      <div class="card bg-card py-5" style="width: 17rem">
-        <i class="bi bi-people elementor-heading-title fs-1"></i>
-        <h2 class="counter text-white">800</h2>
-        <p class="grey">Satisfied Streamers</p>
-      </div>
+  </div>
+</div>
+
+<!-- Fallback for entire section if data is not available -->
+<div *ngIf="!counterCardsSection" class="container-fluid bg-black">
+  <div class="row justify-content-center">
+    <div class="col-lg-8 text-center text-danger">
+      <h2 class="fw-bold">Counter Cards Data Not Available</h2>
+      <p>Sorry, there are no items available for the counter cards section at the moment.</p>
     </div>
   </div>
 </div>

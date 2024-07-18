@@ -1,324 +1,32 @@
-<div class="container-fluid bg-black">
+<!-- shop.component.html -->
+<div class="container-fluid bg-black" *ngIf="shopNowSection">
   <div class="row text-center">
-    <span class="sub-title">Shop Now</span>
-    <h2 class="title text-white"><span>Explore Our Collection</span></h2>
-    <p class="grey">
-      Ready to explore? Click 'Shop Now' and find your new favorites!
-    </p>
+    <span class="sub-title">{{ shopNowSection.subtitle }}</span>
+    <h2 class="title text-white">
+      <span>{{ shopNowSection.title }}</span>
+    </h2>
+    <p class="grey">{{ shopNowSection.description }}</p>
   </div>
   <div class="row justify-content-center">
-    <div class="col-2 mx-4">
+    <div class="col-2 mx-5" *ngFor="let item of shopNowSection.cardList">
       <div class="card bg-transparent py-5" style="width: 17rem">
         <img
-          fetchpriority="high"
-          width="300"
-          height="169"
-          alt="Gaming Room"
-          nitro-lazy-src="https://cdn-gepmfkb.nitrocdn.com/WYEremhYGNlHzmKefSTYSkktLYZvoCNY/assets/images/optimized/rev-421e137/streamerstation.com/wp-content/uploads/2023/11/gaming-room-shop-thumb.gif"
-          class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail lazyloaded img-fluid"
-          decoding="async"
-          nitro-lazy-empty=""
-          id="MTIyMjo2Njk=-1"
-          src="https://cdn-gepmfkb.nitrocdn.com/WYEremhYGNlHzmKefSTYSkktLYZvoCNY/assets/images/optimized/rev-421e137/streamerstation.com/wp-content/uploads/2023/11/gaming-room-shop-thumb.gif"
-        />
-        <h5>
-          <a
-            href="https://streamerstation.com/product/twitch-banner/"
-            class="woocommerce-LoopProduct-link nav-link text-white fw-bolder pt-3"
-            >Twitch Banner</a
-          >
-        </h5>
-        <div class="products-shop">
-          <span class="price grey fw-bolder"
-            ><span class="woocommerce-Price-amount amount"
-              ><bdi
-                ><span class="woocommerce-Price-currencySymbol">$</span
-                >70.00</bdi
-              ></span
-            >
-            –
-            <span class="woocommerce-Price-amount amount"
-              ><bdi
-                ><span class="woocommerce-Price-currencySymbol">$</span
-                >1,200.00</bdi
-              ></span
-            ></span
-          >
-        </div>
-      </div>
-    </div>
-    <div class="col-2 mx-4">
-      <div class="card bg-transparent py-5" style="width: 17rem">
-        <img
+          [src]="item.imageUrl"
+          [alt]="item.altText"
           width="300"
           height="300"
-          alt="Emotes Main Thumb"
-          nitro-lazy-src="https://cdn-gepmfkb.nitrocdn.com/WYEremhYGNlHzmKefSTYSkktLYZvoCNY/assets/images/optimized/rev-421e137/streamerstation.com/wp-content/uploads/2023/11/emotes-shop-thumb.gif"
           class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail lazyloaded img-fluid"
-          decoding="async"
-          nitro-lazy-empty=""
-          id="MTIzMTo2MzM=-1"
-          src="https://cdn-gepmfkb.nitrocdn.com/WYEremhYGNlHzmKefSTYSkktLYZvoCNY/assets/images/optimized/rev-421e137/streamerstation.com/wp-content/uploads/2023/11/emotes-shop-thumb.gif"
         />
         <h5>
           <a
-            href="https://streamerstation.com/product/twitch-banner/"
+            [href]="item.link"
             class="woocommerce-LoopProduct-link nav-link text-white fw-bolder pt-3"
-            >Emotes</a
           >
+            {{ item.title }}
+          </a>
         </h5>
         <div class="products-shop">
-          <span class="price grey fw-bolder"
-            ><span class="woocommerce-Price-amount amount"
-              ><bdi
-                ><span class="woocommerce-Price-currencySymbol">$</span
-                >60.00</bdi
-              ></span
-            >
-            –
-            <span class="woocommerce-Price-amount amount"
-              ><bdi
-                ><span class="woocommerce-Price-currencySymbol">$</span
-                >300.00</bdi
-              ></span
-            ></span
-          >
-        </div>
-      </div>
-    </div>
-    <div class="col-2 mx-4">
-      <div class="card bg-transparent py-5" style="width: 17rem">
-        <img
-          width="300"
-          height="300"
-          alt="Multiple animated PFPs"
-          nitro-lazy-src="https://cdn-gepmfkb.nitrocdn.com/WYEremhYGNlHzmKefSTYSkktLYZvoCNY/assets/images/optimized/rev-421e137/streamerstation.com/wp-content/uploads/2023/11/pfp-shop-thumb.gif"
-          class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail lazyloaded img-fluid"
-          decoding="async"
-          nitro-lazy-empty=""
-          id="MTI0MDo2MjY=-1"
-          src="https://cdn-gepmfkb.nitrocdn.com/WYEremhYGNlHzmKefSTYSkktLYZvoCNY/assets/images/optimized/rev-421e137/streamerstation.com/wp-content/uploads/2023/11/pfp-shop-thumb.gif"
-        />
-        <h5>
-          <a
-            href="https://streamerstation.com/product/twitch-banner/"
-            class="woocommerce-LoopProduct-link nav-link text-white fw-bolder pt-3"
-            >PFP</a
-          >
-        </h5>
-        <div class="products-shop">
-          <span class="price grey fw-bolder"
-            ><span class="woocommerce-Price-amount amount"
-              ><bdi
-                ><span class="woocommerce-Price-currencySymbol">$</span
-                >70.00</bdi
-              ></span
-            >
-            –
-            <span class="woocommerce-Price-amount amount"
-              ><bdi
-                ><span class="woocommerce-Price-currencySymbol">$</span
-                >100.00</bdi
-              ></span
-            ></span
-          >
-        </div>
-      </div>
-    </div>
-    <div class="col-2 mx-4">
-      <div class="card bg-transparent py-5" style="width: 17rem">
-        <img
-          width="300"
-          height="169"
-          alt="Multiple animated screens"
-          nitro-lazy-src="https://cdn-gepmfkb.nitrocdn.com/WYEremhYGNlHzmKefSTYSkktLYZvoCNY/assets/images/optimized/rev-421e137/streamerstation.com/wp-content/uploads/2023/11/screen-shop-thumb.gif"
-          class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail lazyloaded img-fluid"
-          decoding="async"
-          nitro-lazy-empty=""
-          id="MTI0OTo2NTY=-1"
-          src="https://cdn-gepmfkb.nitrocdn.com/WYEremhYGNlHzmKefSTYSkktLYZvoCNY/assets/images/optimized/rev-421e137/streamerstation.com/wp-content/uploads/2023/11/screen-shop-thumb.gif"
-        />
-        <h5>
-          <a
-            href="https://streamerstation.com/product/twitch-banner/"
-            class="woocommerce-LoopProduct-link nav-link text-white fw-bolder pt-3"
-            >Screen</a
-          >
-        </h5>
-        <div class="products-shop">
-          <span class="price grey fw-bolder"
-            ><span class="woocommerce-Price-amount amount"
-              ><bdi
-                ><span class="woocommerce-Price-currencySymbol">$</span
-                >70.00</bdi
-              ></span
-            >
-            –
-            <span class="woocommerce-Price-amount amount"
-              ><bdi
-                ><span class="woocommerce-Price-currencySymbol">$</span
-                >100.00</bdi
-              ></span
-            ></span
-          >
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="row justify-content-center">
-    <div class="col-2 mx-4">
-      <div class="card bg-transparent py-5" style="width: 17rem">
-        <img
-          width="300"
-          height="169"
-          alt="Twitch Banner Main Thumb"
-          nitro-lazy-src="https://cdn-gepmfkb.nitrocdn.com/WYEremhYGNlHzmKefSTYSkktLYZvoCNY/assets/images/optimized/rev-421e137/streamerstation.com/wp-content/uploads/2023/11/twitch-banner-shop-thumb.gif"
-          class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail lazyloaded img-fluid"
-          decoding="async"
-          nitro-lazy-empty=""
-          id="MTI1ODo2ODM=-1"
-          src="https://cdn-gepmfkb.nitrocdn.com/WYEremhYGNlHzmKefSTYSkktLYZvoCNY/assets/images/optimized/rev-421e137/streamerstation.com/wp-content/uploads/2023/11/twitch-banner-shop-thumb.gif"
-        />
-        <h5>
-          <a
-            href="https://streamerstation.com/product/twitch-banner/"
-            class="woocommerce-LoopProduct-link nav-link text-white fw-bolder pt-3"
-            >Twitch Banner</a
-          >
-        </h5>
-        <div class="products-shop">
-          <span class="price grey fw-bolder"
-            ><span class="woocommerce-Price-amount amount"
-              ><bdi
-                ><span class="woocommerce-Price-currencySymbol">$</span
-                >70.00</bdi
-              ></span
-            >
-            –
-            <span class="woocommerce-Price-amount amount"
-              ><bdi
-                ><span class="woocommerce-Price-currencySymbol">$</span
-                >100.00</bdi
-              ></span
-            ></span
-          >
-        </div>
-      </div>
-    </div>
-    <div class="col-2 mx-4">
-      <div class="card bg-transparent py-5" style="width: 17rem">
-        <img
-          width="300"
-          height="300"
-          alt="2D MODEL"
-          nitro-lazy-src="https://cdn-gepmfkb.nitrocdn.com/WYEremhYGNlHzmKefSTYSkktLYZvoCNY/assets/images/optimized/rev-421e137/streamerstation.com/wp-content/uploads/2023/11/vtuber-design-2d-shop-thumb.gif"
-          class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail lazyloaded img-fluid"
-          decoding="async"
-          nitro-lazy-empty=""
-          id="MTI2Nzo2ODM=-1"
-          src="https://cdn-gepmfkb.nitrocdn.com/WYEremhYGNlHzmKefSTYSkktLYZvoCNY/assets/images/optimized/rev-421e137/streamerstation.com/wp-content/uploads/2023/11/vtuber-design-2d-shop-thumb.gif"
-        />
-        <h5>
-          <a
-            href="https://streamerstation.com/product/twitch-banner/"
-            class="woocommerce-LoopProduct-link nav-link text-white fw-bolder pt-3"
-            >Vtuber Design 2D</a
-          >
-        </h5>
-        <div class="products-shop">
-          <span class="price grey fw-bolder"
-            ><span class="woocommerce-Price-amount amount"
-              ><bdi
-                ><span class="woocommerce-Price-currencySymbol">$</span
-                >250.00</bdi
-              ></span
-            >
-            –
-            <span class="woocommerce-Price-amount amount"
-              ><bdi
-                ><span class="woocommerce-Price-currencySymbol">$</span
-                >700.00</bdi
-              ></span
-            ></span
-          >
-        </div>
-      </div>
-    </div>
-    <div class="col-2 mx-4">
-      <div class="card bg-transparent py-5" style="width: 17rem">
-        <img
-          width="300"
-          height="300"
-          alt="Vtuber 3D Models Main Thumb"
-          nitro-lazy-src="https://cdn-gepmfkb.nitrocdn.com/WYEremhYGNlHzmKefSTYSkktLYZvoCNY/assets/images/optimized/rev-421e137/streamerstation.com/wp-content/uploads/2023/11/vtuber-design-3d-shop-thumb.gif"
-          class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail lazyloaded img-fluid"
-          decoding="async"
-          nitro-lazy-empty=""
-          id="MTI3Njo3MDI=-1"
-          src="https://cdn-gepmfkb.nitrocdn.com/WYEremhYGNlHzmKefSTYSkktLYZvoCNY/assets/images/optimized/rev-421e137/streamerstation.com/wp-content/uploads/2023/11/vtuber-design-3d-shop-thumb.gif"
-        />
-        <h5>
-          <a
-            href="https://streamerstation.com/product/twitch-banner/"
-            class="woocommerce-LoopProduct-link nav-link text-white fw-bolder pt-3"
-            >Vtuber Design 3D</a
-          >
-        </h5>
-        <div class="products-shop">
-          <span class="price grey fw-bolder"
-            ><span class="woocommerce-Price-amount amount"
-              ><bdi
-                ><span class="woocommerce-Price-currencySymbol">$</span
-                >450.00</bdi
-              ></span
-            >
-            –
-            <span class="woocommerce-Price-amount amount"
-              ><bdi
-                ><span class="woocommerce-Price-currencySymbol">$</span
-                >1,000.00</bdi
-              ></span
-            ></span
-          >
-        </div>
-      </div>
-    </div>
-    <div class="col-2 mx-4">
-      <div class="card bg-transparent py-5" style="width: 17rem">
-        <img
-          width="300"
-          height="169"
-          alt="Multiple 3D animated scenes"
-          nitro-lazy-src="https://cdn-gepmfkb.nitrocdn.com/WYEremhYGNlHzmKefSTYSkktLYZvoCNY/assets/images/optimized/rev-421e137/streamerstation.com/wp-content/uploads/2023/12/3d-scene-shop-thumb.gif"
-          class="attachment-woocommerce_thumbnail size-woocommerce_thumbnail lazyloaded img-fluid"
-          decoding="async"
-          nitro-lazy-empty=""
-          id="MTI4NTo1NTQ=-1"
-          src="https://cdn-gepmfkb.nitrocdn.com/WYEremhYGNlHzmKefSTYSkktLYZvoCNY/assets/images/optimized/rev-421e137/streamerstation.com/wp-content/uploads/2023/12/3d-scene-shop-thumb.gif"
-        />
-        <h5>
-          <a
-            href="https://streamerstation.com/product/twitch-banner/"
-            class="woocommerce-LoopProduct-link nav-link text-white fw-bolder pt-3"
-            >3D Scene</a
-          >
-        </h5>
-        <div class="products-shop">
-          <span class="price grey fw-bolder"
-            ><span class="woocommerce-Price-amount amount"
-              ><bdi
-                ><span class="woocommerce-Price-currencySymbol">$</span
-                >70.00</bdi
-              ></span
-            >
-            –
-            <span class="woocommerce-Price-amount amount"
-              ><bdi
-                ><span class="woocommerce-Price-currencySymbol">$</span
-                >100.00</bdi
-              ></span
-            ></span
-          >
+          <span class="price grey fw-bolder">{{ item.priceRange }}</span>
         </div>
       </div>
     </div>
@@ -326,8 +34,9 @@
   <div class="text-center">
     <button
       class="btn rounded-pill btn-dark text-white fw-bolder border ms-2 px-4 py-3 text-uppercase"
+      [routerLink]="shopNowSection.buttonUrl"
     >
-      Shop now
+      {{ shopNowSection.buttonText }}
     </button>
   </div>
 </div>

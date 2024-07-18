@@ -29,7 +29,6 @@ export class StreamerStationSectionComponent implements OnInit {
       (`${environment.apiUrl}/streamer-section`)
       .subscribe((res: StreamerSection) => {
         this.streamerSection = res;
-        console.log(this.streamerSection);
       }, (error) => {
         console.error('Error fetching streamer section:', error);
       });

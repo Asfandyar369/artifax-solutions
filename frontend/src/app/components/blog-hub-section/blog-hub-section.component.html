@@ -1,290 +1,45 @@
-<div class="container-fluid bg-black">
+<!-- Blog Hub Section -->
+<div class="container-fluid bg-black" *ngIf="blogHubSection">
   <div class="row text-center">
-    <span class="sub-title">Streamer Station</span>
+    <span class="sub-title">{{ blogHubSection.subTitle }}</span>
     <h2 class="title text-white">
-      <span>Discover Insights: Our Blog Hub</span>
+      <span>{{ blogHubSection.title }}</span>
     </h2>
-    <p class="grey">
-      Explore a treasure trove of blogs covering diverse topics.
-    </p>
+    <p class="grey">{{ blogHubSection.description }}</p>
   </div>
-  <!-- Streamer Station Section -->
-  <div class="row justify-content-center">
+  <div class="row justify-content-center my-4">
     <ngb-carousel
-      [showNavigationArrows]="false"
-      [showNavigationIndicators]="false"
+      [showNavigationArrows]="blogHubSection.showNavigationArrows"
+      [showNavigationIndicators]="blogHubSection.showNavigationIndicators"
     >
-      <!-- First ngbSlide with three cards -->
-      <ng-template ngbSlide>
+      <!-- Create slides dynamically -->
+      <ng-template
+        ngbSlide
+        *ngFor="
+          let slideItems of chunk(blogHubSection.itemList, 3);
+          trackBy: trackBySlide
+        "
+      >
         <div class="row justify-content-center">
-          <div class="col-3">
-            <div class="card bg bg-transparent">
-              <figure>
-                <img
-                  alt="Colorful smartphone interface with icons and text"
-                  src="https://cdn-gepmfkb.nitrocdn.com/WYEremhYGNlHzmKefSTYSkktLYZvoCNY/assets/images/optimized/rev-421e137/streamerstation.com/wp-content/uploads/2024/05/colorful-smartphone-interface-with-icons-and-text-300x169.png"
-                  class="img-fluid"
-                  decoding="async"
-                />
-              </figure>
-              <figcaption>
-                <h5 class="elementor-heading-title">
-                  The Rise of Interactive Elements in Stream Graphics:
-                </h5>
-              </figcaption>
-              <p class="grey fw-bolder">
-                In the ever-evolving landscape of online streaming,
-                interactivity has become a crucial element for engaging and
-                retaining viewers. Streamers now incorporate interactive custom
-                streamer graphics, such as polls, games, and live chat
-                integrations, to create immersive experiences. As technology
-                advances, the future promises even more sophisticated elements
-                like augmented reality...
-              </p>
-            </div>
-          </div>
-
-          <div class="col-3">
-            <div class="card bg bg-transparent">
-              <figure>
-                <img
-                  alt="Video editing"
-                  nitro-lazy-src="https://cdn-gepmfkb.nitrocdn.com/WYEremhYGNlHzmKefSTYSkktLYZvoCNY/assets/images/optimized/rev-421e137/streamerstation.com/wp-content/uploads/2024/05/video-editing-300x169.png"
-                  class="lazyloaded img-fluid"
-                  decoding="async"
-                  nitro-lazy-empty=""
-                  id="MTM0NDoxNDk=-1"
-                  src="https://cdn-gepmfkb.nitrocdn.com/WYEremhYGNlHzmKefSTYSkktLYZvoCNY/assets/images/optimized/rev-421e137/streamerstation.com/wp-content/uploads/2024/05/video-editing-300x169.png"
-                />
-              </figure>
-              <figcaption>
-                <h5 class="elementor-heading-title">
-                  Behind the Scenes: The Art of Crafting Custom
-                </h5>
-              </figcaption>
-              <p class="grey fw-bolder">
-                In the competitive world of online streaming, capturing and
-                retaining viewer attention is essential. One effective way
-                streamers achieve this is through custom attention-grabbing
-                animated alerts, which notify streamers of interactions like new
-                followers and donations, while also entertaining the audience.
-                This blog delves into the art of creating these...
-              </p>
-            </div>
-          </div>
-
-          <div class="col-3">
-            <div class="card bg bg-transparent">
-              <figure>
-                <img
-                  alt="A well-lit modern workspace with devices displaying digital content."
-                  nitro-lazy-src="https://cdn-gepmfkb.nitrocdn.com/WYEremhYGNlHzmKefSTYSkktLYZvoCNY/assets/images/optimized/rev-421e137/streamerstation.com/wp-content/uploads/2024/05/a-well-lit-modern-workspace-with-devices-displaying-digital-content-300x169.png"
-                  class="lazyloaded img-fluid"
-                  decoding="async"
-                  nitro-lazy-empty=""
-                  id="MTM1MToyNTg=-1"
-                  src="https://cdn-gepmfkb.nitrocdn.com/WYEremhYGNlHzmKefSTYSkktLYZvoCNY/assets/images/optimized/rev-421e137/streamerstation.com/wp-content/uploads/2024/05/a-well-lit-modern-workspace-with-devices-displaying-digital-content-300x169.png"
-                />
-              </figure>
-              <figcaption>
-                <h5 class="elementor-heading-title">
-                  Optimizing Stream Graphics for Different Platforms: A
-                  Comprehensive
-                </h5>
-              </figcaption>
-              <p class="grey fw-bolder">
-                In the bustling world of online streaming, standing out amidst
-                the sea of content is crucial for attracting and retaining
-                viewers. One key aspect that streamers often overlook is the
-                optimization of their streamer graphics for different platforms.
-                Whether streaming on Twitch, YouTube, Facebook Gaming, or Mixer,
-                each platform has...
-              </p>
-            </div>
-          </div>
-        </div>
-      </ng-template>
-
-      <!-- Second ngbSlide with next three cards -->
-      <ng-template ngbSlide>
-        <div class="row justify-content-center">
-          <div class="col-3">
-            <div class="card bg bg-transparent">
-              <figure>
-                <img
-                  alt="man watching computer"
-                  nitro-lazy-src="https://cdn-gepmfkb.nitrocdn.com/WYEremhYGNlHzmKefSTYSkktLYZvoCNY/assets/images/optimized/rev-421e137/streamerstation.com/wp-content/uploads/2024/05/man-watching-computer-1-300x169.png"
-                  class="lazyloaded img-fluid"
-                  decoding="async"
-                  nitro-lazy-empty=""
-                  id="MTM1ODoxNjc=-1"
-                  src="https://cdn-gepmfkb.nitrocdn.com/WYEremhYGNlHzmKefSTYSkktLYZvoCNY/assets/images/optimized/rev-421e137/streamerstation.com/wp-content/uploads/2024/05/man-watching-computer-1-300x169.png"
-                />
-              </figure>
-              <figcaption>
-                <h5 class="elementor-heading-title">
-                  Streamers’ Guide to Choosing the Right Animation Styles
-                </h5>
-              </figcaption>
-              <p class="grey fw-bolder">
-                Animation styles are a powerful tool for streamers looking to
-                establish a distinctive brand identity and captivate their
-                audience. From subtle motion graphics to dynamic transitions,
-                the right animation style can elevate a streamer's content and
-                leave a lasting impression on viewers. In this comprehensive
-                guide, we'll explore the factors...
-              </p>
-            </div>
-          </div>
-
-          <div class="col-3">
-            <div class="card bg bg-transparent">
-              <figure>
-                <img
-                  alt="A futuristic helmeted character in a cyberpunk-themed room."
-                  nitro-lazy-src="https://cdn-gepmfkb.nitrocdn.com/WYEremhYGNlHzmKefSTYSkktLYZvoCNY/assets/images/optimized/rev-421e137/streamerstation.com/wp-content/uploads/2024/05/a-futuristic-helmeted-character-in-a-cyberpunk-themed-room-1-300x169.png"
-                  class="lazyloaded img-fluid"
-                  decoding="async"
-                  nitro-lazy-empty=""
-                  id="MTM2NToyNDI=-1"
-                  src="https://cdn-gepmfkb.nitrocdn.com/WYEremhYGNlHzmKefSTYSkktLYZvoCNY/assets/images/optimized/rev-421e137/streamerstation.com/wp-content/uploads/2024/05/a-futuristic-helmeted-character-in-a-cyberpunk-themed-room-1-300x169.png"
-                />
-              </figure>
-              <figcaption>
-                <h5 class="elementor-heading-title">
-                  The Future of Stream Branding: Predictions and Insights
-                </h5>
-              </figcaption>
-              <p class="grey fw-bolder">
-                In our exploration of the future of stream branding, we delve
-                into groundbreaking trends poised to reshape the streaming
-                landscape. From immersive experiences leveraging AR and VR
-                technologies to AI-driven personalization, streamers are on the
-                brink of a branding revolution. Cross-platform consistency,
-                interactive widgets, and real-time data visualization will be...
-              </p>
-            </div>
-          </div>
-
-          <div class="col-3">
-            <div class="card bg bg-transparent">
-              <figure>
-                <img
-                  alt="Overlay graphic."
-                  nitro-lazy-src="https://cdn-gepmfkb.nitrocdn.com/WYEremhYGNlHzmKefSTYSkktLYZvoCNY/assets/images/optimized/rev-421e137/streamerstation.com/wp-content/uploads/2024/05/Overlay-graphic-300x169.png"
-                  class="lazyloaded img-fluid"
-                  decoding="async"
-                  nitro-lazy-empty=""
-                  id="MTM3MjoxNTQ=-1"
-                  src="https://cdn-gepmfkb.nitrocdn.com/WYEremhYGNlHzmKefSTYSkktLYZvoCNY/assets/images/optimized/rev-421e137/streamerstation.com/wp-content/uploads/2024/05/Overlay-graphic-300x169.png"
-                />
-              </figure>
-              <figcaption>
-                <h5 class="elementor-heading-title">
-                  Exploring The Impact Of High-Quality Overlays On Viewer
-                </h5>
-              </figcaption>
-              <p class="grey fw-bolder">
-                In the competitive world of online streaming, the quality of
-                overlays can significantly impact viewer engagement. This blog
-                explores the benefits of using high-quality overlays to enhance
-                your stream's visual appeal and create a more immersive
-                experience for your audience. Learn how to select the right
-                overlays to complement your content and...
-              </p>
-            </div>
-          </div>
-        </div>
-      </ng-template>
-
-      <!-- Third ngbSlide with last three cards -->
-      <ng-template ngbSlide>
-        <div class="row justify-content-center">
-          <div class="col-3">
-            <div class="card bg bg-transparent">
-              <figure>
-                <img
-                  alt="Over-the-shoulder view of person editing video"
-                  nitro-lazy-src="https://cdn-gepmfkb.nitrocdn.com/WYEremhYGNlHzmKefSTYSkktLYZvoCNY/assets/images/optimized/rev-421e137/streamerstation.com/wp-content/uploads/2024/05/over-the-shoulder-view-of-person-editing-video-300x169.png"
-                  class="lazyloaded img-fluid"
-                  decoding="async"
-                  nitro-lazy-empty=""
-                  id="MTM3OToyMTE=-1"
-                  src="https://cdn-gepmfkb.nitrocdn.com/WYEremhYGNlHzmKefSTYSkktLYZvoCNY/assets/images/optimized/rev-421e137/streamerstation.com/wp-content/uploads/2024/05/over-the-shoulder-view-of-person-editing-video-300x169.png"
-                />
-              </figure>
-              <figcaption>
-                <h5 class="elementor-heading-title">
-                  The Evolution of Stream Graphics: From Basic to High-Tech
-                </h5>
-              </figcaption>
-              <p class="grey fw-bolder">
-                Stream graphics have evolved significantly over the years,
-                moving from basic overlays to sophisticated, high-tech designs.
-                This blog takes you on a journey through the evolution of stream
-                graphics, highlighting key milestones and the technologies that
-                have shaped the industry. Discover how streamers are now using
-                advanced tools and techniques to create...
-              </p>
-            </div>
-          </div>
-
-          <div class="col-3">
-            <div class="card bg bg-transparent">
-              <figure>
-                <img
-                  alt="Stylish banner"
-                  nitro-lazy-src="https://cdn-gepmfkb.nitrocdn.com/WYEremhYGNlHzmKefSTYSkktLYZvoCNY/assets/images/optimized/rev-421e137/streamerstation.com/wp-content/uploads/2024/05/stylish-banner-300x169.png"
-                  class="lazyloaded img-fluid"
-                  decoding="async"
-                  nitro-lazy-empty=""
-                  id="MTM4NjoxNDk=-1"
-                  src="https://cdn-gepmfkb.nitrocdn.com/WYEremhYGNlHzmKefSTYSkktLYZvoCNY/assets/images/optimized/rev-421e137/streamerstation.com/wp-content/uploads/2024/05/stylish-banner-300x169.png"
-                />
-              </figure>
-              <figcaption>
-                <h5 class="elementor-heading-title">
-                  Best Practices for Creating Consistent Stream Branding
-                </h5>
-              </figcaption>
-              <p class="grey fw-bolder">
-                Consistent stream branding is crucial for establishing a strong
-                and recognizable presence in the streaming community. This blog
-                outlines best practices for creating cohesive branding across
-                all your stream elements, including overlays, alerts, and
-                transitions. Learn how to develop a unique brand identity that
-                resonates with your audience and sets you apart from the
-                competition...
-              </p>
-            </div>
-          </div>
-
-          <div class="col-3">
-            <div class="card bg bg-transparent">
-              <figure>
-                <img
-                  alt="Colorful digital graphics on a screen."
-                  nitro-lazy-src="https://cdn-gepmfkb.nitrocdn.com/WYEremhYGNlHzmKefSTYSkktLYZvoCNY/assets/images/optimized/rev-421e137/streamerstation.com/wp-content/uploads/2024/05/colorful-digital-graphics-on-a-screen-300x169.png"
-                  class="lazyloaded img-fluid"
-                  decoding="async"
-                  nitro-lazy-empty=""
-                  id="MTM5MzoxODc=-1"
-                  src="https://cdn-gepmfkb.nitrocdn.com/WYEremhYGNlHzmKefSTYSkktLYZvoCNY/assets/images/optimized/rev-421e137/streamerstation.com/wp-content/uploads/2024/05/colorful-digital-graphics-on-a-screen-300x169.png"
-                />
-              </figure>
-              <figcaption>
-                <h5 class="elementor-heading-title">
-                  The Importance of Visual Storytelling in Streaming
-                </h5>
-              </figcaption>
-              <p class="grey fw-bolder">
-                Visual storytelling is a powerful tool for streamers looking to
-                connect with their audience on a deeper level. This blog
-                explores the importance of using visuals to tell compelling
-                stories during your streams, from creating engaging thumbnails
-                to designing immersive stream overlays. Learn how to leverage
-                visual storytelling techniques to enhance your...
-              </p>
+          <div
+            class="col-3"
+            *ngFor="let item of slideItems; trackBy: trackByFn"
+          >
+            <div class="card bg-dark h-100">
+              <a class="nav-link" [routerLink]="item.linkUrl">
+                <figure>
+                  <img
+                    [alt]="item.altText"
+                    [src]="item.imageUrl"
+                    class="img-fluid w-100"
+                    decoding="async"
+                  />
+                  <figcaption class="mt-3 ms-3">
+                    <h5 class="elementor-heading-title">{{ item.title }}</h5>
+                  </figcaption>
+                </figure>
+              </a>
+              <p class="grey px-3">{{ item.content }}</p>
             </div>
           </div>
         </div>
@@ -295,8 +50,9 @@
   <div class="text-center">
     <button
       class="btn rounded-pill btn-dark text-white fw-bolder border ms-2 px-4 py-3 text-uppercase"
+      [routerLink]="blogHubSection.buttonUrl"
     >
-      Read More
+      {{ blogHubSection.buttonText }}
     </button>
   </div>
 </div>

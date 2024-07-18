@@ -1,4 +1,9 @@
-<div class="container-fluid bg-black" style="padding-bottom: 9%">
+<!-- acquire-section.component.html -->
+<div
+  class="container-fluid bg-black"
+  style="padding-bottom: 9%"
+  *ngIf="acquireSection"
+>
   <div class="row">
     <div class="col-lg-5 offset-1">
       <div>
@@ -6,37 +11,15 @@
           [showNavigationArrows]="false"
           [showNavigationIndicators]="false"
         >
-          <ng-template ngbSlide>
+          <ng-template
+            ngbSlide
+            *ngFor="let slide of acquireSection?.carouselSlides"
+          >
             <img
-              alt="Static PFP Angry Dinosaur stand in front of sunset"
-              nitro-lazy-src="https://cdn-gepmfkb.nitrocdn.com/WYEremhYGNlHzmKefSTYSkktLYZvoCNY/assets/images/optimized/rev-421e137/streamerstation.com/wp-content/uploads/2024/02/static-pfp-home-6.jpg"
+              [src]="slide.imageUrl"
+              [alt]="slide.altText"
               class="swiper-slide-image lazyloaded img-fluid"
               decoding="async"
-              nitro-lazy-empty=""
-              id="OTgxOjMyMg==-1"
-              src="https://cdn-gepmfkb.nitrocdn.com/WYEremhYGNlHzmKefSTYSkktLYZvoCNY/assets/images/optimized/rev-421e137/streamerstation.com/wp-content/uploads/2024/02/static-pfp-home-6.jpg"
-            />
-          </ng-template>
-          <ng-template ngbSlide>
-            <img
-              alt="Static pfp A guy transform a ghost with dark scary background"
-              nitro-lazy-src="https://cdn-gepmfkb.nitrocdn.com/WYEremhYGNlHzmKefSTYSkktLYZvoCNY/assets/images/optimized/rev-421e137/streamerstation.com/wp-content/uploads/2024/02/static-pfp-home-4.jpg"
-              class="swiper-slide-image lazyloaded img-fluid"
-              decoding="async"
-              nitro-lazy-empty=""
-              id="OTgxOjY2Mg==-1"
-              src="https://cdn-gepmfkb.nitrocdn.com/WYEremhYGNlHzmKefSTYSkktLYZvoCNY/assets/images/optimized/rev-421e137/streamerstation.com/wp-content/uploads/2024/02/static-pfp-home-4.jpg"
-            />
-          </ng-template>
-          <ng-template ngbSlide>
-            <img
-              alt="Static pfp A guy with glasses reading a book in library"
-              nitro-lazy-src="https://cdn-gepmfkb.nitrocdn.com/WYEremhYGNlHzmKefSTYSkktLYZvoCNY/assets/images/optimized/rev-421e137/streamerstation.com/wp-content/uploads/2024/02/static-pfp-home-5.jpg"
-              class="swiper-slide-image lazyloaded img-fluid"
-              decoding="async"
-              nitro-lazy-empty=""
-              id="OTgxOjk5Ng==-1"
-              src="https://cdn-gepmfkb.nitrocdn.com/WYEremhYGNlHzmKefSTYSkktLYZvoCNY/assets/images/optimized/rev-421e137/streamerstation.com/wp-content/uploads/2024/02/static-pfp-home-5.jpg"
             />
           </ng-template>
         </ngb-carousel>
@@ -46,42 +29,40 @@
       <div class="elementor-widget-wrap">
         <div class="elementor-element">
           <div class="section-title mb-4">
-            <span class="sub-title">Hey! Acquire</span>
+            <span class="sub-title">{{ acquireSection.subTitle }}</span>
             <h1 class="text-white text-capitalize mt-5">
-              The Power of Streaming Design
+              {{ acquireSection.title }}
             </h1>
-            <p class="grey mt-5">
-              In the fast-paced world of livestream, design plays a pivotal role
-              in shaping the viewer experience and setting your stream apart
-              from the rest. With a keen focus on creativity and innovation,
-              Streamer Station offers a range of design solutions tailored to
-              enhance your stream.
-            </p>
+            <p class="grey mt-5">{{ acquireSection.description }}</p>
           </div>
         </div>
-        <div class="row my-5">
-          <a href="/" class="text-white green-line fw-bold">
-            Keeping pace with the evolving trends of streaming.
-          </a>
+        <div class="row my-5" *ngFor="let link of acquireSection?.usefulLinks">
+          <a [href]="link.url" class="text-white green-line fw-bold">{{
+            link.linkText
+          }}</a>
         </div>
-        <div class="row my-5">
-          <a href="/" class="text-white green-line fw-bold">
-            Creativity as the foundation of innovation and transformative ideas.
-          </a>
-        </div>
-        <div class="row my-5">
-          <a href="/" class="text-white green-line fw-bold">
-            Tailored solutions for your unique needs in stream.
-          </a>
-        </div>
-        <div class="mt-5">
+        <div class="mt-5" *ngFor="let button of acquireSection?.callToActions">
           <button
             class="btn rounded-pill btn-dark text-white fw-bolder border ms-2 px-4 py-3 text-uppercase"
+            [routerLink]="button.buttonUrl"
           >
-            See How it works
+            {{ button.buttonText }}
           </button>
         </div>
       </div>
+    </div>
+  </div>
+</div>
+
+<!-- Fallback for entire section if data is not available -->
+<div *ngIf="!acquireSection" class="container-fluid bg-black">
+  <div class="row justify-content-center">
+    <div class="col-lg-8 text-center text-danger">
+      <h2 class="fw-bold">Acquire Section Data Not Available</h2>
+      <p>
+        Sorry, there are no items available for the acquire section at the
+        moment.
+      </p>
     </div>
   </div>
 </div>
