@@ -25,7 +25,6 @@ export class ShopNowSectionComponent implements OnInit {
       .get<ShopNowSection>(`${environment.apiUrl}/shop-now-section`)
       .subscribe((res: ShopNowSection) => {
         this.shopNowSection = res;
-        console.log(this.shopNowSection);
       }, (error) => {
         console.error(error);
       });

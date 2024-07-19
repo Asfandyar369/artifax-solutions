@@ -27,9 +27,8 @@ export class ExpertsSectionComponent implements OnInit {
     this.http.get<ExpertSection>(`${environment.apiUrl}/expert-section`).subscribe(
       (res: ExpertSection) => {
         this.expertsSection = res;
-        console.log(this.expertsSection);
       }, (error) => {
-        console.log(error);
+        console.error(error);
       });
   }
 }

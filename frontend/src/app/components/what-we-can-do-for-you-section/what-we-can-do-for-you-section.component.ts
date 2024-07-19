@@ -23,7 +23,6 @@ export class WhatWeCanDoForYouSectionComponent implements OnInit {
     this.http.get<StreamerFeatureSection>(`${environment.apiUrl}/streamer-feature`).subscribe(
       (data: StreamerFeatureSection) => {
         this.streamerFeature = data;
-        console.log(this.streamerFeature);
       },
       (error) => {
         console.error('Error fetching streamer feature:', error);

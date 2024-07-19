@@ -27,7 +27,6 @@ export class AcquireSectionComponent implements OnInit {
     this.http.get<AcquireSection>(`${environment.apiUrl}/acquire-section`).subscribe(
       (data: AcquireSection) => {
         this.acquireSection = data;
-        console.log(this.acquireSection);
       },
       (error) => {
         console.error('Error fetching acquire section:', error);
