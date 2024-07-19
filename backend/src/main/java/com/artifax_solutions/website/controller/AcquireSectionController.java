@@ -1,7 +1,7 @@
 package com.artifax_solutions.website.controller;
 
 import com.artifax_solutions.website.dto.AcquireSectionDto;
-import com.artifax_solutions.website.Service.serviceInterface.AcquireSectionService;
+import com.artifax_solutions.website.service.serviceInterface.AcquireSectionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;

@@ -83,7 +83,7 @@
 }
 
 .transition-link::after {
-  content: '';
+  content: "";
   position: absolute;
   width: 0;
   height: 2px; /* Adjust the height of the underline */
@@ -116,11 +116,13 @@
   color: #32ed22;
 }
 
-
 /* Custom class to remove background and border from list group items */
 .custom-list-item {
   background-color: transparent !important;
   border: none !important;
   padding: 0.5rem 0rem; /* Optional: adjust padding as needed */
+  color: grey;
+}
+input::placeholder {
   color: grey;
 }

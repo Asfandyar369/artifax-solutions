@@ -1,7 +1,7 @@
 package com.artifax_solutions.website.controller;
 
 import com.artifax_solutions.website.dto.StreamerSectionDto;
-import com.artifax_solutions.website.Service.serviceInterface.StreamerSectionService;
+import com.artifax_solutions.website.service.serviceInterface.StreamerSectionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;

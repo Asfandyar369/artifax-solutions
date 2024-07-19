@@ -1,203 +1,92 @@
-<div class="container-fluid bg-black">
+<div *ngIf="footerData" class="container-fluid bg-black">
   <div class="container">
     <div class="row">
       <div class="col-4 px-5 mb-5">
         <div class="mb-5">
           <img
-            alt="Streamer Station"
-            nitro-lazy-src="https://cdn-gepmfkb.nitrocdn.com/WYEremhYGNlHzmKefSTYSkktLYZvoCNY/assets/images/optimized/rev-421e137/streamerstation.com/wp-content/uploads/2023/10/Logos-05-copy.png"
-            class="lazyloaded img-fluid"
-            decoding="async"
+            [alt]="footerData.logoAltText"
+            [src]="footerData.logoUrl"
+            class="img-fluid"
             width="200"
             height="200"
-            nitro-lazy-empty=""
-            id="MTcwNTo2Nw==-1"
-            src="https://cdn-gepmfkb.nitrocdn.com/WYEremhYGNlHzmKefSTYSkktLYZvoCNY/assets/images/optimized/rev-421e137/streamerstation.com/wp-content/uploads/2023/10/Logos-05-copy.png"
           />
         </div>
         <div>
           <p class="grey fw-bolder fs-5">
-            Streamer station was Founded in 2020 by a team of professional
-            designers, which specializes in providing top-tier designing
-            services tailored for streamers.<br /><br />
+            {{ footerData.aboutText }}<br /><br />
             <span style="color: #757575; font-family: Poppins">
-              <span style="font-size: 16px; letter-spacing: 1px"
-                >Copyright © 2024 All rights reserved by&nbsp;<a
-                  href="https://digitalamplify.com/"
+              <span style="font-size: 16px; letter-spacing: 1px">
+                {{ footerData.copyrightText }}
+                <a
+                  [href]="footerData.copyrightLink"
                   target="_blank"
                   rel="noopener"
                   class="transition-link"
-                  >Digital Amplify.</a
-                ></span
-              ></span
-            >
-
+                >
+                  Digital Amplify.
+                </a>
+              </span>
+            </span>
             <br /><br />
-            <span style="color: #757575; font-family: Poppins"
-              ><span style="font-size: 16px; letter-spacing: 1px"
-                >Our Payment Methods</span
-              ></span
-            >
+            <span style="color: #757575; font-family: Poppins">
+              <span style="font-size: 16px; letter-spacing: 1px">
+                {{ footerData.ourPaymentMethods }}
+              </span>
+            </span>
             <img
-              alt=""
+              [alt]="footerData.ourPaymentMethods"
+              [src]="footerData.paymentMethodsImg"
               width="300"
               height="21"
-              nitro-lazy-src="https://cdn-gepmfkb.nitrocdn.com/WYEremhYGNlHzmKefSTYSkktLYZvoCNY/assets/images/optimized/rev-421e137/streamerstation.com/wp-content/uploads/2024/02/Payment-Methods-White-BG.png"
-              class="alignnone size-full wp-image-4274 lazyloaded"
-              decoding="async"
-              nitro-lazy-empty=""
-              id="MTcxNzoxNzA=-1"
-              src="https://cdn-gepmfkb.nitrocdn.com/WYEremhYGNlHzmKefSTYSkktLYZvoCNY/assets/images/optimized/rev-421e137/streamerstation.com/wp-content/uploads/2024/02/Payment-Methods-White-BG.png"
+              class="alignnone size-full wp-image-4274"
             />
           </p>
         </div>
       </div>
-      <div class="col-2 offset-1">
-        <h4 class="elementor-heading-title">Company</h4>
+      <div
+        class="col-2"
+        *ngFor="let heading of footerData.headingList"
+      >
+        <h4 class="elementor-heading-title">{{ heading.heading }}</h4>
         <ul class="list-group bg-transparent border-none mt-5">
-          <li class="list-group-item custom-list-item">
-            <a
-              href="https://streamerstation.com/about/"
-              class="transition-link fw-bold"
-            >
-              About
-            </a>
-          </li>
-          <li class="list-group-item custom-list-item">
-            <a
-              href="https://streamerstation.com/blogs/"
-              class="transition-link fw-bold"
-            >
-              Blogs
-            </a>
-          </li>
-          <li class="list-group-item custom-list-item">
-            <a
-              href="https://streamerstation.com/our-portfolio/"
-              class="transition-link fw-bold"
-            >
-              Our Portfolio
-            </a>
-          </li>
-          <li class="list-group-item custom-list-item">
-            <a
-              href="https://streamerstation.com/affiliated-designers/"
-              class="transition-link fw-bold"
-            >
-              Affiliated Designers
-            </a>
-          </li>
-          <li class="list-group-item custom-list-item">
-            <a
-              href="https://streamerstation.com/contact/"
-              class="transition-link fw-bold"
-              >Contact</a
-            >
-          </li>
-          <li class="list-group-item custom-list-item">
-            <a
-              rel="privacy-policy"
-              href="https://streamerstation.com/privacy-policy/"
-              class="transition-link fw-bold"
-            >
-              Privacy Policy
+          <li
+            *ngFor="let menuItem of heading.menuList"
+            class="list-group-item custom-list-item"
+          >
+            <a [href]="menuItem.linkUrl" class="transition-link fw-bold">
+              {{ menuItem.menuName }}
             </a>
           </li>
         </ul>
+        <div
+          *ngIf="heading.menuIconList?.length"
+          class="d-flex justify-content-between fs-6 mt-3"
+        >
+          <div *ngFor="let iconItem of heading.menuIconList">
+            <a [href]="iconItem.iconUrl" class="social-links">
+              <i [class]="'bi ' + iconItem.iconClass"></i>
+            </a>
+          </div>
+        </div>
       </div>
-      <div class="col-2">
-        <h4 class="elementor-heading-title">Services</h4>
-        <ul class="list-group bg-transparent border-none mt-5">
-          <li class="list-group-item custom-list-item">
-            <a
-              href="https://streamerstation.com/about/"
-              class="transition-link fw-bold"
-            >
-              Shop
-            </a>
-          </li>
-          <li class="list-group-item custom-list-item">
-            <a
-              href="https://streamerstation.com/blogs/"
-              class="transition-link fw-bold"
-            >
-              Streaming Graphics Design
-            </a>
-          </li>
-          <li class="list-group-item custom-list-item">
-            <a
-              href="https://streamerstation.com/our-portfolio/"
-              class="transition-link fw-bold"
-            >
-              3D Scenes & Gaming Room
-            </a>
-          </li>
-          <li class="list-group-item custom-list-item">
-            <a
-              href="https://streamerstation.com/affiliated-designers/"
-              class="transition-link fw-bold"
-            >
-              VTuber Model
-            </a>
-          </li>
-        </ul>
-      </div>
-      <div class="col-2">
-        <h4 class="elementor-heading-title">Contact</h4>
-        <ul class="list-group bg-transparent border-none mt-5">
-          <li class="list-group-item custom-list-item grey fw-bold">Email:</li>
-          <li class="list-group-item custom-list-item grey fw-bold">
-            <a
-              href="https://streamerstation.com/about/"
-              class="transition-link fw-bold"
-            >
-              abc&#64;gmail.com
-            </a>
-          </li>
-          <li class="list-group-item custom-list-item">
-            <a
-              href="https://streamerstation.com/blogs/"
-              class="transition-link fw-bold"
-            >
-              support&#64;streamerstation.com
-            </a>
-          </li>
-        </ul>
-        <div class="d-flex justify-content-evenly fs-6 mt-5">
-          <div>
-            <a href="/" class="social-links">
-              <i class="bi bi-facebook"></i>
-            </a>
+      <div class="col-3">
+        <div class="row mt-5">
+          <div class="col">
+            <input
+              type="email"
+              class="form-control bg-transparent w-75 py-2 text-center text-white"
+              placeholder="Enter Your Email Address"
+              [(ngModel)]="input"
+            />
           </div>
-          <div>
-            <a href="/" class="social-links">
-              <i class="bi bi-linkedin"></i>
-            </a>
-          </div>
-          <div>
-            <a href="/" class="social-links">
-              <i class="bi bi-twitter"></i>
-            </a>
-          </div>
-          <div>
-            <a href="/" class="social-links">
-              <i class="bi bi-instagram"></i>
-            </a>
-          </div>
-          <div>
-            <a href="/" class="social-links">
-              <i class="bi bi-discord"></i>
-            </a>
-          </div>
-          <div>
-            <a href="/" class="social-links">
-              <i class="bi bi-behance"></i>
-            </a>
-          </div>
-          <div>
-            <a href="/" class="social-links">
-              <i class="bi bi-twitch"></i>
-            </a>
+        </div>
+        <div class="row mt-4">
+          <div class="col">
+            <button
+              class="btn btn-dark text-white border py-2 w-75 fw-medium text-uppercase"
+            >
+              <small>{{ footerData.buttonText }}</small>
+            </button>
           </div>
         </div>
       </div>

@@ -1,6 +1,6 @@
 package com.artifax_solutions.website.controller;
 
-import com.artifax_solutions.website.Service.serviceInterface.BlogHubSectionService;
+import com.artifax_solutions.website.service.serviceInterface.BlogHubSectionService;
 import com.artifax_solutions.website.dto.BlogHubSectionDto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

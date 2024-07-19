@@ -69,12 +69,7 @@
 .wow {
   background-image: linear-gradient(-224deg, #32ed22, #101010);
 }
-.bg-green-image {
-  background-image: url("/images/home-3d-scenes-gaming-room-banner.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-}
+
 
 .transition-link {
   color: grey;
