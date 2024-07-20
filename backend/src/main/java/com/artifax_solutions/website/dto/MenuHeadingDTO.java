@@ -14,4 +14,5 @@ public class MenuHeadingDTO {
     private String heading;
     private List<MenuListDTO> menuList;
     private List<MenuIconDto> menuIconList;
+    private List<MenuButtonDto> menuButtonList;
 }

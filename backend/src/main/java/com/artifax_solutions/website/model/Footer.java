@@ -22,8 +22,6 @@ public class Footer {
     private String copyrightLink;
     private String ourPaymentMethods;
     private String paymentMethodsImg;
-    private String buttonText;
-    private String buttonLink;
 
     @OneToMany(mappedBy = "footer")
     private List<MenuHeading> headingList;

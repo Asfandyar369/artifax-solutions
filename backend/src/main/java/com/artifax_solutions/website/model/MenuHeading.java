@@ -21,8 +21,12 @@ public class MenuHeading {
 
     @OneToMany(mappedBy = "menuHeading")
     private List<MenuList> menuList;
+
     @OneToMany(mappedBy = "menuHeading")
     private List<MenuIcon> menuIconList;
+
+    @OneToMany(mappedBy = "menuHeading")
+    private List<MenuButton> menuButtonList;
 
     @ManyToOne
     @JoinColumn(name = "footer_id")

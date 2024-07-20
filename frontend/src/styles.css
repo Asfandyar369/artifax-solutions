@@ -1,1 +1,137 @@
 /* You can add global styles to this file, and also import other style files */
+.btn {
+  background-color: #32ed22 !important;
+}
+.btn:hover {
+  background-color: transparent !important;
+}
+.btn-opposite {
+  background-color: transparent !important;
+}
+.btn-opposite:hover {
+  background-color: #32ed22 !important;
+}
+.inner {
+  position: relative;
+  z-index: 2;
+}
+.title {
+  font-size: 60px;
+}
+.bg-black {
+  background-color: #101010 !important;
+  padding-top: 9%;
+}
+.sub-title {
+  background: linear-gradient(
+    120deg,
+    #32ed22 20.69%,
+    #26b21a 50.19%,
+    #1a6d0b 79.69%
+  );
+  -webkit-background-clip: text;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="var(--color-primary)",endColorstr="var(--color-secondary)",GradientType=1);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  line-height: 18px;
+  font-size: 16px;
+  border-radius: 4px;
+  margin-bottom: 12px;
+}
+.grey,
+.elementor-element p {
+  color: rgba(198, 201, 216, 0.75);
+}
+.elementor-heading-title {
+  color: #32ed22;
+}
+.bg-card {
+  background-color: #0c0c0c;
+  z-index: 3;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.green-line {
+  font-size: 1.1rem;
+}
+.green-line:hover {
+  text-decoration: underline !important;
+  text-decoration-color: #32ed22 !important;
+}
+.bg-image {
+  background-image: url("/images/homepage-banner.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+.wow {
+  background-image: linear-gradient(-224deg, #32ed22, #101010);
+}
+.bg-green-image {
+  background-image: url("/images/home-3d-scenes-gaming-room-banner.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+.transition-link {
+  color: grey;
+  text-decoration: none;
+  position: relative; /* Required for positioning the pseudo-element */
+}
+.transition-link::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 2px; /* Adjust the height of the underline */
+  bottom: -2px; /* Position the underline just below the text */
+  left: 0;
+  background: linear-gradient(
+    120deg,
+    #32ed22 20.69%,
+    #26b21a 50.19%,
+    #1a6d0b 79.69%
+  );
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+}
+.transition-link:hover::after {
+  visibility: visible;
+  width: 100%;
+}
+.transition-link:hover {
+  color: #32ed22; /* Change the text color on hover */
+  transition: color 0.3s; /* Smooth transition for text color */
+}
+.social-links {
+  color: grey;
+}
+.social-links:hover {
+  color: #32ed22;
+}
+/* Custom class to remove background and border from list group items */
+.custom-list-item {
+  background-color: transparent !important;
+  border: none !important;
+  padding: 0.5rem 0rem; /* Optional: adjust padding as needed */
+  color: grey;
+}
+.bg-dark {
+  background-color: black !important;
+}
+.nav-link:hover {
+  color: #32ed22 !important;
+}
+.green:hover {
+  color: #32ed22 !important;
+}
+/* Custom CSS for dropdown on hover */
+.navbar-nav .dropdown:hover .dropdown-menu {
+  display: block;
+}
+.dropdown-item:hover {
+  color: #32ed22 !important;
+  background-color: rgb(24, 23, 23) !important;
+}
+
