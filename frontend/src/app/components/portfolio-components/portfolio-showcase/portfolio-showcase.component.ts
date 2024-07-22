@@ -4,6 +4,7 @@ import { environment } from '../../../../environments/environment';
 import { PortfolioShowcase } from '../../../../interface/PortfolioShowcase';
 import { NgFor, NgIf } from '@angular/common';
 
+
 @Component({
   selector: 'app-portfolio-showcase',
   standalone: true,

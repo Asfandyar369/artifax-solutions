@@ -134,4 +134,12 @@
   color: #32ed22 !important;
   background-color: rgb(24, 23, 23) !important;
 }
+.btn-success {
+  background-color: #00ff00 !important;
+  color: white !important;
+}
 
+.btn-nonActive {
+  background-color: transparent !important;
+  color: white !important;
+}

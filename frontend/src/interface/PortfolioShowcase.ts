@@ -3,6 +3,8 @@ export interface PortfolioShowcase {
   subTitle: string | null | undefined;
   title: string | null | undefined;
   description: string | null | undefined;
+  imageUrl?: string | undefined | null;
+  filterOptions?: string[] | undefined | null;
   showCaseCardList: PortfolioShowcaseCard[] | undefined | null;
 }
 export interface PortfolioShowcaseCard {

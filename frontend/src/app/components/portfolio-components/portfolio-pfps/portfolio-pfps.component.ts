@@ -1,10 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { PortfolioPFPs } from '../../../../interface/PortfolioPFPs';
+import { PortfolioShowcase } from '../../../../interface/PortfolioShowcase';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../../../environments/environment';
 import { NgClass, NgFor, NgIf } from '@angular/common';
 import { trigger, transition, style, animate } from '@angular/animations';
 import { PortfolioShowcaseCard } from '../../../../interface/PortfolioShowcase';
+
 
 @Component({
   selector: 'app-portfolio-pfps',
@@ -25,23 +26,23 @@ import { PortfolioShowcaseCard } from '../../../../interface/PortfolioShowcase';
   ]
 })
 export class PortfolioPFPsComponent implements OnInit {
-  portfolioPfps: PortfolioPFPs | undefined | null;
+  PortfolioPFPs: PortfolioShowcase | undefined | null;
   filteredCardList: PortfolioShowcaseCard[] | undefined | null;
   activeFilter: string = 'All PFPs';
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
-    this.getPortfolioPfps();
+    this.getPortfolioShowcase();
   }
 
-  private getPortfolioPfps(): void {
+  private getPortfolioShowcase(): void {
     this.http
-      .get<PortfolioPFPs>(`${environment.apiUrl}/portfolio-pfps`)
+      .get<PortfolioShowcase>(`${environment.apiUrl}/portfolio-pfps`)
       .subscribe(
-        (res: PortfolioPFPs) => {
-          this.portfolioPfps = res;
-          this.filteredCardList = res.showCaseCardList; // Initialize filtered cards
+        (res: PortfolioShowcase) => {
+          this.PortfolioPFPs = res;
+          this.filteredCardList = res.showCaseCardList;
         },
         (error) => {
           console.error(error);
@@ -52,9 +53,9 @@ export class PortfolioPFPsComponent implements OnInit {
   filterCards(option: string): void {
     this.activeFilter = option;
     if (option === 'All PFPs') {
-      this.filteredCardList = this.portfolioPfps?.showCaseCardList;
+      this.filteredCardList = this.PortfolioPFPs?.showCaseCardList;
     } else {
-      this.filteredCardList = this.portfolioPfps?.showCaseCardList?.filter(card => card.description === option);
+      this.filteredCardList = this.PortfolioPFPs?.showCaseCardList?.filter(card => card.description === option);
     }
   }
 }

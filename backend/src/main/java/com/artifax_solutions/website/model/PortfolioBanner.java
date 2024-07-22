@@ -1,13 +1,10 @@
 package com.artifax_solutions.website.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
+import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -16,7 +13,11 @@ public class PortfolioBanner {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    private String subTitle;
     private String title;
-    private String altText;
-    private String imageUrl;
+    private String description;
+    @ElementCollection
+    private List<String> filterOptions;
+    @OneToMany(mappedBy = "portfolioBanner")
+    private List<ShowCaseBannerCard> showCaseCardList;
 }

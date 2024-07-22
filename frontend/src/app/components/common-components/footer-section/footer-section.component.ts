@@ -5,11 +5,12 @@ import { NgClass, NgFor, NgIf } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { Footer } from '../../../../interface/Footer';
 import { environment } from '../../../../environments/environment';
+import { BuildStreamSectionComponent } from "../../home-components/build-stream-section/build-stream-section.component";
 
 @Component({
   selector: 'app-footer-section',
   standalone: true,
-  imports: [FormsModule, NgIf, RouterModule,NgFor,NgClass],
+  imports: [FormsModule, NgIf, RouterModule, NgFor, NgClass, BuildStreamSectionComponent],
   templateUrl: './footer-section.component.html',
   styleUrl: './footer-section.component.css'
 })
