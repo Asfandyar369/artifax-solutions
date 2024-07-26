@@ -1,40 +1,66 @@
 <!-- streamer-section.component.html -->
 <div class="container-fluid bg-black" *ngIf="streamerSection">
   <div class="row">
-    <div class="col-lg-5 offset-1">
+    <div class="col-lg-5 offset-lg-1">
       <div *ngIf="streamerSection.carouselImages?.length">
         <ngb-carousel
           [showNavigationArrows]="false"
           [showNavigationIndicators]="false"
         >
-          <ng-template ngbSlide *ngFor="let imageUrl of streamerSection.carouselImages">
+          <ng-template
+            ngbSlide
+            *ngFor="let imageUrl of streamerSection.carouselImages"
+          >
             <img [src]="imageUrl" class="img-fluid" alt="Carousel Image" />
           </ng-template>
         </ngb-carousel>
       </div>
       <div *ngIf="!streamerSection.carouselImages?.length">
         <!-- Fallback text or image -->
-        <img src="/path/to/default-image.jpg" class="img-fluid" alt="Default Image" />
-        <p class="text-white">Default text for carousel when no images are available.</p>
+        <img
+          src="/path/to/default-image.jpg"
+          class="img-fluid"
+          alt="Default Image"
+        />
+        <p class="text-white">
+          Default text for carousel when no images are available.
+        </p>
       </div>
     </div>
     <div class="col-lg-5 ps-4">
       <div class="elementor-widget-wrap">
         <div class="elementor-element">
           <div class="section-title mb-4">
-            <span class="sub-title">{{ streamerSection.subTitle || 'Default Subtitle' }}</span>
-            <h1 class="text-white text-capitalize">{{ streamerSection.title || 'Default Title' }}</h1>
-            <p class="grey">{{ streamerSection.description || 'Default Description' }}</p>
+            <span class="sub-title">{{
+              streamerSection.subTitle || "Default Subtitle"
+            }}</span>
+            <h1 class="text-white text-capitalize">
+              {{ streamerSection.title || "Default Title" }}
+            </h1>
+            <p class="grey">
+              {{ streamerSection.description || "Default Description" }}
+            </p>
           </div>
         </div>
         <div class="row">
-          <div class="col-md-6" *ngFor="let heading of streamerSection.headings; let i = index">
+          <div
+            class="col-md-6"
+            *ngFor="let heading of streamerSection.headings; let i = index"
+          >
             <div class="elementor-widget-wrap">
               <div class="elementor-element">
-                <h5 class="elementor-heading-title">{{ heading || 'Default Heading' }}</h5>
+                <h5 class="elementor-heading-title">
+                  {{ heading || "Default Heading" }}
+                </h5>
               </div>
               <div class="elementor-element">
-                <p>{{ streamerSection.texts ? streamerSection.texts[i] : 'Default Text' }}</p>
+                <p>
+                  {{
+                    streamerSection.texts
+                      ? streamerSection.texts[i]
+                      : "Default Text"
+                  }}
+                </p>
               </div>
             </div>
           </div>
@@ -43,9 +69,11 @@
           <div class="col">
             <div class="elementor-widget-wrap">
               <div class="elementor-element">
-                <button class="btn rounded-pill btn-dark text-white fw-bolder border ms-2 px-4 py-3 text-uppercase"
-                        [routerLink]="streamerSection.buttonLink">
-                  {{ streamerSection.buttonText || 'Default Button Text' }}
+                <button
+                  class="btn rounded-pill btn-dark text-white fw-bolder border py-3 text-uppercase"
+                  [routerLink]="streamerSection.buttonLink"
+                >
+                  {{ streamerSection.buttonText || "Default Button Text" }}
                 </button>
               </div>
             </div>
@@ -61,7 +89,10 @@
   <div class="row justify-content-center">
     <div class="col-lg-8 text-center text-danger">
       <h2 class="fw-bold">Streamer Section Data Not Available</h2>
-      <p>Sorry, there are no items available for the streamer section at the moment.</p>
+      <p>
+        Sorry, there are no items available for the streamer section at the
+        moment.
+      </p>
     </div>
   </div>
 </div>

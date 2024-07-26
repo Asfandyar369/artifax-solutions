@@ -1,39 +1,41 @@
 <!-- src/app/components/pricing/pricing.component.html -->
 
-<div class="container-fluid bg-black" *ngIf="pricing">
-  <div class="row">
-    <div class="col-lg-12">
+<div class="container-fluid bg-black py-5" *ngIf="pricing">
+  <!-- Section Title -->
+  <div class="row justify-content-center">
+    <div class="col-12 col-lg-8">
       <div class="section-title text-center">
-        <span class="sub-title">{{ pricing.subTitle }}</span>
-        <h2 class="title rbt-section-title text-white">
+        <span class="sub-title text-white">{{ pricing.subTitle }}</span>
+        <h2 class="title text-white">
           {{ pricing.title }}
         </h2>
-        <p class="grey mt-3 fs-5 fw-bold">{{ pricing.description }}</p>
+        <p class="text-secondary mt-3 fs-5 fw-bold">{{ pricing.description }}</p>
       </div>
     </div>
   </div>
 
-  <div class="row justify-content-center">
+  <!-- Pricing Cards -->
+  <div class="row justify-content-evenly mt-5">
     <div
       *ngFor="let card of pricing.cardList"
       [ngClass]="{ 'progressing-card': card.title === 'Progressing' }"
-      class="col-3 me-4 border rounded mb-5"
+      class="col-12 col-sm-6 col-md-5 col-lg-3 mb-4 border rounded"
     >
-      <div class="card bg-transparent border-0">
+      <div class="card bg-transparent text-white border-0 h-100">
         <div class="card-body">
-          <div class="pricing-header text-center mb-3 border-bottom">
+          <div class="pricing-header text-center mb-3 border-bottom pb-3">
             <h3 class="text-white">{{ card.title }}</h3>
             <div class="pricing">
-              <h1 class="title price elementor-heading-title fw-bold">
+              <h1 class="title price fw-bold">
                 ${{ card.price }}
               </h1>
-              <p class="grey fw-bold mb-4">{{ card.description }}</p>
+              <p class="text-secondary fw-bold mb-4">{{ card.description }}</p>
             </div>
           </div>
           <div class="pricing-body">
-            <ul class="nav-link">
+            <ul class="list-unstyled">
               <li
-                class="nav-link grey my-3"
+                class="d-flex align-items-center text-secondary my-3"
                 *ngFor="let service of card.pricingServiceList"
               >
                 <i [class]="service.icon"></i>
@@ -41,9 +43,9 @@
               </li>
             </ul>
           </div>
-          <div class="pricing-footer text-center mt-5">
+          <div class="pricing-footer text-center mt-4">
             <button
-              class="btn rounded-pill btn-dark text-white fw-bolder border ms-2 px-5 py-3 text-uppercase pricing-button"
+              class="btn rounded-pill btn-dark text-white fw-bold px-4 py-2 text-uppercase pricing-button"
             >
               {{ card.buttonText }}
             </button>

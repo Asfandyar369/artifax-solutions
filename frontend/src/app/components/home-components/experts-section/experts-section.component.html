@@ -1,7 +1,7 @@
 <!-- Experts Section -->
 <div class="container-fluid bg-black" *ngIf="expertsSection">
   <div class="row">
-    <div class="col-lg-5 offset-1">
+    <div class="col-lg-5 offset-lg-1">
       <div *ngIf="expertsSection.carouselImages?.length">
         <ngb-carousel [showNavigationArrows]="false" [showNavigationIndicators]="false">
           <ng-template ngbSlide *ngFor="let imageUrl of expertsSection.carouselImages">

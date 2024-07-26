@@ -1,21 +1,24 @@
 <!-- Portfolio Emotes -->
-<div class="container-fluid bg-black" *ngIf="portfolioEmote">
+<div class="container-fluid bg-black py-5" *ngIf="portfolioEmote">
+  <!-- Section Title -->
   <div class="row justify-content-center">
-    <div class="col-lg-6">
+    <div class="col-12 col-lg-6">
       <div class="section-title section-title--2 text-center">
         <h1 class="text-white fw-bold">{{ portfolioEmote.subTitle }}</h1>
-        <p class="grey fw-bold fs-5">{{ portfolioEmote.title }}</p>
-        <p class="grey">{{ portfolioEmote.description }}</p>
+        <p class="text-secondary fw-bold fs-5">{{ portfolioEmote.title }}</p>
+        <p class="text-secondary">{{ portfolioEmote.description }}</p>
       </div>
     </div>
   </div>
-  <div class="row justify-content-center mt-5">
+
+  <!-- Filter Options -->
+  <div class="row justify-content-center mt-4">
     <div class="col-auto">
       <div class="btn-group rounded-pill border" role="group">
         <button
           *ngFor="let option of portfolioEmote.filterOptions"
           (click)="filterCards(option)"
-          class="btn border-0 rounded-pill fw-bolder px-4 py-2"
+          class="btn border-0 rounded-pill fw-bolder px-4 py-2 btn-sm"
           [ngClass]="{
             'btn-nonActive text-white': activeFilter !== option,
             'btn-success': activeFilter === option
@@ -26,27 +29,25 @@
       </div>
     </div>
   </div>
+
+  <!-- Filtered Cards -->
   <div class="container mt-5 pb-5" *ngIf="filteredCardList?.length">
-    <div class="row justify-content-center">
+    <div class="row justify-content-between">
       <div
-        class="col-md-4 mb-4"
+        class="col-12 col-sm-6 col-md-4 mb-4"
         *ngFor="let card of filteredCardList"
         [@cardAnimation]
       >
-        <div class="card bg-dark text-white h-100" style="width: 20rem">
+        <div class="card bg-dark text-white h-100">
+          <img
+            class="card-img-top"
+            [src]="card.imageUrl"
+            [alt]="card.altText"
+            loading="lazy"
+          />
           <div class="card-body">
-            <figure>
-              <img
-                class="img-fluid w-100"
-                [src]="card.imageUrl"
-                [alt]="card.altText"
-                loading="lazy"
-              />
-              <figcaption class="my-3 fw-bold">
-                <h5 class="card-title">{{ card.title }}</h5>
-                <p class="card-text grey">{{ card.description }}</p>
-              </figcaption>
-            </figure>
+            <h5 class="card-title fw-bold">{{ card.title }}</h5>
+            <p class="card-text text-secondary">{{ card.description }}</p>
           </div>
         </div>
       </div>

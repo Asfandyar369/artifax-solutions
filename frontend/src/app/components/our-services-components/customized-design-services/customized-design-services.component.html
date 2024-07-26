@@ -5,7 +5,7 @@
   *ngIf="customizedServices"
 >
   <div class="row">
-    <div class="col-lg-5 offset-1">
+    <div class="col-lg-5 offset-lg-1">
       <div>
         <ngb-carousel
           [showNavigationArrows]="false"
@@ -51,7 +51,7 @@
             *ngFor="let button of customizedServices?.callToActions"
           >
             <button
-              class="btn rounded-pill btn-dark text-white fw-bolder border ms-2 px-4 py-3 text-uppercase"
+              class="btn rounded-pill btn-dark text-white fw-bolder border col-7 col-md-4 py-3 text-uppercase"
               [routerLink]="button.buttonUrl"
             >
               {{ button.buttonText }}
