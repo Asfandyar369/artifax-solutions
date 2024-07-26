@@ -1,0 +1,64 @@
+<!-- Customized Design Services Section -->
+<div
+  class="container-fluid bg-black"
+  style="padding-bottom: 9%"
+  *ngIf="customizedServices"
+>
+  <div class="row">
+    <div class="col-lg-5 offset-1">
+      <div>
+        <ngb-carousel
+          [showNavigationArrows]="false"
+          [showNavigationIndicators]="false"
+        >
+          <ng-template
+            ngbSlide
+            *ngFor="let slide of customizedServices?.carouselSlides"
+          >
+            <img
+              [src]="slide.imageUrl"
+              [alt]="slide.altText"
+              class="swiper-slide-image lazyloaded img-fluid"
+              decoding="async"
+            />
+          </ng-template>
+        </ngb-carousel>
+      </div>
+    </div>
+    <div class="col-lg-5 ps-4">
+      <div class="elementor-widget-wrap">
+        <div class="elementor-element">
+          <div class="section-title">
+            <span class="sub-title">{{ customizedServices.subTitle }}</span>
+            <h1 class="text-white text-capitalize mt-4">
+              {{ customizedServices.title }}
+            </h1>
+            <p class="grey fw-bold mt-4">{{ customizedServices.description }}</p>
+          </div>
+        </div>
+        <div *ngIf="customizedServices.benefitList?.length">
+          <div
+            class="row my-5"
+            *ngFor="let item of customizedServices.benefitList"
+          >
+            <div class="d-flex align-items-center fs-5">
+              <i [class]="item.icon"></i>
+              <span class="ms-2 text-white">{{ item.benefit }}</span>
+            </div>
+          </div>
+          <div
+            class="mt-5"
+            *ngFor="let button of customizedServices?.callToActions"
+          >
+            <button
+              class="btn rounded-pill btn-dark text-white fw-bolder border ms-2 px-4 py-3 text-uppercase"
+              [routerLink]="button.buttonUrl"
+            >
+              {{ button.buttonText }}
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

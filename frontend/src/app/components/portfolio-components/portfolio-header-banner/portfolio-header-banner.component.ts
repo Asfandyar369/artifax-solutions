@@ -1,6 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { environment } from '../../../../environments/environment';
 import { NgIf } from '@angular/common';
 import { PortfolioShowcase } from '../../../../interface/PortfolioShowcase';
 
@@ -14,22 +12,18 @@ import { PortfolioShowcase } from '../../../../interface/PortfolioShowcase';
 export class PortfolioHeaderBannerComponent implements OnInit {
   portfolioBanner: PortfolioShowcase | undefined | null;
 
-  constructor(
-    private http: HttpClient,
-  ) { }
+  constructor() { }
 
   ngOnInit(): void {
     this.getPortfolioBanner();
   }
 
   private getPortfolioBanner(): void {
-    this.http
-      .get<PortfolioShowcase>(`${environment.apiUrl}/portfolio-header-banner`)
-      .subscribe(
-        (res: PortfolioShowcase) => {
-          this.portfolioBanner = res;
-        }, (error) => {
-          console.error(error);
-        });
+    this.portfolioBanner = {
+      "id": 1,
+      "title": "Our Portfolio",
+      "altText": "Banner Image",
+      "imageUrl": "/images/portfolio-header-banner.webp"
+    };
   }
 }

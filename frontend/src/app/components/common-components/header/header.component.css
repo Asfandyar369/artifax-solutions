@@ -1,0 +1,6 @@
+/* Adjust navbar items on large screens */
+@media (min-width: 992px) {
+  .navbar-nav {
+    justify-content: flex-end;
+  }
+}

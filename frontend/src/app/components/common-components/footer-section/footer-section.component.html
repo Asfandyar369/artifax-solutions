@@ -1,11 +1,13 @@
 <!-- Footer Header -->
 <app-build-stream-section></app-build-stream-section>
+
 <!-- Footer -->
-<div *ngIf="footerData" class="container-fluid bg-black">
+<div *ngIf="footerData" class="container-fluid bg-black text-white py-5">
   <div class="container">
     <div class="row">
-      <div class="col-4 px-5 mb-5">
-        <div class="mb-5">
+      <!-- Logo and About Section -->
+      <div class="col-lg-4 col-md-6 mb-4 d-flex flex-column align-items-start">
+        <div class="mb-4">
           <img
             [alt]="footerData.logoAltText"
             [src]="footerData.logoUrl"
@@ -17,31 +19,31 @@
         <div>
           <p class="grey fw-bolder fs-5">
             {{ footerData.aboutText }}<br /><br />
-            <span style="color: #757575; font-family: Poppins">
-              <span style="font-size: 16px; letter-spacing: 1px">
+            <span class="text-muted" style="font-family: Poppins">
+              <span class="fs-6" style="letter-spacing: 1px">
                 {{ footerData.copyrightText }}
                 <a
                   [href]="footerData.copyrightLink"
                   target="_blank"
                   rel="noopener"
-                  class="transition-link"
+                  class="text-light text-decoration-none"
                 >
                   Digital Amplify.
                 </a>
               </span>
             </span>
             <br /><br />
-            <span style="color: #757575; font-family: Poppins">
-              <span style="font-size: 16px; letter-spacing: 1px">
+            <span class="text-muted" style="font-family: Poppins">
+              <span class="fs-6" style="letter-spacing: 1px">
                 {{ footerData.ourPaymentMethods }}
               </span>
             </span>
             <img
               [alt]="footerData.ourPaymentMethods"
               [src]="footerData.paymentMethodsImg"
+              class="img-fluid mt-2"
               width="300"
               height="21"
-              class="alignnone size-full wp-image-4274"
             />
           </p>
         </div>
@@ -50,31 +52,28 @@
       <!-- Dynamic Columns based on headingList -->
       <div
         *ngFor="let heading of footerData.headingList"
-        class="col-2"
+        class="col-12 col-md-6 col-lg-2 mb-4"
         [ngClass]="{
-          'offset-1': heading.heading === 'Company',
-          'col-3': heading.heading === 'Contact'
+          'offset-lg-1': heading.heading === 'Company',
+          'col-lg-3': heading.heading === 'Contact'
         }"
       >
-        <h4 class="elementor-heading-title">{{ heading.heading }}</h4>
-        <ul class="list-group bg-transparent border-none mt-5">
-          <li
-            *ngFor="let menuItem of heading.menuList"
-            class="list-group-item custom-list-item"
-          >
-            <a [href]="menuItem.linkUrl" class="transition-link fw-bold">
+        <h4 class="elementor-heading-title mb-3">{{ heading.heading }}</h4>
+        <ul class="list-unstyled mt-3">
+          <li *ngFor="let menuItem of heading.menuList" class="mb-2">
+            <a
+              [href]="menuItem.linkUrl"
+              class="text-light text-decoration-none fw-bold"
+            >
               {{ menuItem.menuName }}
             </a>
           </li>
         </ul>
 
         <!-- Display Icons if available -->
-        <div
-          *ngIf="heading.menuIconList?.length"
-          class="d-flex justify-content-between fs-6 mt-3 w-75"
-        >
-          <div *ngFor="let iconItem of heading.menuIconList">
-            <a [href]="iconItem.iconUrl" class="social-links">
+        <div *ngIf="heading.menuIconList?.length" class="d-flex flex-wrap mt-3">
+          <div *ngFor="let iconItem of heading.menuIconList" class="me-2">
+            <a [href]="iconItem.iconUrl" class="text-light">
               <i [class]="iconItem.iconClass"></i>
             </a>
           </div>
@@ -83,25 +82,21 @@
         <!-- Display Buttons if available -->
         <div
           *ngIf="heading.menuButtonList?.length"
-          class="d-flex flex-column mt-3 w-75"
+          class="d-flex flex-column mt-3"
         >
-          <div class="row mt-3" *ngFor="let button of heading.menuButtonList">
-            <div class="col-12 mb-3">
-              <input
-                type="email"
-                class="form-control bg-transparent w-100 py-2 text-center text-white"
-                placeholder="Enter Your Email Address"
-                [(ngModel)]="input"
-              />
-            </div>
-            <div class="col-12">
-              <button
-                class="btn btn-dark text-white border py-2 w-100 fw-medium text-uppercase"
-                [routerLink]="button.buttonLink"
-              >
-                <small>{{ button.buttonText }}</small>
-              </button>
-            </div>
+          <input
+            type="email"
+            class="form-control bg-transparent text-white"
+            placeholder="Enter Your Email Address"
+            [(ngModel)]="input"
+          />
+          <div class="mt-3" *ngFor="let button of heading.menuButtonList">
+            <button
+              class="btn btn-dark text-white border-0 py-2 w-100 fw-medium text-uppercase"
+              [routerLink]="button.buttonLink"
+            >
+              <small>{{ button.buttonText }}</small>
+            </button>
           </div>
         </div>
       </div>

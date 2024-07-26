@@ -4,7 +4,8 @@ export interface AcquireSection {
   subTitle: string | undefined | null;
   description: string | undefined | null;
   carouselSlides: AcquireSectionSlide[] | undefined | null;
-  usefulLinks: AcquireSectionUsefulLink[] | undefined | null;
+  usefulLinks?: AcquireSectionUsefulLink[] | undefined | null;
+  benefitList?: CustomizeDesignServiceBenefit[] | undefined | null;
   callToActions: AcquireSectionButton[] | undefined | null;
 }
 
@@ -24,4 +25,10 @@ export interface AcquireSectionButton {
   id: number | undefined | null;
   buttonText: string | undefined | null;
   buttonUrl: string | undefined | null;
+}
+
+export interface CustomizeDesignServiceBenefit {
+  id: number | null | undefined;
+  icon: string | undefined | null;
+  benefit: string | undefined | null;
 }

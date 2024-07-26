@@ -1,14 +1,16 @@
 <!-- Build Stream Section -->
-<div *ngIf="buildStreamSection" class="container-fluid bg-black">
-  <div class="container border-bottom border-secondary">
-    <div class="row justify-content-between">
-      <div class="col-4">
-        <h2 class="text-white">{{ buildStreamSection.heading }}</h2>
+<div *ngIf="buildStreamSection" class="container-fluid bg-black py-4">
+  <div class="container border-bottom border-secondary pb-5">
+    <div class="row align-items-center justify-content-between">
+      <!-- Heading Section -->
+      <div class="col-12 col-md-5 mb-3 mb-md-0">
+        <h2 class="text-white text-center text-md-start">{{ buildStreamSection.heading }}</h2>
       </div>
-      <div class="col-2">
-        <div class="text-center pt-4 pb-5">
+      <!-- Button Section -->
+      <div class="col-12 col-md-4 col-lg-2 text-center text-md-end">
+        <div class="pt-4">
           <button
-            class="btn-opposite rounded-pill btn-dark text-white fw-bolder border ms-2 px-5 py-4 text-uppercase w-100"
+          class="btn-opposite rounded-pill btn-dark text-white fw-bolder border py-4 text-uppercase w-100"
             [routerLink]="buildStreamSection.buttonLink"
           >
             {{ buildStreamSection.buttonText }}

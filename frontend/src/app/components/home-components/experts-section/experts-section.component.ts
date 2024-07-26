@@ -1,9 +1,7 @@
 import { NgFor, NgIf } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { HttpClient } from '@angular/common/http';
 import { ExpertSection } from '../../../../interface/ExpertSection';
-import { environment } from '../../../../environments/environment';
 
 @Component({
   selector: 'app-experts-section',
@@ -15,20 +13,45 @@ import { environment } from '../../../../environments/environment';
 export class ExpertsSectionComponent implements OnInit {
   expertsSection: ExpertSection | undefined | null;
 
-  constructor(
-    private http: HttpClient,
-  ) { }
+  constructor() { }
 
   ngOnInit(): void {
     this.getExpertSection();
   }
 
   getExpertSection(): void {
-    this.http.get<ExpertSection>(`${environment.apiUrl}/expert-section`).subscribe(
-      (res: ExpertSection) => {
-        this.expertsSection = res;
-      }, (error) => {
-        console.error(error);
-      });
+    this.expertsSection = {
+      "id": 1,
+      "carouselImages": [
+        "https://cdn-gepmfkb.nitrocdn.com/WYEremhYGNlHzmKefSTYSkktLYZvoCNY/assets/images/optimized/rev-421e137/streamerstation.com/wp-content/uploads/2024/02/static-pfp-home-7.jpg",
+        "https://cdn-gepmfkb.nitrocdn.com/WYEremhYGNlHzmKefSTYSkktLYZvoCNY/assets/images/optimized/rev-421e137/streamerstation.com/wp-content/uploads/2024/02/static-pfp-home-9.jpg",
+        "https://cdn-gepmfkb.nitrocdn.com/WYEremhYGNlHzmKefSTYSkktLYZvoCNY/assets/images/optimized/rev-421e137/streamerstation.com/wp-content/uploads/2024/02/static-pfp-home-8.jpg"
+      ],
+      "subtitle": "We Are",
+      "title": "Experts!",
+      "description": "We specialize in crafting Professional graphic designs that make your stream stand out. Let our expertise bring your vision to life!",
+      "progressData": [
+        {
+          "id": 1,
+          "label": "Innovation",
+          "percent": 99
+        },
+        {
+          "id": 2,
+          "label": "Customization",
+          "percent": 95
+        },
+        {
+          "id": 3,
+          "label": "Versatility",
+          "percent": 93
+        },
+        {
+          "id": 4,
+          "label": "Creativity",
+          "percent": 99
+        }
+      ]
+    };
   }
 }

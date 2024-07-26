@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { NgIf } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { StreamingCreativitySection } from '../../../../interface/StreamingCreativitySection';
-import { environment } from '../../../../environments/environment';
+
 
 @Component({
   selector: 'app-streaming-creativity-section',
@@ -14,21 +13,18 @@ import { environment } from '../../../../environments/environment';
 })
 export class StreamingCreativitySectionComponent implements OnInit {
   streamingCreativitySection: StreamingCreativitySection | undefined | null;
-  constructor(
-    private http: HttpClient,
-  ) { }
+  constructor() { }
   ngOnInit(): void {
     this.getStreamingCreativitySection();
   }
   private getStreamingCreativitySection(): void {
-    this.http
-      .get<StreamingCreativitySection>(`${environment.apiUrl}/streaming-creativity-section`)
-      .subscribe(
-        (res: StreamingCreativitySection) => {
-
-          this.streamingCreativitySection = res;
-        }, (error) => {
-          console.error(error);
-        });
+    this.streamingCreativitySection = {
+      "id": 1,
+      "imageUrl": "images/home-3d-scenes-gaming-room-banner.jpg",
+      "mainTitle": "Spark your streaming creativity",
+      "subtitle": "Immerse your audience in a visual journey that not only entertains but leaves a lasting impression.",
+      "buttonText": "Contact Us",
+      "buttonLink": "/contact"
+    };
   }
 }

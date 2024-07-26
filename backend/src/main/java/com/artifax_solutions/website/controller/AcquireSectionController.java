@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/api/acquire-section")
 public class AcquireSectionController {
-//    Test New GitHub Account
     @Autowired
     private AcquireSectionService service;
 

@@ -1,0 +1,36 @@
+.banner-container {
+  position: relative; /* Ensure the container is positioned relative for absolute positioning of overlay */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  height: 70vh;
+  overflow: hidden; /* Prevents content overflow from affecting layout */
+}
+
+.banner-container .overlay {
+  position: absolute; /* Position overlay to cover entire container */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Set the overlay color and opacity */
+  z-index: 1; /* Ensure overlay is above the background but below text */
+}
+
+.section-title,
+.text-center {
+  position: relative; /* Ensure text is positioned above overlay */
+  z-index: 2;
+}
+
+.title {
+  color: white;
+}
+
+.btn-opposite:hover {
+  background-color: white;
+  color: #32ed22;
+  transform: translateY(-5px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}

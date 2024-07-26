@@ -15,11 +15,8 @@ public class CustomizeDesignServiceBenefit {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     private String icon;
-
     private String benefit;
-
     @ManyToOne
     @JoinColumn(name = "customize_design_service_id")
     @ToString.Exclude

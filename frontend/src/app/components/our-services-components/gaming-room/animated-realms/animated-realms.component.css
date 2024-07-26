@@ -1,0 +1,9 @@
+.green-line {
+  text-decoration: underline !important;
+  cursor: pointer;
+  text-decoration-color: grey !important;
+}
+
+.green-line.active {
+  text-decoration-color: #32ed22 !important;
+}

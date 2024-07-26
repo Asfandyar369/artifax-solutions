@@ -1,0 +1,31 @@
+.progressing-card {
+  background-color: #32ed22;
+}
+.progressing-card h1 {
+  color: white !important;
+}
+.progressing-card p {
+  color: white !important;
+}
+.progressing-card li {
+  color: white !important;
+}
+.progressing-card button {
+  background-color: white !important;
+  color: #32ed22 !important;
+  transition: all 0.3s ease;
+}
+.card button:hover {
+  transform: translateY(-5px); /* Lift the button */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a shadow for depth */
+}
+.pricing-button {
+  border: 2px solid #32ed22 !important;
+  background-color: transparent !important;
+  color: #32ed22 !important;
+}
+.pricing-button:hover {
+  border: none;
+  background-color: #32ed22 !important;
+  color: white !important;
+}

@@ -18,7 +18,7 @@ public class CustomizedDesignBanner {
     private Long id;
     private String imageUrl;
     private String mainTitle;
-    private String subtitle;
+    private String subTitle;
     private String buttonText;
     private String buttonLink;
 }

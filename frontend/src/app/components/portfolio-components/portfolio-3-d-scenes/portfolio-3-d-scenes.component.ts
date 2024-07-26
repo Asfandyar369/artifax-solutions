@@ -1,17 +1,16 @@
 import { animate, style, transition, trigger } from '@angular/animations';
 import { NgClass, NgFor, NgIf } from '@angular/common';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { PortfolioShowcase } from '../../../../interface/PortfolioShowcase';
-import { HttpClient } from '@angular/common/http';
-import { environment } from '../../../../environments/environment';
-
+import { RouterModule } from '@angular/router';
+import { ButtonList } from '../../../../interface/Footer';
 
 @Component({
   selector: 'app-portfolio-3-d-scenes',
   standalone: true,
-  imports: [NgIf, NgFor, NgClass],
+  imports: [NgIf, NgFor, NgClass, RouterModule],
   templateUrl: './portfolio-3-d-scenes.component.html',
-  styleUrl: './portfolio-3-d-scenes.component.css',
+  styleUrls: ['./portfolio-3-d-scenes.component.css'],
   animations: [
     trigger('cardAnimation', [
       transition(':enter', [
@@ -27,22 +26,45 @@ import { environment } from '../../../../environments/environment';
 export class Portfolio3DScenesComponent implements OnInit {
   portfolio3DScene: PortfolioShowcase | undefined | null;
 
-  constructor(private http: HttpClient) { }
+  @Input() subTitle: string | undefined | null;
+  @Input() title: string | undefined | null;
+  @Input() view: ButtonList | undefined | null;
+
+  constructor() { }
 
   ngOnInit(): void {
     this.getPortfolio3DScene();
   }
 
   private getPortfolio3DScene(): void {
-    this.http
-      .get<PortfolioShowcase>(`${environment.apiUrl}/portfolio-3d-scene`)
-      .subscribe(
-        (res: PortfolioShowcase) => {
-          this.portfolio3DScene = res;
+    this.portfolio3DScene = {
+      id: 1,
+      subTitle: this.subTitle || "3D Scenes",
+      title: this.title || "Transport your viewers to immersive virtual worlds with lifelike 3D scenes.",
+      description: "Discover unique and stylish 3d scenes frames tailored to your taste.",
+      showCaseCardList: [
+        {
+          id: 1,
+          imageUrl: "https://cdn-gepmfkb.nitrocdn.com/WYEremhYGNlHzmKefSTYSkktLYZvoCNY/assets/images/optimized/rev-421e137/streamerstation.com/wp-content/uploads/2024/02/animated-3d-scenes-portfolio-3.gif",
+          altText: "3D ANIMATED SCENES",
+          title: "Scenes",
+          description: "3D"
         },
-        (error) => {
-          console.error(error);
+        {
+          id: 2,
+          imageUrl: "https://cdn-gepmfkb.nitrocdn.com/WYEremhYGNlHzmKefSTYSkktLYZvoCNY/assets/images/optimized/rev-421e137/streamerstation.com/wp-content/uploads/2024/02/animated-3d-scenes-portfolio-2.gif",
+          altText: "3D ANIMATED SCENES",
+          title: "Scenes",
+          description: "3D"
+        },
+        {
+          id: 3,
+          imageUrl: "https://cdn-gepmfkb.nitrocdn.com/WYEremhYGNlHzmKefSTYSkktLYZvoCNY/assets/images/optimized/rev-421e137/streamerstation.com/wp-content/uploads/2024/02/animated-3d-scenes-portfolio-1.gif",
+          altText: "3D ANIMATED SCENES",
+          title: "Scenes",
+          description: "3D"
         }
-      );
+      ]
+    };
   }
 }

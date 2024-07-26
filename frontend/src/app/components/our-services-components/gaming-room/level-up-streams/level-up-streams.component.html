@@ -1,0 +1,89 @@
+<!-- Level Up Streams Section -->
+<div
+  class="container-fluid bg-black"
+  style="padding-bottom: 9%"
+  *ngIf="levelUpStream"
+>
+  <div class="row">
+    <div class="col-12 col-lg-6 offset-lg-1">
+      <video
+        class="object-fit-cover w-100 rounded"
+        [autoplay]="true"
+        [loop]="true"
+        [controls]="true"
+        [muted]="true"
+        controlsList="nodownload"
+      >
+        <source [src]="levelUpStream.videoUrl" />
+      </video>
+    </div>
+    <div class="col-lg-4 col-12 ps-lg-4 mt-3">
+      <div class="elementor-widget-wrap">
+        <div class="elementor-element">
+          <div class="section-title">
+            <span class="sub-title">{{ levelUpStream.subTitle }}</span>
+            <h1
+              class="text-white text-capitalize fw-bold mt-1 d-lg-none d-block"
+            >
+              {{ levelUpStream.title }}
+            </h1>
+            <h1
+              class="text-white text-capitalize fw-bold mt-1 d-none d-lg-block"
+              style="font-size: 3.5rem"
+            >
+              {{ levelUpStream.title }}
+            </h1>
+            <p style="font-size: 1.1rem" class="grey fw-bold mt-3">
+              {{ levelUpStream.description }}
+            </p>
+          </div>
+        </div>
+        <div
+          class="my-3"
+          *ngFor="let heading of levelUpStream.headings; let i = index"
+        >
+          <div>
+            <!-- Heading with click event -->
+            <div
+              (click)="toggleTextVisibility(i)"
+              class="d-flex align-items-center justify-content-between"
+            >
+              <span
+                class="text-white green-line fw-bold pointer-event"
+                [ngClass]="{ active: textVisible[i] }"
+              >
+                {{ heading }}
+              </span>
+            </div>
+            <!-- Conditionally render the text with animation -->
+            <div
+              class="elementor-element"
+              [@dropdownAnimation]="textVisible[i] ? 'expanded' : 'collapsed'"
+            >
+              <p class="fw-bold mt-2">
+                {{
+                  levelUpStream.texts
+                    ? levelUpStream.texts[i]
+                    : "Default Text"
+                }}
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Fallback for entire section if data is not available -->
+<div *ngIf="!levelUpStream" class="container-fluid bg-black">
+  <div class="row justify-content-center">
+    <div class="col-lg-8 text-center text-danger">
+      <h2 class="fw-bold">Acquire Section Data Not Available</h2>
+      <p>
+        Sorry, there are no items available for the acquire section at the
+        moment.
+      </p>
+    </div>
+  </div>
+</div>

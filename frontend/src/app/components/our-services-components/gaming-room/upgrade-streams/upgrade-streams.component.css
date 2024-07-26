@@ -1,0 +1,15 @@
+video {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  box-sizing: border-box; /* Ensures padding and borders are included in width/height calculations */
+}
+.green-line {
+  text-decoration: underline !important;
+  cursor: pointer;
+  text-decoration-color: grey !important;
+}
+
+.green-line.active {
+  text-decoration-color: #32ed22 !important;
+}

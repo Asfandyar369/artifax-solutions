@@ -4,8 +4,8 @@
     <div class="col-lg-6">
       <div class="section-title section-title--2 text-center">
         <h1 class="text-white fw-bold">{{ portfolio3DScene.subTitle }}</h1>
-        <p class="grey fw-bold fs-5">{{ portfolio3DScene.title }}</p>
-        <p class="grey">{{ portfolio3DScene.description }}</p>
+        <p class="text-secondary fw-bold fs-5">{{ portfolio3DScene.title }}</p>
+        <p class="text-secondary">{{ portfolio3DScene.description }}</p>
       </div>
     </div>
   </div>
@@ -13,27 +13,33 @@
     class="container mt-5 pb-5"
     *ngIf="portfolio3DScene?.showCaseCardList?.length"
   >
-    <div class="row justify-content-center">
+    <div class="row justify-content-between">
       <div
-        class="col-md-4 mb-4"
+        class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4"
         *ngFor="let card of portfolio3DScene.showCaseCardList"
       >
-        <div class="card bg-dark text-white h-100" style="width: 20rem">
+        <div class="card bg-dark text-white h-100">
+          <img
+            class="card-img-top"
+            [src]="card.imageUrl"
+            [alt]="card.altText"
+            loading="lazy"
+          />
           <div class="card-body">
-            <figure>
-              <img
-                class="img-fluid w-100"
-                [src]="card.imageUrl"
-                [alt]="card.altText"
-                loading="lazy"
-              />
-              <figcaption class="my-3 fw-bold">
-                <h5 class="card-title">{{ card.title }}</h5>
-                <p class="card-text grey">{{ card.description }}</p>
-              </figcaption>
-            </figure>
+            <h5 class="card-title fw-bold">{{ card.title }}</h5>
+            <p class="card-text text-secondary">{{ card.description }}</p>
           </div>
         </div>
+      </div>
+    </div>
+    <div class="row justify-content-center mt-5" *ngIf="view">
+      <div class="col-12 col-md-4 col-lg-3">
+        <button
+          class="btn rounded-pill btn-dark text-white fw-bold w-100 py-3 text-uppercase"
+          [routerLink]="view.buttonLink"
+        >
+          {{ view.buttonText }}
+        </button>
       </div>
     </div>
   </div>

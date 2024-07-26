@@ -1,8 +1,9 @@
 export interface StreamerSection {
   id: number | undefined | null;
-  carouselImages: string[] | undefined | null;
+  carouselImages?: string[] | undefined | null;
+  videoUrl?: string | undefined | null;
   title: string | undefined | null;
-  subtitle: string | undefined | null;
+  subTitle: string | undefined | null;
   description: string | undefined | null;
   headings: string[] | undefined | null;
   texts: string[] | undefined | null;
