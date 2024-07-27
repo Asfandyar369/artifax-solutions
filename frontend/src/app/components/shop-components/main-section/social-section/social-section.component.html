@@ -1,0 +1,75 @@
+<div class="card bg-dark text-white mb-4" *ngIf="socialSection">
+  <div class="card-body">
+    <div class="d-flex align-items-center mb-4">
+      <div class="position-relative" (click)="openInstagram()">
+        <!-- Profile Image Container -->
+        <div class="profile-image-container">
+          <!-- Profile Image -->
+          <img
+            [src]="socialSection.profileImageUrl"
+            [alt]="socialSection.profileImageAltText"
+            class="img-fluid rounded-circle profile-image"
+            width="80"
+            height="80"
+          />
+          <!-- Dark Overlay Effect -->
+          <div class="dark-overlay"></div>
+        </div>
+        <!-- Instagram Icon Overlay -->
+        <div
+          class="instagram-overlay position-absolute top-0 start-0 d-flex justify-content-center align-items-center"
+        >
+          <svg
+            class="svg-inline--fa fa-instagram mb-1"
+            aria-hidden="true"
+            aria-label="Instagram"
+            data-prefix="fab"
+            data-icon="instagram"
+            role="img"
+            viewBox="0 0 448 512"
+            style="width: 1.5rem"
+          >
+            <path
+              fill="currentColor"
+              [attr.d]="socialSection.buttonIconSvg"
+            ></path>
+          </svg>
+        </div>
+      </div>
+      <!-- Title -->
+      <span class="h4 text-white ms-3">{{ socialSection.title }}</span>
+    </div>
+    <!-- Post List -->
+    <div class="row">
+      <div class="col-3 mb-2" *ngFor="let image of socialSection.postList">
+        <img
+          [src]="image.imageUrl"
+          [alt]="image.altText"
+          class="img-fluid rounded"
+          decoding="async"
+        />
+      </div>
+    </div>
+    <!-- Button -->
+    <div class="text-center mt-3">
+      <button class="btn btn-sm btn-dark text-white fw-bold text-uppercase">
+        <svg
+          class="svg-inline--fa fa-instagram mb-1"
+          aria-hidden="true"
+          aria-label="Instagram"
+          data-prefix="fab"
+          data-icon="instagram"
+          role="img"
+          viewBox="0 0 448 512"
+          style="width: 1rem; color: #32ed22"
+        >
+          <path
+            fill="currentColor"
+            [attr.d]="socialSection.buttonIconSvg"
+          ></path>
+        </svg>
+        <small class="ms-2">{{ socialSection.buttonText }}</small>
+      </button>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,46 @@
+<div class="bg-black py-5">
+  <div
+    *ngIf="footerBanner"
+    class="container-fluid py-5 position-relative"
+    [style.background-image]="'url(' + footerBanner.imageUrl + ')'"
+    style="
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+    "
+  >
+    <!-- Overlay Div -->
+    <div class="overlay"></div>
+
+    <!-- Content -->
+    <div
+      class="section-title mb--20 mb_sm--0 text-center pt-5 position-relative col-6 fw-bold mx-auto d-none d-lg-block"
+    >
+      <h2 class="title rbt-section-title text-white pt-5">
+        <span>{{ footerBanner.mainTitle }}</span>
+      </h2>
+      <p class="grey fw-bolder fs-5">
+        {{ footerBanner.subtitle }}
+      </p>
+    </div>
+    <div
+      class="section-title mb--20 mb_sm--0 text-center pt-5 position-relative d-lg-none d-block"
+    >
+      <h2 class="title rbt-section-title text-white pt-5">
+        <span>{{ footerBanner.mainTitle }}</span>
+      </h2>
+      <p class="grey fw-bolder fs-5">
+        {{ footerBanner.subtitle }}
+      </p>
+    </div>
+    <div class="text-center pt-4 pb-5 position-relative">
+      <a [routerLink]="footerBanner.buttonLink">
+        <button
+          class="btn-opposite rounded-pill btn-dark text-white fw-bolder border ms-2 px-5 py-3 text-uppercase"
+        >
+          {{ footerBanner.buttonText }}
+        </button>
+      </a>
+    </div>
+  </div>
+</div>

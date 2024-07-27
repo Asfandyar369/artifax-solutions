@@ -1,0 +1,24 @@
+<!-- price-filter-card.component.html -->
+<div class="card bg-dark text-white p-3 mb-3">
+  <div class="card-body">
+    <h5 class="card-title">Filter by price</h5>
+    <!-- Price Range Slider -->
+    <input
+      type="range"
+      class="form-range range-slider mt-3 mb-3"
+      min="0"
+      max="1200"
+      [(ngModel)]="price"
+      (input)="updateSliderStyle($event)"
+      [style.background]="getSliderBackground()"
+    />
+
+    <!-- Filter Button and Price Range -->
+    <div class="d-flex justify-content-between align-items-center">
+      <button class="btn btn-success text-uppercase fw-bold">Filter</button>
+      <span class="price-range"
+        >Price: ${{ priceRange.min }} — ${{ priceRange.max }}</span
+      >
+    </div>
+  </div>
+</div>

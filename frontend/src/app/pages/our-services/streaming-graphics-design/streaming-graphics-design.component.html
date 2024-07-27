@@ -1,9 +1,32 @@
 <!-- Header Banner -->
 <app-header-banner
-[headerBannerComponent]="{
-  portfolio: false,
-  services: false,
-  gamingRoom: false,
-  graphicDesign: true
-}"
+  [headerBannerComponent]="{
+    portfolio: false,
+    services: false,
+    gamingRoom: false,
+    vtuberModel: false,
+    graphicDesign: true
+  }"
 ></app-header-banner>
+<!-- Enhance Your Channel Section -->
+<app-carousel-with-text
+  [carousel]="{
+    services: false,
+    gamingRoom: false,
+    vtuberModel: false,
+    graphicDesign: true
+  }"
+></app-carousel-with-text>
+<!-- Budget Plan Section -->
+<app-pricing-plan></app-pricing-plan>
+<!-- Rewarding Section -->
+<app-rewarding-cover></app-rewarding-cover>
+<!-- Signature Stream Section -->
+<app-footer-banner
+  [dynamicSelection]="{
+    services: false,
+    gamingRoom: false,
+    vtuberModel: false,
+    graphicDesign: true
+  }"
+></app-footer-banner>

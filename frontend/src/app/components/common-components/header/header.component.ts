@@ -24,7 +24,7 @@ export class HeaderComponent implements OnInit {
   private getNavbar(): void {
     this.navbar = {
       id: 1,
-      url: 'https://cdn-gepmfkb.nitrocdn.com/WYEremhYGNlHzmKefSTYSkktLYZvoCNY/assets/images/optimized/rev-421e137/streamerstation.com/wp-content/uploads/2023/10/Logos-05-copy.png',
+      url: 'images/White-and-Light-Blue.png',
       navbarMenus: [
         { id: 8, name: 'Home', link: '/', nestedMenus: [] },
         { id: 9, name: 'Our Portfolio', link: '/portfolio', nestedMenus: [] },

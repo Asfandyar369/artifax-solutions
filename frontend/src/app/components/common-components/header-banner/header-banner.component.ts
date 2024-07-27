@@ -1,7 +1,7 @@
 import { NgIf } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { PortfolioShowcase } from '../../../../interface/PortfolioShowcase';
-import { HeaderBanner } from '../../../../interface/HeaderBanner';
+import { DynamicSelection } from '../../../../interface/DynamicSelection';
 
 @Component({
   selector: 'app-header-banner',
@@ -12,7 +12,7 @@ import { HeaderBanner } from '../../../../interface/HeaderBanner';
 })
 export class HeaderBannerComponent {
   headerBanner: PortfolioShowcase | undefined | null;
-  @Input() headerBannerComponent: HeaderBanner | undefined | null;
+  @Input() headerBannerComponent: DynamicSelection | undefined | null;
   constructor() { }
   ngOnInit(): void {
     this.getBanner();
@@ -45,6 +45,20 @@ export class HeaderBannerComponent {
         "title": "Streaming Graphics Design",
         "altText": "Streaming Graphics Design Banner",
         "imageUrl": "https://streamerstation.com/wp-content/uploads/2024/02/home-streaming-graphics-design-banner.jpg"
+      }
+    } else if (this.headerBannerComponent?.vtuberModel) {
+      this.headerBanner = {
+        "id": 1,
+        "title": "VTuber Model",
+        "altText": "VTuber Model Banner",
+        "imageUrl": "https://cdn-gepmfkb.nitrocdn.com/WYEremhYGNlHzmKefSTYSkktLYZvoCNY/assets/images/optimized/rev-421e137/streamerstation.com/wp-content/uploads/2024/02/home-vtuber-banner.jpg"
+      }
+    } else if (this.headerBannerComponent?.shop) {
+      this.headerBanner = {
+        "id": 1,
+        "title": "Shop",
+        "altText": "Shop Banner",
+        "imageUrl": "images/White-and-Light-Blue.png"
       }
     }
   }

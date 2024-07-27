@@ -1,0 +1,33 @@
+<!-- VTuber Spotlight Section -->
+<div class="container-fluid bg-black py-5" *ngIf="vTuberspootlight">
+  <div class="row justify-content-center">
+    <div class="col-12 col-lg-8">
+      <div class="section-title text-center">
+        <span class="sub-title text-white">{{
+          vTuberspootlight.subTitle
+        }}</span>
+        <h2 class="title text-white">
+          {{ vTuberspootlight.title }}
+        </h2>
+        <p class="text-secondary mt-3 fs-5 fw-bold">
+          {{ vTuberspootlight.description }}
+        </p>
+      </div>
+    </div>
+  </div>
+  <div class="row justify-content-center mt-5">
+    <div
+      *ngFor="let url of vTuberspootlight.videoUrl"
+      class="col-12 col-sm-6 col-md-5 mb-4"
+    >
+      <video
+        class="object-fit-cover w-100 rounded vh-100"
+        [autoplay]="true"
+        [loop]="true"
+        [muted]="true"
+      >
+        <source [src]="url" />
+      </video>
+    </div>
+  </div>
+</div>

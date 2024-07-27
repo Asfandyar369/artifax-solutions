@@ -8,8 +8,8 @@
         alt="Streamer Station"
         [src]="navbar.url"
         class="img-fluid"
-        width="200"
-        height="200"
+        width="70"
+        height="50"
       />
     </a>
     <button
@@ -129,7 +129,7 @@
                   >
                     <li *ngFor="let nested of item.nestedMenus">
                       <a
-                        class="dropdown-item px-3 py-2 rounded text-secondary"
+                        class="dropdown-item px-3 py-2 rounded text-secondary text-wrap"
                         [routerLink]="nested.link"
                       >
                         {{ nested.name }}

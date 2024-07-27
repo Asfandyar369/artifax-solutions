@@ -48,12 +48,12 @@
               (click)="toggleTextVisibility(i)"
               class="d-flex align-items-center justify-content-between"
             >
-              <span
-                class="text-white green-line fw-bold pointer-event"
+              <button
+              class="text-white green-line fw-bold border-0 bg-transparent"
                 [ngClass]="{ active: textVisible[i] }"
               >
                 {{ heading }}
-              </span>
+              </button>
             </div>
             <!-- Conditionally render the text with animation -->
             <div

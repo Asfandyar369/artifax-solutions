@@ -11,9 +11,9 @@ import { ExpertsSectionComponent } from '../../components/home-components/expert
 import { ShopNowSectionComponent } from '../../components/home-components/shop-now-section/shop-now-section.component';
 import { BlogHubSectionComponent } from '../../components/home-components/blog-hub-section/blog-hub-section.component';
 import { SocialSectionComponent } from '../../components/home-components/social-section/social-section.component';
-import { StreamingCreativitySectionComponent } from '../../components/home-components/streaming-creativity-section/streaming-creativity-section.component';
 import { BuildStreamSectionComponent } from '../../components/home-components/build-stream-section/build-stream-section.component';
 import { FooterSectionComponent } from '../../components/common-components/footer-section/footer-section.component';
+import { FooterBannerComponent } from "../../components/common-components/footer-banner/footer-banner.component";
 @Component({
   selector: 'app-home',
   standalone: true,
@@ -30,10 +30,10 @@ import { FooterSectionComponent } from '../../components/common-components/foote
     ShopNowSectionComponent,
     BlogHubSectionComponent,
     SocialSectionComponent,
-    StreamingCreativitySectionComponent,
     BuildStreamSectionComponent,
-    FooterSectionComponent
-  ],
+    FooterSectionComponent,
+    FooterBannerComponent
+],
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })

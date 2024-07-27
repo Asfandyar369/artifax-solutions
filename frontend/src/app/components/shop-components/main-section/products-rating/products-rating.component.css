@@ -1,0 +1,28 @@
+.card {
+  background-color: #000000 !important; /* Dark background color */
+  border: 2px solid rgba(255, 255, 255, .2) !important; /* Border color */
+}
+.card-title.text-green {
+  color: #32ed22;
+}
+
+.list-group-item {
+  border-bottom: 1px solid #444444; /* Separator line color */
+}
+
+.img-thumbnail {
+  background-color: transparent; /* Ensure no background */
+  border: none; /* Remove border */
+}
+
+.bi-star,
+.bi-star-fill {
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: color 0.3s;
+}
+
+.bi-star:hover,
+.bi-star-fill:hover {
+  color: #32ed22 !important; /* Hover color for stars */
+}

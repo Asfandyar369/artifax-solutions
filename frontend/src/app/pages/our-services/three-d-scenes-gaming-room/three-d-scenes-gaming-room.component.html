@@ -1,14 +1,22 @@
 <!-- Gaming Room Header Banner -->
 <app-header-banner
   [headerBannerComponent]="{
-    portfolio: false,
     services: false,
     gamingRoom: true,
+    portfolio: false,
+    vtuberModel: false,
     graphicDesign: false
   }"
 ></app-header-banner>
 <!-- Animated Realms Section -->
-<app-animated-realms></app-animated-realms>
+<app-carousel-with-text
+  [carousel]="{
+    services: false,
+    gamingRoom: true,
+    vtuberModel: false,
+    graphicDesign: false
+  }"
+></app-carousel-with-text>
 <!-- Upgrade Your Streams Section -->
 <app-upgrade-streams></app-upgrade-streams>
 <!-- Level Up Your Streams Section -->
@@ -24,4 +32,12 @@
   }"
 ></app-portfolio-3-d-scenes>
 <!-- Streaming Creativity Section -->
-<app-streaming-creativity-section></app-streaming-creativity-section>
+<app-footer-banner
+  [dynamicSelection]="{
+    home: true,
+    services: false,
+    gamingRoom: false,
+    vtuberModel: false,
+    graphicDesign: false
+  }"
+></app-footer-banner>

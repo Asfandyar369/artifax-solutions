@@ -4,6 +4,7 @@
     portfolio: false,
     services: true,
     gamingRoom: false,
+    vtuberModel: false,
     graphicDesign: false
   }"
 ></app-header-banner>
@@ -14,4 +15,12 @@
 <!-- Pricing Plan Section -->
 <app-pricing-plan></app-pricing-plan>
 <!-- Customized Design Banner Section -->
-<app-customized-design-banner></app-customized-design-banner>
+<app-footer-banner
+  [dynamicSelection]="{
+    home: false,
+    services: true,
+    gamingRoom: false,
+    vtuberModel: false,
+    graphicDesign: false
+  }"
+></app-footer-banner>

@@ -1,0 +1,93 @@
+<!-- Portfolio Emotes -->
+<div class="container-fluid bg-black py-5 pt-3" *ngIf="portfolioEmote">
+  <!-- Section Title -->
+  <!-- Responsive Row for Large Screens -->
+  <div class="row align-items-center justify-content-between d-lg-flex d-none">
+    <!-- Text Section -->
+    <div class="col-lg-6 ps-4">
+      <p class="grey fs-5 fw-bold mb-0">Showing all 14 results</p>
+    </div>
+    <!-- Dropdown Section -->
+    <div class="col-lg-6 text-end pe-4">
+      <div ngbDropdown>
+        <button
+          type="button"
+          class="btn btn-outline-secondary py-2"
+          id="dropdownBasic1"
+          ngbDropdownToggle
+        >
+          Default Sorting
+        </button>
+        <div ngbDropdownMenu aria-labelledby="dropdownBasic1" class="bg-dark">
+          <button ngbDropdownItem class="grey">Sort by popularity</button>
+          <button ngbDropdownItem class="grey">Sort by average rating</button>
+          <button ngbDropdownItem class="grey">Sort by latest</button>
+          <button ngbDropdownItem class="grey">
+            Sort by price: low to high
+          </button>
+          <button ngbDropdownItem class="grey">
+            Sort by price: high to low
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Responsive Row for Smaller Screens -->
+  <div class="row align-items-center d-lg-none d-flex justify-content-between">
+    <!-- Text Section -->
+    <div class="col-md-6 col-12 mb-5 mb-md-0">
+      <p class="grey fs-5 fw-bold mb-0 ps-4">Showing all 14 results</p>
+    </div>
+    <!-- Dropdown Section -->
+    <div class="col-md-6 col-12 text-md-end text-center pe-4 pe-md-5">
+      <div ngbDropdown>
+        <button
+          type="button"
+          class="btn btn-sm btn-outline-secondary py-2"
+          id="dropdownBasic1"
+          ngbDropdownToggle
+        >
+          Default Sorting
+        </button>
+        <div ngbDropdownMenu aria-labelledby="dropdownBasic1" class="bg-dark">
+          <button ngbDropdownItem class="grey">Sort by popularity</button>
+          <button ngbDropdownItem class="grey">Sort by average rating</button>
+          <button ngbDropdownItem class="grey">Sort by latest</button>
+          <button ngbDropdownItem class="grey">
+            Sort by price: low to high
+          </button>
+          <button ngbDropdownItem class="grey">
+            Sort by price: high to low
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cards -->
+  <div
+    class="container mt-5 pb-5"
+    *ngIf="portfolioEmote.showCaseCardList?.length"
+  >
+    <div class="row justify-content-between">
+      <div
+        class="col-12 col-sm-6 mb-4"
+        *ngFor="let card of portfolioEmote.showCaseCardList"
+      >
+        <div class="card bg-dark text-white h-100">
+          <img
+            class="card-img-top"
+            [src]="card.imageUrl"
+            [alt]="card.altText"
+            loading="lazy"
+          />
+          <div class="card-body">
+            <h5 class="card-title fw-bold">{{ card.title }}</h5>
+            <p class="card-text text-secondary">{{ card.description }}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

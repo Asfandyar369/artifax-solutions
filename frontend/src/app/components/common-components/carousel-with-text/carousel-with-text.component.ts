@@ -1,17 +1,42 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { DynamicCarouselWithText } from '../../../../interface/DynamicCarouselWithText';
 import { CarouselWithText } from '../../../../interface/CarouselWithText';
+import { NgClass, NgFor, NgIf } from '@angular/common';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { RouterModule } from '@angular/router';
+import { DynamicSelection } from '../../../../interface/DynamicSelection';
+import { animate, state, style, transition, trigger } from '@angular/animations';
 
 @Component({
   selector: 'app-carousel-with-text',
   standalone: true,
-  imports: [],
+  imports: [NgIf, NgbModule, NgFor, RouterModule, NgClass],
   templateUrl: './carousel-with-text.component.html',
-  styleUrl: './carousel-with-text.component.css'
+  styleUrl: './carousel-with-text.component.css',
+  animations: [
+    trigger('dropdownAnimation', [
+      // State for when the element is hidden
+      state('collapsed', style({
+        height: '0',
+        opacity: 0,
+        overflow: 'hidden',
+      })),
+      // State for when the element is visible
+      state('expanded', style({
+        height: '*',
+        opacity: 1,
+        overflow: 'hidden',
+      })),
+      // Transition from collapsed to expanded with animation
+      transition('collapsed <=> expanded', [
+        animate('300ms ease-in-out'),
+      ])
+    ])
+  ]
 })
 export class CarouselWithTextComponent implements OnInit {
-  @Input() carousel: DynamicCarouselWithText | undefined | null;
+  @Input() carousel: DynamicSelection | undefined | null;
   data: CarouselWithText | undefined | null;
+  textVisible: boolean[] = [];
   constructor() { }
 
   ngOnInit(): void {
@@ -19,16 +44,18 @@ export class CarouselWithTextComponent implements OnInit {
   }
 
   private getData(): void {
-    if (this.carousel?.home.streamerStation) {
+    if (this.carousel?.gamingRoom) {
       this.data = {
+        "title": "Bring Your Visions to Life",
+        "subTitle": "Dive Into 3D Animated Realms",
+        "description": "Step into the realm of captivating streams with Streamer Station's dynamic 3D animations. We're all about making your channel stand out from the crowd.",
         "carouselImages": [
-          "https://cdn-gepmfkb.nitrocdn.com/WYEremhYGNlHzmKefSTYSkktLYZvoCNY/assets/images/optimized/rev-421e137/streamerstation.com/wp-content/uploads/2024/02/static-pfp-home-1.jpg",
-          "https://cdn-gepmfkb.nitrocdn.com/WYEremhYGNlHzmKefSTYSkktLYZvoCNY/assets/images/optimized/rev-421e137/streamerstation.com/wp-content/uploads/2024/02/static-pfp-home-3.jpg",
-          "https://cdn-gepmfkb.nitrocdn.com/WYEremhYGNlHzmKefSTYSkktLYZvoCNY/assets/images/optimized/rev-421e137/streamerstation.com/wp-content/uploads/2024/02/static-pfp-home-2.jpg"
+          "https://streamerstation.com/wp-content/uploads/2024/02/static-3d-room-3.jpg",
+          "https://streamerstation.com/wp-content/uploads/2024/02/static-3d-room-2.jpg",
+          "https://streamerstation.com/wp-content/uploads/2024/02/static-3d-room-1.jpg",
         ],
-        "title": "The ultimate destination for streamers",
-        "subTitle": "Streamer Station",
-        "description": "Elevate your stream with our services.",
+        "buttonText": "Get It Now",
+        "buttonLink": "/shop",
         "headings": [
           "Increase Visibility",
           "Variety & Creativity",
@@ -41,39 +68,67 @@ export class CarouselWithTextComponent implements OnInit {
           "Build your community with visually strong graphics design.",
           "Increase your stream quality through professional and customized visual elements."
         ],
-        "buttonText": "Contact Us Now",
-        "buttonLink": "/about"
       };
-    } if (this.carousel?.home.acquireSection) {
+      // Initialize textVisible with the same number of elements as headings
+      this.textVisible = this.data?.headings!.map(() => false) || [];
+    } else if (this.carousel?.graphicDesign) {
       this.data = {
-        "title": "The Power of Streaming Design",
-        "subTitle": "Hey! Acquire",
-        "description": "In the fast-paced world of livestream, design plays a pivotal role in shaping the viewer experience and setting your stream apart from the rest. With a keen focus on creativity and innovation, Streamer Station offers a range of design solutions tailored to enhance your stream.",
+        "title": "Why Stream Graphic Designing Matters",
+        "subTitle": "Enhance Your Channel With Stream Designing",
+        "description": "In the streaming realm, design is key. It's not just about aesthetics; it's about standing out, fostering engagement, and building credibility. Discover how top-notch stream design from Streamer Station can amplify your streaming experience.",
         "carouselImages": [
-          "https://cdn-gepmfkb.nitrocdn.com/WYEremhYGNlHzmKefSTYSkktLYZvoCNY/assets/images/optimized/rev-421e137/streamerstation.com/wp-content/uploads/2024/02/static-pfp-home-6.jpg",
-          "https://cdn-gepmfkb.nitrocdn.com/WYEremhYGNlHzmKefSTYSkktLYZvoCNY/assets/images/optimized/rev-421e137/streamerstation.com/wp-content/uploads/2024/02/static-pfp-home-4.jpg",
-          "https://cdn-gepmfkb.nitrocdn.com/WYEremhYGNlHzmKefSTYSkktLYZvoCNY/assets/images/optimized/rev-421e137/streamerstation.com/wp-content/uploads/2024/02/static-pfp-home-5.jpg",
+          "https://streamerstation.com/wp-content/uploads/2024/02/static-pfp-streaming-graphics-design-1.jpg",
+          "https://streamerstation.com/wp-content/uploads/2024/02/static-pfp-streaming-graphics-design-2.jpg",
+          "https://streamerstation.com/wp-content/uploads/2024/02/static-pfp-streaming-graphics-design-3.jpg",
         ],
-        "usefulLinks": [
-          {
-            "id": 1,
-            "linkText": "Keeping pace with the evolving trends of streaming.",
-            "url": "/"
-          },
-          {
-            "id": 2,
-            "linkText": "Creativity as the foundation of innovation and transformative ideas.",
-            "url": "/"
-          },
-          {
-            "id": 3,
-            "linkText": "Tailored solutions for your unique needs in stream.",
-            "url": "/"
-          }
+        "buttonText": "See How It Works",
+        "buttonLink": "/shop",
+        "headings": [
+          "✓ Attract new viewers",
+          "✓ Retain existing viewers",
+          "✓ Establish a professional image",
+          "✓ Reflect your unique personality",
         ],
-        "buttonText": "See How it works",
-        "buttonLink": "/our-services"
+        "texts": [
+          "Visually appealing graphics and logos can help draw in new viewers and make your stream stand out.",
+          "Visually appealing graphics and logos can help draw in new viewers and make your stream stand out.",
+          "Visually appealing graphics and logos can help draw in new viewers and make your stream stand out.",
+          "Visually appealing graphics and logos can help draw in new viewers and make your stream stand out.",
+        ],
       };
+      // Initialize textVisible with the same number of elements as headings
+      this.textVisible = this.data?.headings!.map(() => false) || [];
+    } else if (this.carousel?.vtuberModel) {
+      this.data = {
+        "title": "Virtual Creativity With VTuber Models",
+        "subTitle": "Create Your Own VTuber Models",
+        "description": "Unleash your inner virtual superstar with our custom VTuber model! Helping you stand out in the crowded world of streaming and make your stream unforgettable with a visually striking and unique VTuber model.",
+        "carouselImages": [
+          "https://cdn-gepmfkb.nitrocdn.com/WYEremhYGNlHzmKefSTYSkktLYZvoCNY/assets/images/optimized/rev-421e137/streamerstation.com/wp-content/uploads/2024/02/static-half-body-2d-vtuber-3.jpg",
+          "https://cdn-gepmfkb.nitrocdn.com/WYEremhYGNlHzmKefSTYSkktLYZvoCNY/assets/images/optimized/rev-421e137/streamerstation.com/wp-content/uploads/2024/02/static-half-body-2d-vtuber-2.jpg",
+          "https://cdn-gepmfkb.nitrocdn.com/WYEremhYGNlHzmKefSTYSkktLYZvoCNY/assets/images/optimized/rev-421e137/streamerstation.com/wp-content/uploads/2024/02/static-half-body-2d-vtuber-1.jpg",
+        ],
+        "buttonText": "Get It Now",
+        "buttonLink": "/shop",
+        "headings": [
+          "✓ Engage and retain viewers",
+          "✓ Attract new viewers",
+          "✓ Reflect your unique personality",
+          "✓ Enhance aesthetic of your stream",
+        ],
+        "texts": [
+          "Visually appealing graphics and logos can help draw in new viewers and make your stream stand out.",
+          "Visually appealing graphics and logos can help draw in new viewers and make your stream stand out.",
+          "Visually appealing graphics and logos can help draw in new viewers and make your stream stand out.",
+          "Visually appealing graphics and logos can help draw in new viewers and make your stream stand out.",
+        ],
+      };
+      // Initialize textVisible with the same number of elements as headings
+      this.textVisible = this.data?.headings!.map(() => false) || [];
     }
+  }
+  public toggleTextVisibility(index: number): void {
+    // Toggle the current index and ensure at least one is open
+    this.textVisible[index] = !this.textVisible[index];
   }
 }

@@ -1,0 +1,89 @@
+<!-- Custom Vtuber Model Section -->
+<div
+  class="container-fluid bg-black"
+  style="padding-bottom: 9%"
+  *ngIf="customVtuberModel"
+>
+  <div class="row">
+    <div class="col-lg-5 offset-lg-1">
+      <div class="elementor-widget-wrap">
+        <div class="elementor-element">
+          <div class="section-title mt-5">
+            <span class="sub-title mt-5">{{ customVtuberModel.subTitle }}</span>
+            <h1
+              class="text-white text-capitalize mt-4 fw-bold d-none d-lg-block"
+              style="font-size: 3.3rem"
+            >
+              {{ customVtuberModel.title }}
+            </h1>
+            <h1
+              class="text-white text-capitalize mt-4 fw-bold d-lg-none d-block"
+            >
+              {{ customVtuberModel.title }}
+            </h1>
+            <p class="grey fw-bold mt-4 fs-5 d-none d-lg-block">
+              {{ customVtuberModel.description }}
+            </p>
+            <p class="grey fw-bold mt-4 d-lg-none d-block">
+              {{ customVtuberModel.description }}
+            </p>
+          </div>
+        </div>
+        <div *ngIf="customVtuberModel.benefitList?.length">
+          <div class="row">
+            <div
+              class="col-6 my-3"
+              *ngFor="let item of customVtuberModel.benefitList"
+            >
+              <div class="d-flex align-items-center fs-5 d-none d-lg-block">
+                <i [class]="item.icon"></i>
+                <span class="ms-2 text-white">{{ item.benefit }}</span>
+              </div>
+              <div class="d-flex align-items-center d-lg-none d-block">
+                <i [class]="item.icon"></i>
+                <span class="ms-2 text-white lh-sm">{{ item.benefit }}</span>
+              </div>
+            </div>
+          </div>
+          <div
+            class="mt-5"
+            *ngFor="let button of customVtuberModel?.callToActions"
+          >
+            <button
+              class="btn rounded-pill btn-dark text-white fw-bolder border col-7 col-md-4 py-3 text-uppercase d-none d-lg-block"
+              [routerLink]="button.buttonUrl"
+            >
+              {{ button.buttonText }}
+            </button>
+            <button
+              class="btn btn-sm rounded-pill btn-dark text-white fw-bolder border col-5 mb-5 col-md-4 py-2 text-uppercase d-lg-none d-block"
+              [routerLink]="button.buttonUrl"
+            >
+              {{ button.buttonText }}
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-5 ps-4">
+      <div>
+        <ngb-carousel
+          [showNavigationArrows]="false"
+          [showNavigationIndicators]="false"
+        >
+          <ng-template
+            ngbSlide
+            *ngFor="let slide of customVtuberModel?.carouselSlides"
+          >
+            <img
+              [src]="slide.imageUrl"
+              [alt]="slide.altText"
+              class="swiper-slide-image lazyloaded img-fluid"
+              decoding="async"
+            />
+          </ng-template>
+        </ngb-carousel>
+      </div>
+    </div>
+  </div>
+</div>

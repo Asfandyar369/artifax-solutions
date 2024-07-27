@@ -1,0 +1,34 @@
+<!-- Header Banner Section -->
+<app-header-banner
+  [headerBannerComponent]="{
+    services: false,
+    portfolio: false,
+    gamingRoom: false,
+    vtuberModel: true,
+    graphicDesign: false,
+  }"
+></app-header-banner>
+<!-- Vtuber Model Section -->
+<app-carousel-with-text
+  [carousel]="{
+    services: false,
+    portfolio: false,
+    gamingRoom: false,
+    vtuberModel: true,
+    graphicDesign: false,
+  }"
+></app-carousel-with-text>
+<!-- Spotlight Section -->
+<app-virtual-spotlight></app-virtual-spotlight>
+<!-- Custom Vtuber Model -->
+<app-custom-vtuber-models></app-custom-vtuber-models>
+<!-- Footer Banner Section -->
+<app-footer-banner
+  [dynamicSelection]="{
+    services: false,
+    portfolio: false,
+    gamingRoom: false,
+    vtuberModel: true,
+    graphicDesign: false,
+  }"
+></app-footer-banner>

@@ -1,0 +1,43 @@
+<div class="card bg-dark text-white mb-4" *ngIf="products">
+  <div class="card-body">
+    <h5 class="card-title text-green">Products</h5>
+    <ul class="list-group list-group-flush">
+      <li
+        class="list-group-item bg-dark text-white d-flex align-content-center justify-content-between ps-0"
+        *ngFor="let product of products"
+      >
+        <img
+          [src]="product.image"
+          alt="{{ product.name }}"
+          class="img-thumbnail me-3"
+          style="width: 60px; height: auto"
+        />
+        <div class="flex-grow-1">
+          <h6 class="mb-0">{{ product.name }}</h6>
+          <div class="mb-1">
+            <!-- Stars: Display 5 stars and handle click to set rating -->
+            <ng-container *ngFor="let star of stars; let index = index">
+              <button
+                class="border-0 bg-transparent"
+                (click)="setRating(product, index + 1)"
+              >
+                <i
+                  class="bi"
+                  [ngClass]="
+                    index < product.rating!
+                      ? 'bi-star-fill text-warning'
+                      : 'bi-star-fill text-secondary'
+                  "
+                ></i>
+              </button>
+            </ng-container>
+          </div>
+          <p class="grey mb-0">
+            {{ product.priceFrom | currency }} -
+            {{ product.priceTo | currency }}
+          </p>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>

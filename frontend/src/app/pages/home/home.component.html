@@ -26,4 +26,12 @@
 <app-social-section></app-social-section>
 
 <!-- Streaming Creativity -->
-<app-streaming-creativity-section></app-streaming-creativity-section>
+<app-footer-banner
+  [dynamicSelection]="{
+    home: true,
+    services: false,
+    gamingRoom: false,
+    vtuberModel: false,
+    graphicDesign: false
+  }"
+></app-footer-banner>

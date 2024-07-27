@@ -11,7 +11,7 @@ export interface CarouselWithText {
   texts?: string[] | undefined | null;
   usefulLinks?: AcquireSectionUsefulLink[] | undefined | null;
   benefitList?: CustomizeDesignServiceBenefit[] | undefined | null;
-  buttonText: string | undefined | null;
-  buttonLink: string | undefined | null;
+  buttonText?: string | undefined | null;
+  buttonLink?: string | undefined | null;
   progressData?: ProgressData[] | undefined | null;
 }
