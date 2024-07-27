@@ -1,5 +1,12 @@
 <!-- Gaming Room Header Banner -->
-<app-room-header-banner></app-room-header-banner>
+<app-header-banner
+  [headerBannerComponent]="{
+    portfolio: false,
+    services: false,
+    gamingRoom: true,
+    graphicDesign: false
+  }"
+></app-header-banner>
 <!-- Animated Realms Section -->
 <app-animated-realms></app-animated-realms>
 <!-- Upgrade Your Streams Section -->

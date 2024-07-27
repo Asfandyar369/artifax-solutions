@@ -21,7 +21,7 @@ export class CounterCardSectionComponent implements OnInit {
   private getCounterCardsSection(): void {
     this.counterCardsSection = {
       "id": 1,
-      "imageUrl": "/images/homepage-banner.jpg",
+      "imageUrl": "images/homepage-banner.jpg",
       "altText": "800 × 450 px Car Image",
       "counterCards": [
         {

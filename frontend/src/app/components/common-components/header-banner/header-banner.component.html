@@ -1,8 +1,8 @@
-<!-- Gaming Room banner -->
-<ng-container *ngIf="roomHeader">
+<!-- Header Banner -->
+<ng-container *ngIf="headerBanner">
   <div
     class="container-fluid position-relative"
-    [style.background-image]="'url(' + roomHeader.imageUrl + ')'"
+    [style.background-image]="'url(' + headerBanner.imageUrl + ')'"
     style="
       background-size: cover;
       background-position: center;
@@ -20,7 +20,7 @@
       style="padding-top: 12rem; z-index: 2"
     >
       <h1 class="elementor-heading-title fw-bolder" style="font-size: 4rem">
-        {{ roomHeader.title }}
+        {{ headerBanner.title }}
       </h1>
     </div>
     <div
@@ -28,7 +28,7 @@
       style="padding-top: 6rem; z-index: 2"
     >
       <h1 class="elementor-heading-title fw-bolder">
-        {{ roomHeader.title }}
+        {{ headerBanner.title }}
       </h1>
     </div>
   </div>

@@ -1,10 +1,17 @@
 <!-- Our Service Header Banner Section-->
-<app-our-services-header-banner></app-our-services-header-banner>
+<app-header-banner
+  [headerBannerComponent]="{
+    portfolio: false,
+    services: true,
+    gamingRoom: false,
+    graphicDesign: false
+  }"
+></app-header-banner>
 <!-- Customized Design Services Section-->
- <app-customized-design-services></app-customized-design-services>
+<app-customized-design-services></app-customized-design-services>
 <!-- What we can do for you Section -->
 <app-what-we-can-do-for-you-section></app-what-we-can-do-for-you-section>
 <!-- Pricing Plan Section -->
 <app-pricing-plan></app-pricing-plan>
 <!-- Customized Design Banner Section -->
- <app-customized-design-banner></app-customized-design-banner>
+<app-customized-design-banner></app-customized-design-banner>

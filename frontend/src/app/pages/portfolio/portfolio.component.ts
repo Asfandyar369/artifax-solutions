@@ -3,15 +3,15 @@ import { PortfolioBannerComponent } from '../../components/portfolio-components/
 import { PortfolioShowcaseComponent } from "../../components/portfolio-components/portfolio-showcase/portfolio-showcase.component";
 import { PortfolioModelsComponent } from "../../components/portfolio-components/portfolio-models/portfolio-models.component";
 import { PortfolioEmotesComponent } from "../../components/portfolio-components/portfolio-emotes/portfolio-emotes.component";
-import { PortfolioHeaderBannerComponent } from "../../components/portfolio-components/portfolio-header-banner/portfolio-header-banner.component";
 import { PortfolioStreampackComponent } from "../../components/portfolio-components/portfolio-streampack/portfolio-streampack.component";
 import { Portfolio3DScenesComponent } from "../../components/portfolio-components/portfolio-3-d-scenes/portfolio-3-d-scenes.component";
 import { PortfolioPFPsComponent } from '../../components/portfolio-components/portfolio-pfps/portfolio-pfps.component';
+import { HeaderBannerComponent } from "../../components/common-components/header-banner/header-banner.component";
 
 @Component({
   selector: 'app-portfolio',
   standalone: true,
-  imports: [PortfolioBannerComponent, PortfolioPFPsComponent, PortfolioShowcaseComponent, PortfolioModelsComponent, PortfolioEmotesComponent, PortfolioHeaderBannerComponent, PortfolioStreampackComponent, Portfolio3DScenesComponent],
+  imports: [PortfolioBannerComponent, PortfolioPFPsComponent, PortfolioShowcaseComponent, PortfolioModelsComponent, PortfolioEmotesComponent, PortfolioStreampackComponent, Portfolio3DScenesComponent, HeaderBannerComponent],
   templateUrl: './portfolio.component.html',
   styleUrl: './portfolio.component.css'
 })
