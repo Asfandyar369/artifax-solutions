@@ -1,0 +1,22 @@
+<div class="container-fluid bg-black pb-5">
+  <div class="row justify-content-center">
+    <div class="col-11 ms-lg-5 ps-lg-4">
+      <ngb-carousel
+        [showNavigationArrows]="false"
+        [showNavigationIndicators]="false"
+      >
+        <ng-template ngbSlide *ngFor="let slide of images">
+          <img
+            [ngSrc]="slide.url"
+            [alt]="slide.altText"
+            class="img-fluid"
+            width="1300"
+            height="447"
+            priority
+            decoding="async"
+          />
+        </ng-template>
+      </ngb-carousel>
+    </div>
+  </div>
+</div>

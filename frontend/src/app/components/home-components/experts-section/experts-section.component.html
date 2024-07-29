@@ -5,7 +5,7 @@
       <div *ngIf="expertsSection.carouselImages?.length">
         <ngb-carousel [showNavigationArrows]="false" [showNavigationIndicators]="false">
           <ng-template ngbSlide *ngFor="let imageUrl of expertsSection.carouselImages">
-            <img [src]="imageUrl" class="img-fluid" alt="Carousel Image" />
+            <img [src]="imageUrl" decoding="async" class="img-fluid" alt="Carousel Image" />
           </ng-template>
         </ngb-carousel>
       </div>

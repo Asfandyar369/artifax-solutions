@@ -6,4 +6,9 @@ export interface DynamicSelection {
   graphicDesign?: boolean | undefined | null;
   vtuberModel?: boolean | undefined | null;
   shop?: boolean | undefined | null;
+  myAccount?: boolean | undefined | null;
+  cart?: boolean | undefined | null;
+  checkout?: boolean | undefined | null;
+  about?: boolean | undefined | null;
+  customers?: boolean | undefined | null;
 }

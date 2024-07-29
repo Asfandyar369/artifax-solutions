@@ -1,13 +1,14 @@
 import { animate, state, style, transition, trigger } from '@angular/animations';
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { StreamerSection } from '../../../../../interface/StreamerSection';
 import { RouterModule } from '@angular/router';
-import { NgClass, NgFor, NgIf } from '@angular/common';
+import { NgClass, NgFor, NgIf, NgOptimizedImage } from '@angular/common';
+import { DynamicSelection } from '../../../../../interface/DynamicSelection';
 
 @Component({
   selector: 'app-upgrade-streams',
   standalone: true,
-  imports: [NgIf, NgFor, RouterModule, NgClass],
+  imports: [NgIf, NgFor, RouterModule, NgClass, NgOptimizedImage],
   templateUrl: './upgrade-streams.component.html',
   styleUrls: ['./upgrade-streams.component.css'],
   animations: [
@@ -34,7 +35,8 @@ import { NgClass, NgFor, NgIf } from '@angular/common';
 export class UpgradeStreamsComponent implements OnInit {
   upgradeStreams: StreamerSection | undefined | null;
   textVisible: boolean[] = [];
-
+  @Input() checkComponent: DynamicSelection | undefined | null;
+  image: string = '';
   constructor() { }
 
   ngOnInit(): void {
@@ -42,23 +44,46 @@ export class UpgradeStreamsComponent implements OnInit {
   }
 
   private getUpgradeStreams(): void {
-    this.upgradeStreams = {
-      "id": 1,
-      "title": "3D Animated Scenes",
-      "subTitle": "Upgrade Your Streams With",
-      "description": "Embark on a journey through realms of creativity and immersion with our dimensional stream magic.",
-      "videoUrl": "https://streamerstation.com/wp-content/uploads/2024/02/3D-Scene.webm",
-      "buttonText": "Get It Now",
-      "buttonLink": "/shop",
-      "headings": [
-        "Interactive storytelling",
-        "✓ Technical edge",
-      ],
-      "texts": [
-        "A narrative with 3D animations that turn your gaming streams into interactive tales.",
-        "Gain a competitive advantage with high-quality 3D animations, showcasing advanced gaming tech.",
-      ],
-    };
+    if (this.checkComponent?.gamingRoom) {
+      this.upgradeStreams = {
+        "id": 1,
+        "title": "3D Animated Scenes",
+        "subTitle": "Upgrade Your Streams With",
+        "description": "Embark on a journey through realms of creativity and immersion with our dimensional stream magic.",
+        "videoUrl": "https://streamerstation.com/wp-content/uploads/2024/02/3D-Scene.webm",
+        "buttonText": "Get It Now",
+        "buttonLink": "/shop",
+        "headings": [
+          "Interactive storytelling",
+          "✓ Technical edge",
+        ],
+        "texts": [
+          "A narrative with 3D animations that turn your gaming streams into interactive tales.",
+          "Gain a competitive advantage with high-quality 3D animations, showcasing advanced gaming tech.",
+        ],
+      };
+    } else if (this.checkComponent?.about) {
+      this.upgradeStreams = {
+        "id": 1,
+        "title": "About Streamer Station",
+        "subTitle": "Get To Know",
+        "description": "We're a team of passionate individuals dedicated to helping streamers succeed. Our goal is to provide you with the tools and support you need to thrive in the world of streaming.",
+        "carouselImages": [
+          "https://streamerstation.com/wp-content/uploads/2024/02/static-pfp-about-2-1024x1024.jpg"
+        ],
+        "buttonText": null,
+        "buttonLink": null,
+        "headings": [
+          "How we work?",
+          "Why choose us?",
+        ],
+        "texts": [
+          "With our skills and expertise, we're able to deliver top-quality results and provide ongoing support and guidance to keep our clients on track and growing. Let us help you turn your passion for streaming into a thriving experience.",
+          "We understand the unique challenges of building a successful streaming experience. We take the time to get to know our clients and understand their needs, so we can create a customized solution that works for them.",
+        ],
+      };
+      this.image = this.upgradeStreams?.carouselImages![0];
+    }
     // Initialize textVisible with the same number of elements as headings
     this.textVisible = this.upgradeStreams?.headings!.map(() => false) || [];
     this.toggleTextVisibility(0); // Open the first heading by default

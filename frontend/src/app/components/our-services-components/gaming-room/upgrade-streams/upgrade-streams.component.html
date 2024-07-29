@@ -5,7 +5,7 @@
   *ngIf="upgradeStreams"
 >
   <div class="row">
-    <div class="col-lg-4 col-12 ps-lg-4 mt-3 offset-lg-1">
+    <div class="col-lg-5 col-12 ps-lg-4 mt-3 offset-lg-1">
       <div class="elementor-widget-wrap">
         <div class="elementor-element">
           <div class="section-title">
@@ -38,7 +38,10 @@
             >
               <button
                 class="text-white green-line fw-bold border-0 bg-transparent"
-                [ngClass]="{ active: textVisible[i] }"
+                [ngClass]="{
+                  active: textVisible[i],
+                  ' fs-3 ps-0': checkComponent?.about
+                }"
               >
                 {{ heading }}
               </button>
@@ -60,7 +63,7 @@
         </div>
       </div>
     </div>
-    <div class="col-12 col-lg-6">
+    <div class="col-12 col-lg-6" *ngIf="checkComponent?.gamingRoom">
       <video
         class="object-fit-cover w-100 rounded"
         [autoplay]="true"
@@ -71,6 +74,17 @@
       >
         <source [src]="upgradeStreams.videoUrl" />
       </video>
+    </div>
+    <div class="col-12 col-lg-5 text-center" *ngIf="checkComponent?.about">
+      <img
+        [ngSrc]="image"
+        alt="about 2"
+        class="img-fluid"
+        width="550"
+        height="550"
+        decoding="async"
+        priority
+      />
     </div>
   </div>
 </div>

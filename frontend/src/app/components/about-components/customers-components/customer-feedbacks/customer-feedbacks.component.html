@@ -1,0 +1,31 @@
+<div class="container-fluid bg-black" *ngIf="feedback">
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="col-lg-7 mx-auto text-center">
+        <span class="sub-title">{{ feedback.subTitle }}</span>
+        <h1 class="text-white" style="font-size: 3.5rem">
+          {{ feedback.title }}
+        </h1>
+        <p class="grey mt-4 fs-5">{{ feedback.description }}</p>
+      </div>
+    </div>
+  </div>
+  <div class="container mt-5 pb-5">
+    <div class="row justify-content-center">
+      <div class="col-md-5" *ngFor="let video of feedback.videoUrl">
+        <div class="d-flex justify-content-center mb-4">
+          <video
+            class="object-fit-cover w-100 rounded"
+            [autoplay]="true"
+            [loop]="true"
+            [controls]="true"
+            [muted]="true"
+            controlsList="nodownload"
+          >
+            <source [src]="video" />
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

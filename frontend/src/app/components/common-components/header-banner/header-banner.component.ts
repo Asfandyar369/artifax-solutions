@@ -1,4 +1,4 @@
-import { NgIf } from '@angular/common';
+import { NgIf, NgOptimizedImage } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { PortfolioShowcase } from '../../../../interface/PortfolioShowcase';
 import { DynamicSelection } from '../../../../interface/DynamicSelection';
@@ -6,7 +6,7 @@ import { DynamicSelection } from '../../../../interface/DynamicSelection';
 @Component({
   selector: 'app-header-banner',
   standalone: true,
-  imports: [NgIf],
+  imports: [NgIf, NgOptimizedImage],
   templateUrl: './header-banner.component.html',
   styleUrl: './header-banner.component.css'
 })
@@ -59,6 +59,41 @@ export class HeaderBannerComponent {
         "title": "Shop",
         "altText": "Shop Banner",
         "imageUrl": "images/White-and-Light-Blue.png"
+      }
+    } else if (this.headerBannerComponent?.myAccount) {
+      this.headerBanner = {
+        "id": 1,
+        "title": "My Account",
+        "altText": "Account Banner",
+        "imageUrl": "https://streamerstation.com/wp-content/uploads/2024/02/my-account-header-banner.jpg"
+      }
+    } else if (this.headerBannerComponent?.cart) {
+      this.headerBanner = {
+        id: 1,
+        title: "Cart",
+        altText: "Cart Banner",
+        imageUrl: "https://streamerstation.com/wp-content/uploads/2024/02/Cart-Header-Banner.jpeg"
+      }
+    } else if (this.headerBannerComponent?.checkout) {
+      this.headerBanner = {
+        id: 1,
+        title: "Checkout",
+        altText: "Checkout Banner",
+        imageUrl: "https://streamerstation.com/wp-content/uploads/2024/02/Checkout-Header-Banner-scaled.jpg"
+      }
+    } else if (this.headerBannerComponent?.about) {
+      this.headerBanner = {
+        id: 1,
+        title: "About",
+        altText: "About Banner",
+        imageUrl: "images/Order-889-2-animated-poster-design.jpg"
+      }
+    } else if (this.headerBannerComponent?.customers) {
+      this.headerBanner = {
+        id: 1,
+        title: "Customers",
+        altText: "Customers Banner",
+        imageUrl: "https://streamerstation.com/wp-content/uploads/2024/02/customers-header-banner.jpg"
       }
     }
   }

@@ -1,0 +1,31 @@
+.alert {
+  background-color: #111; /* Match the dark theme */
+  color: #fff;
+  border-color: #00ff00; /* Green border */
+}
+
+.btn-success {
+  background-color: #00ff00;
+  border-color: #00ff00;
+  color: #000;
+}
+
+.table-dark, th,td {
+  background-color: #111;
+  border: 1px solid rgba(255, 255, 255, .2);
+}
+
+.img-thumbnail {
+  border: none;
+  background-color: transparent;
+}
+.delete{
+  background-color: transparent !important;
+  border: none !important;
+}
+.form-control:active, .form-control:focus {
+  color: grey !important;
+}
+.form-control::placeholder {
+  color: grey !important;
+}

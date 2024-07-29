@@ -77,10 +77,11 @@
       >
         <div class="card bg-dark text-white h-100">
           <img
-            class="card-img-top"
+            class="card-img-top img-fluid"
             [src]="card.imageUrl"
             [alt]="card.altText"
             loading="lazy"
+            decoding="async"
           />
           <div class="card-body">
             <h5 class="card-title fw-bold">{{ card.title }}</h5>

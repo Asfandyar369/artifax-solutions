@@ -1,0 +1,136 @@
+<div class="container-fluid bg-black">
+  <div class="container">
+    <div class="row">
+      <div
+        ngbAccordion
+        class="container mt-4"
+        #acc="ngbAccordion"
+        activeIds="ngb-panel-0"
+      >
+        <div
+          ngbAccordionItem
+          id="ngb-panel-0"
+          class="border-0 accordion-border"
+        >
+          <h2 ngbAccordionHeader>
+            <button ngbAccordionButton class="accordion-button">
+              <i class="bi bi-calendar elementor-heading-title me-3"></i>
+              Returning customer? Click here to login
+            </button>
+          </h2>
+          <div ngbAccordionCollapse>
+            <div ngbAccordionBody>
+              <div class="bg-dark grey p-3 border border-secondary rounded">
+                <p>
+                  If you have shopped with us before, please enter your details
+                  below. If you are a new customer, please proceed to the
+                  Billing section.
+                </p>
+                <form>
+                  <div class="mb-3">
+                    <label for="username" class="form-label"
+                      >Username or email
+                      <span class="text-danger">*</span></label
+                    >
+                    <input
+                      type="text"
+                      autocomplete="username"
+                      class="form-control bg-dark grey"
+                      id="username"
+                    />
+                  </div>
+                  <div class="mb-3">
+                    <label for="password" class="form-label"
+                      >Password <span class="text-danger">*</span></label
+                    >
+                    <div class="input-group">
+                      <input
+                        autocomplete="current-password"
+                        [type]="passwordVisible ? 'text' : 'password'"
+                        class="form-control"
+                        id="password"
+                      />
+                      <span
+                        class="input-group-text"
+                        (click)="showPassword()"
+                        style="cursor: pointer"
+                      >
+                        <i
+                          [class]="
+                            passwordVisible ? 'bi bi-eye' : 'bi bi-eye-slash'
+                          "
+                          class="text-white"
+                        ></i>
+                      </span>
+                    </div>
+                  </div>
+                  <div class="form-check mb-3">
+                    <input
+                      type="checkbox"
+                      class="form-check-input"
+                      id="rememberMe"
+                    />
+                    <label class="form-check-label" for="rememberMe"
+                      >Remember me</label
+                    >
+                  </div>
+                  <button type="button" class="btn btn-success w-100 fw-bold">
+                    LOGIN
+                  </button>
+                  <button class="d-block mt-2 border-0 bg-transparent grey">
+                    Lost your password?
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div
+        ngbAccordion
+        class="container mt-4"
+        #acc="ngbAccordion"
+        activeIds="ngb-panel-0"
+      >
+        <div
+          ngbAccordionItem
+          id="ngb-panel-0"
+          class="border-0 accordion-border"
+        >
+          <h2 ngbAccordionHeader>
+            <button ngbAccordionButton class="accordion-button">
+              <i class="bi bi-calendar elementor-heading-title me-3"></i>
+              Have a coupon? Click here to enter your code
+            </button>
+          </h2>
+          <div ngbAccordionCollapse>
+            <div ngbAccordionBody>
+              <div class="bg-dark grey p-3 border border-secondary rounded">
+                <p>If you have a cuppon code,please apply it below.</p>
+                <form>
+                  <div class="mb-3">
+                    <input
+                      type="text"
+                      class="form-control bg-dark grey"
+                      id="couponCode"
+                      placeholder="Coupon code"
+                    />
+                  </div>
+
+                  <button
+                    type="button"
+                    class="btn btn-success col-12 col-md-3 col-lg-2 fw-bold text-uppercase"
+                  >
+                    Apply cuppon
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

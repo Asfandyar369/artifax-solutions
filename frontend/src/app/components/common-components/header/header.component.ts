@@ -39,7 +39,7 @@ export class HeaderComponent implements OnInit {
           id: 11, name: 'Shop', link: '/shop', nestedMenus: [
             { id: 4, name: 'My account', link: '/my-account' },
             { id: 5, name: 'Cart', link: '/cart' },
-            { id: 6, name: 'Checkout', link: '/check-out' }
+            { id: 6, name: 'Checkout', link: '/checkout' }
           ]
         },
         {

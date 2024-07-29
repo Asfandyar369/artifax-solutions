@@ -6,6 +6,11 @@ import { ThreeDScenesGamingRoomComponent } from './pages/our-services/three-d-sc
 import { StreamingGraphicsDesignComponent } from './pages/our-services/streaming-graphics-design/streaming-graphics-design.component';
 import { VtuberModelComponent } from './pages/our-services/vtuber-model/vtuber-model.component';
 import { ShopComponent } from './pages/shop/shop.component';
+import { MyAccountComponent } from './pages/shop/my-account/my-account.component';
+import { CartComponent } from './pages/shop/cart/cart.component';
+import { CheckoutComponent } from './pages/shop/checkout/checkout.component';
+import { AboutComponent } from './pages/about/about.component';
+import { CustomersComponent } from './pages/about/customers/customers.component';
 const routes = {
   home: 'home',
   portfolio: 'portfolio',
@@ -14,6 +19,11 @@ const routes = {
   streamingGraphicsDesign: "streaming-graphics-design",
   vtuberModel: "vtuber-model",
   shop: 'shop',
+  myAccount: 'my-account',
+  cart: 'cart',
+  checkout: 'checkout',
+  about: 'about',
+  customers: 'customers',
 };
 export const appRoutes: Routes = [
   {
@@ -48,6 +58,26 @@ export const appRoutes: Routes = [
   {
     path: `${routes.shop}`,
     component: ShopComponent
+  },
+  {
+    path: routes.myAccount,
+    component: MyAccountComponent
+  },
+  {
+    path: routes.cart,
+    component: CartComponent
+  },
+  {
+    path: routes.checkout,
+    component: CheckoutComponent
+  },
+  {
+    path: routes.about,
+    component: AboutComponent
+  },
+  {
+    path: routes.customers,
+    component: CustomersComponent
   },
   {
     path: '**', redirectTo: '/home'

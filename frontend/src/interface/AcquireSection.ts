@@ -25,6 +25,7 @@ export interface AcquireSectionButton {
   id: number | undefined | null;
   buttonText: string | undefined | null;
   buttonUrl: string | undefined | null;
+  description?: string | undefined | null;
 }
 
 export interface CustomizeDesignServiceBenefit {

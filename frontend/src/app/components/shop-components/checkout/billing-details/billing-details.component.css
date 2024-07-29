@@ -1,0 +1,48 @@
+.bg-dark {
+  background-color: #111111 !important;
+}
+
+.text-light {
+  color: #e0e0e0 !important;
+}
+
+.form-label {
+  color: #e0e0e0;
+  margin-top: 1.2rem;
+}
+
+.form-control,
+.form-select {
+  background-color: #222222;
+  border: none;
+  color: grey !important;
+}
+
+.form-control::placeholder {
+  color: #999999;
+}
+
+.input-group-text {
+  background-color: #222222;
+  border: none;
+}
+
+.btn-success {
+  background-color: #2af319;
+  border: none;
+}
+
+.btn-success:hover {
+  background-color: #24cc13;
+}
+
+.border-light {
+  border-color: #e0e0e0 !important;
+}
+
+h3 {
+  color: #e0e0e0;
+}
+.form-control{
+color: grey !important;
+}

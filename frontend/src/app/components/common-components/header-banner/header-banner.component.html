@@ -1,20 +1,22 @@
 <!-- Header Banner -->
 <ng-container *ngIf="headerBanner">
-  <div
-    class="container-fluid position-relative bg-black"
-    [style.background-image]="'url(' + headerBanner.imageUrl + ')'"
-    style="
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      height: 70vh;
-    "
-  >
+  <div class="container-fluid position-relative bg-black" style="height: 70vh">
+    <!-- Image Element using NgOptimizedImage -->
+    <img
+      [ngSrc]="headerBanner.imageUrl!"
+      class="w-100 h-100 position-absolute z-0"
+      fill
+      priority
+      [alt]="headerBanner.title"
+    />
+
     <!-- Overlay -->
     <div
       class="overlay position-absolute w-100 h-100"
       style="background-color: rgba(0, 0, 0, 0.5); top: 0; left: 0; z-index: 1"
     ></div>
+
+    <!-- Large Screen Title -->
     <div
       class="row text-center position-relative d-none d-lg-block"
       style="padding-top: 3rem; z-index: 2"
@@ -23,6 +25,8 @@
         {{ headerBanner.title }}
       </h1>
     </div>
+
+    <!-- Small Screen Title -->
     <div
       class="row text-center position-relative d-lg-none d-block"
       style="padding-top: 6rem; z-index: 2"

@@ -1,0 +1,82 @@
+<div class="container-fluid bg-black pt-5">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-7">
+        <div class="bg-dark text-light">
+          <h3 class="mb-4">Billing details</h3>
+          <form>
+            <div class="mb-3">
+              <label for="firstName" class="form-label mt-1"
+                >First name <span class="text-danger">*</span></label
+              >
+              <input type="text" class="form-control" id="firstName" />
+            </div>
+            <div class="mb-3">
+              <label for="lastName" class="form-label"
+                >Last name <span class="text-danger">*</span></label
+              >
+              <input type="text" class="form-control" id="lastName" />
+            </div>
+            <div class="mb-3">
+              <label for="country" class="form-label">Country / Region <span class="text-danger">*</span></label>
+              <select id="country" autocomplete="country-name" class="form-select custom-select">
+                <option *ngFor="let country of countries" [value]="country.cca2">{{ country.name.common }}</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="phone" class="form-label"
+                >Phone <span class="text-danger">*</span></label
+              >
+              <input type="tel" class="form-control" autocomplete="tel" id="phone" />
+            </div>
+            <div class="mb-3">
+              <label for="email" class="form-label"
+                >Email address <span class="text-danger">*</span></label
+              >
+              <input type="email" class="form-control" autocomplete="email" id="email" />
+            </div>
+            <div class="mb-3">
+              <label for="accountUsername" class="form-label"
+                >Account username <span class="text-danger">*</span></label
+              >
+              <input
+                type="text"
+                class="form-control"
+                id="accountUsername"
+                placeholder="Username"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="accountPassword" class="form-label"
+                >Create account password
+                <span class="text-danger">*</span></label
+              >
+              <div class="input-group">
+                <input
+                  [type]="passwordVisible ? 'text' : 'password'"
+                  class="form-control"
+                  autocomplete="current-password"
+                  id="accountPassword"
+                  placeholder="Password"
+                />
+                <span
+                  class="input-group-text"
+                  (click)="togglePasswordVisibility()"
+                  style="cursor: pointer"
+                >
+                  <i
+                    [class]="passwordVisible ? 'bi bi-eye' : 'bi bi-eye-slash'"
+                    class="text-white"
+                  ></i>
+                </span>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="col-lg-5">
+        <app-your-order></app-your-order>
+      </div>
+    </div>
+  </div>
+</div>
