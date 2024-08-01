@@ -1,4 +1,4 @@
-import { NgClass, NgFor, NgIf, NgOptimizedImage } from '@angular/common';
+import { NgClass, NgFor, NgIf } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { Carousel } from '../../../../interface/BannerSection';
@@ -6,7 +6,7 @@ import { Carousel } from '../../../../interface/BannerSection';
 @Component({
   selector: 'app-banner-section',
   standalone: true,
-  imports: [NgFor, NgClass, RouterLink, NgIf, NgOptimizedImage],
+  imports: [NgFor, NgClass, RouterLink, NgIf],
   templateUrl: './banner-section.component.html',
   styleUrl: './banner-section.component.css'
 })

@@ -13,7 +13,7 @@ import { ImageLoaderService } from './image-loader.service';
       <div
         class="d-flex justify-content-center align-items-center"
         [ngClass]="{'loading': !isLoaded}"
-        [style.width.px]="width"
+        [style.max-width.px]="width"
         [style.height.px]="height"
         style="position: relative;"
       >
@@ -27,8 +27,6 @@ import { ImageLoaderService } from './image-loader.service';
           class="img-fluid"
           [width]="width"
           [height]="height"
-          loading="lazy"
-          decoding="async"
           (load)="onLoad()"
           (error)="onError()"
           [style.display]="isLoaded ? 'block' : 'none'"

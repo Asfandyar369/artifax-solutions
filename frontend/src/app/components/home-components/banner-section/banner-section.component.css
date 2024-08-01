@@ -1,39 +1,71 @@
-@media (max-width: 320px) {
-  .carousel-control-next,
-  .carousel-control-prev {
-    bottom: 15% !important;
-  }
-  .dark-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.3); /* Dark shade with 50% opacity */
-    z-index: 1; /* Make sure the overlay is above the image but below text */
-  }
-  .position-absolute {
-    z-index: 2; /* Ensure text is above the overlay */
-  }
-}
 .carousel-item {
   position: relative;
-}
-
-.dark-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5); /* Dark shade with 50% opacity */
-  z-index: 1; /* Make sure the overlay is above the image but below text */
+  height: 85vh; /* Adjust the height as needed */
+  min-height: 300px;
 }
 
 .carousel-item img {
-  z-index: 0; /* Ensure image is behind the overlay */
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  filter: brightness(0.6); /* Dark overlay effect */
 }
 
-.position-absolute.top-50.start-50 {
-  z-index: 2; /* Ensure text is above the overlay */
+.carousel-caption {
+  position: absolute;
+  top: 57%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.8);
+  width: 100%; /* Ensures text stays within bounds on smaller screens */
+  padding: 0 1rem; /* Padding for mobile screens */
+}
+
+.carousel-caption h1 {
+  font-size: 2.5rem; /* Larger font size for desktop */
+}
+
+.carousel-caption p {
+  font-size: 1.25rem; /* Adjusted for better readability */
+}
+
+@media (max-width: 768px) {
+  .carousel-caption h1 {
+    font-size: 1.75rem; /* Smaller font size for tablets */
+  }
+
+  .carousel-caption p {
+    font-size: 1rem; /* Smaller font size for tablets */
+  }
+}
+
+@media (max-width: 576px) {
+  .carousel-caption h1 {
+    font-size: 1.25rem; /* Even smaller font size for mobile */
+  }
+
+  .carousel-caption p {
+    font-size: 0.875rem; /* Smaller font size for mobile */
+  }
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+}
+
+.carousel-indicators [data-bs-target] {
+  background-color: white; /* Non-active indicator color */
+}
+
+.carousel-indicators .active {
+  background-color: #28a745; /* Matches button color */
+}
+
+.btn-success {
+  background-color: #28a745;
+  border-color: #28a745;
+  color: white;
 }
