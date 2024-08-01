@@ -1,0 +1,67 @@
+.form-control::placeholder {
+  color: grey;
+}
+
+.form-control {
+  border: 1px solid #32ed22;
+}
+
+.table {
+  color: grey;
+}
+
+.table th,
+.table td {
+  background-color: #111;
+  border: 1px solid #827f80;
+  padding: 1.1rem;
+  text-align: center;
+}
+
+.table th {
+  color: #32ed22;
+}
+
+.table td {
+  color: white;
+  font-weight: 500;
+}
+
+i {
+  color: #32ed22;
+}
+
+.section-title {
+  margin-bottom: 1.5rem;
+}
+
+.sub-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  display: block;
+}
+
+.title {
+  font-size: 3rem;
+  font-weight: 700;
+  margin: 0.5rem 0;
+}
+
+.pb-5 {
+  padding-bottom: 9rem !important;
+}
+
+@media (max-width: 576px) {
+  .section-title .sub-title {
+    font-size: 1.1rem;
+  }
+
+  .section-title .title {
+    font-size: 1.5rem;
+  }
+
+  .table th,
+  .table td {
+    padding: 0.75rem;
+  }
+}

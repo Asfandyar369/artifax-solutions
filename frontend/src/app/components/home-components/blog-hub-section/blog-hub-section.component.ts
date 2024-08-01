@@ -1,13 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { NgFor, NgIf } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgFor, NgIf, NgOptimizedImage } from '@angular/common';
+import { RouterLink } from '@angular/router';
 import { BlogHubItem, BlogHubSection } from '../../../../interface/BlogHubSection';
+import { PortfolioImageLoaderComponent } from "../../common-components/portfolio-image-loader/portfolio-image-loader.component";
 
 @Component({
   selector: 'app-blog-hub-section',
   standalone: true,
-  imports: [NgbModule, NgIf, NgFor, RouterModule],
+  imports: [NgbCarouselModule, NgIf, NgFor, RouterLink, NgOptimizedImage, PortfolioImageLoaderComponent],
   templateUrl: './blog-hub-section.component.html',
   styleUrls: ['./blog-hub-section.component.css']
 })

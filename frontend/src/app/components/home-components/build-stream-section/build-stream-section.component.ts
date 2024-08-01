@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { NgIf } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import { RouterLink } from '@angular/router';
 import { BuildStreamSection } from '../../../../interface/BuildStreamSection';
 
 
 @Component({
   selector: 'app-build-stream-section',
   standalone: true,
-  imports: [NgIf, RouterModule],
+  imports: [NgIf, RouterLink],
   templateUrl: './build-stream-section.component.html',
   styleUrl: './build-stream-section.component.css'
 })

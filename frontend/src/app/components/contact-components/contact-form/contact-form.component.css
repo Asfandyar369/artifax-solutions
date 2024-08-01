@@ -1,0 +1,9 @@
+.form-control {
+  color: grey !important;
+}
+.form-control::placeholder {
+  color: grey !important;
+}
+.box-shadow {
+  box-shadow: 0 25px 65px rgba(0, 0, 0, 0.1);
+}

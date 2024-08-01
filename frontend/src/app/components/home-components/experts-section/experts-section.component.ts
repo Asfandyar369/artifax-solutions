@@ -1,12 +1,12 @@
-import { NgFor, NgIf } from '@angular/common';
+import { NgFor, NgIf, NgOptimizedImage } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
 import { ExpertSection } from '../../../../interface/ExpertSection';
 
 @Component({
   selector: 'app-experts-section',
   standalone: true,
-  imports: [NgbModule, NgIf, NgFor],
+  imports: [NgbCarouselModule, NgIf, NgFor, NgOptimizedImage],
   templateUrl: './experts-section.component.html',
   styleUrl: './experts-section.component.css'
 })

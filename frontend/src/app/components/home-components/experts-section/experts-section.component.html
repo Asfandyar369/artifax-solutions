@@ -3,9 +3,23 @@
   <div class="row">
     <div class="col-lg-5 offset-lg-1">
       <div *ngIf="expertsSection.carouselImages?.length">
-        <ngb-carousel [showNavigationArrows]="false" [showNavigationIndicators]="false">
-          <ng-template ngbSlide *ngFor="let imageUrl of expertsSection.carouselImages">
-            <img [src]="imageUrl" decoding="async" class="img-fluid" alt="Carousel Image" />
+        <ngb-carousel
+          [showNavigationArrows]="false"
+          [showNavigationIndicators]="false"
+        >
+          <ng-template
+            ngbSlide
+            *ngFor="let imageUrl of expertsSection.carouselImages"
+          >
+            <img
+              [ngSrc]="imageUrl"
+              decoding="async"
+              width="609"
+              height="609"
+              class="img-fluid"
+              alt="Carousel Image"
+              priority
+            />
           </ng-template>
         </ngb-carousel>
       </div>
@@ -14,19 +28,31 @@
       <div class="elementor-widget-wrap">
         <div class="elementor-element">
           <div class="section-title">
-            <span class="sub-title">{{ expertsSection.subtitle || 'Default Subtitle' }}</span>
-            <h1 class="text-white text-capitalize mt-4">{{ expertsSection.title || 'Default Title' }}</h1>
-            <p class="grey mt-5">{{ expertsSection.description || 'Default Description' }}</p>
+            <span class="sub-title">{{
+              expertsSection.subtitle || "Default Subtitle"
+            }}</span>
+            <h1 class="text-white text-capitalize mt-4">
+              {{ expertsSection.title || "Default Title" }}
+            </h1>
+            <p class="grey mt-5">
+              {{ expertsSection.description || "Default Description" }}
+            </p>
           </div>
         </div>
         <!-- Add progress bars using ngFor -->
-        <div class="row my-5" *ngFor="let progress of expertsSection.progressData">
+        <div
+          class="row my-5"
+          *ngFor="let progress of expertsSection.progressData"
+        >
           <div class="d-flex align-items-center justify-content-between px-0">
             <h4 class="grey">{{ progress.label }}</h4>
             <h6 class="grey pt-1">{{ progress.percent }}%</h6>
           </div>
           <div class="progress bg-dark px-0 rounded-0">
-            <div class="progress-bar wow" [style.width.%]="progress.percent"></div>
+            <div
+              class="progress-bar wow"
+              [style.width.%]="progress.percent"
+            ></div>
           </div>
         </div>
       </div>
@@ -38,7 +64,9 @@
 <div *ngIf="!expertsSection" class="container-fluid bg-black">
   <div class="row justify-content-center">
     <div class="col-lg-8 text-center">
-      <p class="text-white">Default content for the experts section when data is not available.</p>
+      <p class="text-white">
+        Default content for the experts section when data is not available.
+      </p>
     </div>
   </div>
 </div>

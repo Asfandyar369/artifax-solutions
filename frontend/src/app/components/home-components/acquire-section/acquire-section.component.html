@@ -13,13 +13,16 @@
         >
           <ng-template
             ngbSlide
-            *ngFor="let slide of acquireSection?.carouselSlides"
+            *ngFor="let slide of acquireSection?.carouselSlides; let i = index"
           >
             <img
-              [src]="slide.imageUrl"
+              [ngSrc]="slide.imageUrl!"
               [alt]="slide.altText"
-              class="swiper-slide-image lazyloaded img-fluid"
+              [priority]="i === 0"
+              class="img-fluid"
               decoding="async"
+              width="600"
+              height="600"
             />
           </ng-template>
         </ngb-carousel>

@@ -1,23 +1,17 @@
-import { NgClass, NgFor, NgIf } from '@angular/common';
+import { NgClass, NgFor, NgIf, NgOptimizedImage } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
-import { RouterModule } from '@angular/router';
-import { HttpClient } from '@angular/common/http';
+import { RouterLink } from '@angular/router';
 import { Carousel } from '../../../../interface/BannerSection';
-import { environment } from '../../../../environments/environment';
 
 @Component({
   selector: 'app-banner-section',
   standalone: true,
-  imports: [NgFor, NgClass, RouterModule, NgIf],
+  imports: [NgFor, NgClass, RouterLink, NgIf, NgOptimizedImage],
   templateUrl: './banner-section.component.html',
   styleUrl: './banner-section.component.css'
 })
 export class BannerSectionComponent implements OnInit {
   carousel: Carousel | undefined | null;
-
-  constructor(
-    private http: HttpClient
-  ) { }
 
   ngOnInit(): void {
     this.getCarousels();

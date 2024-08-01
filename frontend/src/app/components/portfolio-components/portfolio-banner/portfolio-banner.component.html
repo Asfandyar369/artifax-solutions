@@ -14,15 +14,16 @@
   <!-- Filter Options -->
   <div class="row justify-content-center mt-4">
     <div class="col-auto">
-      <div class="btn-group rounded-pill border" role="group">
+      <div class="btn-group rounded-pill border" role="group" aria-label="Filter Options">
         <button
-          *ngFor="let option of portfolioBanner.filterOptions"
+          *ngFor="let option of portfolioBanner.filterOptions; trackBy: trackByOption"
           (click)="filterCards(option)"
           class="btn border-0 rounded-pill fw-bolder px-4 py-2 btn-sm"
           [ngClass]="{
             'btn-nonActive text-white': activeFilter !== option,
             'btn-success': activeFilter === option
           }"
+          [attr.aria-pressed]="activeFilter === option"
         >
           {{ option }}
         </button>
@@ -35,16 +36,18 @@
     <div class="row justify-content-between">
       <div
         class="col-12 col-sm-6 col-md-4 mb-4"
-        *ngFor="let card of filteredCardList"
+        *ngFor="let card of filteredCardList; trackBy: trackByCard"
         [@cardAnimation]
       >
         <div class="card bg-dark text-white h-100">
-          <img
-            class="card-img-top"
-            [src]="card.imageUrl"
-            [alt]="card.altText"
-            loading="lazy"
-          />
+          <ng-container *ngIf="card.imageUrl">
+            <app-portfolio-image-loader
+              [src]="card.imageUrl"
+              [alt]="card.altText!"
+              [width]="414"
+              [height]="233"
+            ></app-portfolio-image-loader>
+          </ng-container>
           <div class="card-body">
             <h5 class="card-title fw-bold">{{ card.title }}</h5>
             <p class="card-text text-secondary">{{ card.description }}</p>

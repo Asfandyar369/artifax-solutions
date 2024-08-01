@@ -3,12 +3,13 @@ import { PortfolioShowcase } from '../../../../interface/PortfolioShowcase';
 import { PortfolioShowcaseCard } from '../../../../interface/PortfolioShowcase';
 import { NgClass, NgFor, NgIf } from '@angular/common';
 import { animate, style, transition, trigger } from '@angular/animations';
+import { PortfolioImageLoaderComponent } from "../../common-components/portfolio-image-loader/portfolio-image-loader.component";
 
 
 @Component({
   selector: 'app-portfolio-streampack',
   standalone: true,
-  imports: [NgIf, NgFor, NgClass],
+  imports: [NgIf, NgFor, NgClass, PortfolioImageLoaderComponent],
   templateUrl: './portfolio-streampack.component.html',
   styleUrl: './portfolio-streampack.component.css',
   animations: [

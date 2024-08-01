@@ -1,0 +1,10 @@
+.vh-custom {
+  height: 60vh; /* Default height for very small screens */
+}
+
+/* Large screens */
+@media (min-width: 768px) {
+  .vh-custom {
+    height: 80vh; /* Height for medium devices and up */
+  }
+}

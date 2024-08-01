@@ -19,12 +19,14 @@
         *ngFor="let card of portfolio3DScene.showCaseCardList"
       >
         <div class="card bg-dark text-white h-100">
-          <img
-            class="card-img-top"
-            [src]="card.imageUrl"
-            [alt]="card.altText"
-            loading="lazy"
-          />
+          <ng-container *ngIf="card.imageUrl">
+            <app-portfolio-image-loader
+              [src]="card.imageUrl!"
+              [alt]="card.altText!"
+              [width]="304"
+              [height]="171"
+            ></app-portfolio-image-loader>
+          </ng-container>
           <div class="card-body">
             <h5 class="card-title fw-bold">{{ card.title }}</h5>
             <p class="card-text text-secondary">{{ card.description }}</p>

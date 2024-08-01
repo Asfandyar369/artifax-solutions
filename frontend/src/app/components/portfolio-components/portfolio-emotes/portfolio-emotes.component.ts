@@ -1,14 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { PortfolioShowcase } from '../../../../interface/PortfolioShowcase';
 import { animate, style, transition, trigger } from '@angular/animations';
-import { NgClass, NgFor, NgIf } from '@angular/common';
+import { NgClass, NgFor, NgIf, NgOptimizedImage } from '@angular/common';
 import { PortfolioShowcaseCard } from '../../../../interface/PortfolioShowcase';
+import { PortfolioImageLoaderComponent } from "../../common-components/portfolio-image-loader/portfolio-image-loader.component";
 
 
 @Component({
   selector: 'app-portfolio-emotes',
   standalone: true,
-  imports: [NgIf, NgFor, NgClass],
+  imports: [NgIf, NgFor, NgClass, NgOptimizedImage, PortfolioImageLoaderComponent],
   templateUrl: './portfolio-emotes.component.html',
   styleUrl: './portfolio-emotes.component.css',
   animations: [

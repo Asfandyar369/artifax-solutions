@@ -1,4 +1,4 @@
-import { NgIf, NgOptimizedImage } from '@angular/common';
+import { NgClass, NgIf, NgOptimizedImage } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { PortfolioShowcase } from '../../../../interface/PortfolioShowcase';
 import { DynamicSelection } from '../../../../interface/DynamicSelection';
@@ -6,7 +6,7 @@ import { DynamicSelection } from '../../../../interface/DynamicSelection';
 @Component({
   selector: 'app-header-banner',
   standalone: true,
-  imports: [NgIf, NgOptimizedImage],
+  imports: [NgIf, NgOptimizedImage, NgClass],
   templateUrl: './header-banner.component.html',
   styleUrl: './header-banner.component.css'
 })
@@ -94,6 +94,20 @@ export class HeaderBannerComponent {
         title: "Customers",
         altText: "Customers Banner",
         imageUrl: "https://streamerstation.com/wp-content/uploads/2024/02/customers-header-banner.jpg"
+      }
+    } else if (this.headerBannerComponent?.contact) {
+      this.headerBanner = {
+        id: 1,
+        title: "Contact",
+        altText: "Contact Banner",
+        imageUrl: "https://streamerstation.com/wp-content/uploads/2024/02/contact-header-banner.jpg"
+      }
+    } else if (this.headerBannerComponent?.verifyDesigners) {
+      this.headerBanner = {
+        id: 1,
+        title: "Affiliated Designers",
+        altText: "Verify Designers Banner",
+        imageUrl: "https://streamerstation.com/wp-content/uploads/2024/02/affiliated-designers-header-banner.jpg"
       }
     }
   }

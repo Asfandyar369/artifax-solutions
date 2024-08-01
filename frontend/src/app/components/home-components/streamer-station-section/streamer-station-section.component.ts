@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { NgFor, NgIf } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import { NgbCarouselModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgFor, NgIf, NgOptimizedImage } from '@angular/common';
+import { RouterLink, RouterModule } from '@angular/router';
 import { StreamerSection } from '../../../../interface/StreamerSection';
 
 @Component({
   selector: 'app-streamer-station-section',
   standalone: true,
-  imports: [NgbModule, NgIf, NgFor, RouterModule],
+  imports: [NgbCarouselModule, NgIf, NgFor, RouterLink, NgOptimizedImage],
   templateUrl: './streamer-station-section.component.html',
   styleUrl: './streamer-station-section.component.css'
 })

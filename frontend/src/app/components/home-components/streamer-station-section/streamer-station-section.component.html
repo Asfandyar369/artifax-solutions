@@ -9,22 +9,22 @@
         >
           <ng-template
             ngbSlide
-            *ngFor="let imageUrl of streamerSection.carouselImages"
+            *ngFor="
+              let imageUrl of streamerSection.carouselImages;
+              let i = index
+            "
           >
-            <img [src]="imageUrl" class="img-fluid" alt="Carousel Image" />
+            <img
+              [priority]="i === 0"
+              alt="Carousel Image"
+              [ngSrc]="imageUrl"
+              class="img-fluid"
+              decoding="async"
+              height="609"
+              width="609"
+            />
           </ng-template>
         </ngb-carousel>
-      </div>
-      <div *ngIf="!streamerSection.carouselImages?.length">
-        <!-- Fallback text or image -->
-        <img
-          src="/path/to/default-image.jpg"
-          class="img-fluid"
-          alt="Default Image"
-        />
-        <p class="text-white">
-          Default text for carousel when no images are available.
-        </p>
       </div>
     </div>
     <div class="col-lg-5 ps-4">

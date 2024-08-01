@@ -1,14 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { PortfolioShowcase } from '../../../../interface/PortfolioShowcase';
-import { NgClass, NgFor, NgIf } from '@angular/common';
+import { NgClass, NgFor, NgIf, NgOptimizedImage } from '@angular/common';
 import { trigger, transition, style, animate } from '@angular/animations';
 import { PortfolioShowcaseCard } from '../../../../interface/PortfolioShowcase';
+import { LoaderComponent } from '../../common-components/loader/loader.component';
+import { PortfolioImageLoaderComponent } from "../../common-components/portfolio-image-loader/portfolio-image-loader.component";
 
 
 @Component({
   selector: 'app-portfolio-pfps',
   standalone: true,
-  imports: [NgIf, NgFor, NgClass],
+  imports: [NgIf, NgFor, NgClass, NgOptimizedImage, LoaderComponent, PortfolioImageLoaderComponent],
   templateUrl: './portfolio-pfps.component.html',
   styleUrls: ['./portfolio-pfps.component.css'],
   animations: [
@@ -134,6 +136,7 @@ export class PortfolioPFPsComponent implements OnInit {
     };
     this.filteredCardList = this.PortfolioPFPs.showCaseCardList;
   }
+
 
   filterCards(option: string): void {
     this.activeFilter = option;

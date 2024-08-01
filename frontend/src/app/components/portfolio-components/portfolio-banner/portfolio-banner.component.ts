@@ -1,14 +1,15 @@
 import { Component, OnInit } from '@angular/core';
-import { NgClass, NgFor, NgIf } from '@angular/common';
+import { NgClass, NgFor, NgIf, NgOptimizedImage } from '@angular/common';
 import { animate, style, transition, trigger } from '@angular/animations';
 import { PortfolioShowcase } from '../../../../interface/PortfolioShowcase';
 import { PortfolioShowcaseCard } from '../../../../interface/PortfolioShowcase';
+import { PortfolioImageLoaderComponent } from "../../common-components/portfolio-image-loader/portfolio-image-loader.component";
 
 
 @Component({
   selector: 'app-portfolio-banner',
   standalone: true,
-  imports: [NgIf, NgFor, NgClass],
+  imports: [NgIf, NgFor, NgClass, NgOptimizedImage, PortfolioImageLoaderComponent],
   templateUrl: './portfolio-banner.component.html',
   styleUrl: './portfolio-banner.component.css',
   animations: [
@@ -148,4 +149,11 @@ export class PortfolioBannerComponent implements OnInit {
     }
   }
 
+  trackByOption(index: number, option: string): string {
+    return option;
+  }
+
+  trackByCard(index: number, card: any): string {
+    return card.id;  // Assuming each card has a unique `id`
+  }
 }

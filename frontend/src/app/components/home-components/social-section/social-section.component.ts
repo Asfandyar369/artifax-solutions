@@ -1,13 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { NgFor, NgIf } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import { NgFor, NgIf, NgOptimizedImage } from '@angular/common';
+import { RouterLink, RouterModule } from '@angular/router';
 import { NgbTooltip } from '@ng-bootstrap/ng-bootstrap';
 import { SocialSection } from '../../../../interface/SocialSection';
 
 @Component({
   selector: 'app-social-section',
   standalone: true,
-  imports: [NgIf, NgFor, RouterModule, NgbTooltip],
+  imports: [NgIf, NgFor, RouterLink, NgbTooltip, NgOptimizedImage],
   templateUrl: './social-section.component.html',
   styleUrl: './social-section.component.css'
 })

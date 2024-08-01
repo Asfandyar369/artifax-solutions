@@ -11,4 +11,6 @@ export interface DynamicSelection {
   checkout?: boolean | undefined | null;
   about?: boolean | undefined | null;
   customers?: boolean | undefined | null;
+  contact?: boolean | undefined | null;
+  verifyDesigners?: boolean | undefined | null;
 }

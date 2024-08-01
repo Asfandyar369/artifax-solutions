@@ -1,14 +1,15 @@
 import { animate, style, transition, trigger } from '@angular/animations';
-import { NgClass, NgFor, NgIf } from '@angular/common';
+import { NgClass, NgFor, NgIf, NgOptimizedImage } from '@angular/common';
 import { Component, Input, OnInit } from '@angular/core';
 import { PortfolioShowcase } from '../../../../interface/PortfolioShowcase';
-import { RouterModule } from '@angular/router';
+import { RouterLink } from '@angular/router';
 import { ButtonList } from '../../../../interface/Footer';
+import { PortfolioImageLoaderComponent } from "../../common-components/portfolio-image-loader/portfolio-image-loader.component";
 
 @Component({
   selector: 'app-portfolio-3-d-scenes',
   standalone: true,
-  imports: [NgIf, NgFor, NgClass, RouterModule],
+  imports: [NgIf, NgFor, NgClass, RouterLink, NgOptimizedImage, PortfolioImageLoaderComponent],
   templateUrl: './portfolio-3-d-scenes.component.html',
   styleUrls: ['./portfolio-3-d-scenes.component.css'],
   animations: [

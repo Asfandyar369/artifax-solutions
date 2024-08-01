@@ -1,0 +1,39 @@
+<div class="container-fluid bg-black pb-5">
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-10">
+      <ul class="timeline">
+        <li
+          *ngFor="let event of timelineEvents; let i = index"
+          [class.active]="i <= currentScrollPosition"
+          [ngClass]="{
+            'timeline-item-right': i % 2 === 0,
+            'timeline-item-left': i % 2 !== 0
+          }"
+          class="timeline-item"
+        >
+          <div class="timeline-date">
+            <p class="grey fw-bold">
+              {{ event.date }}
+            </p>
+          </div>
+          <div
+            class="timeline-badge d-flex justify-content-center align-items-center"
+          >
+            <i class="bi bi-pencil-fill text-white"></i>
+          </div>
+          <div class="timeline-panel">
+            <div class="timeline-heading">
+              <h4 class="elementor-heading-title">{{ event.title }}</h4>
+            </div>
+            <div class="timeline-body">
+              <p>{{ event.content }}</p>
+              <div class="button">
+                <button class="btn btn-success">Read More</button>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

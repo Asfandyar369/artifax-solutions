@@ -1,0 +1,63 @@
+<div class="container-fluid bg-black pb-5">
+  <div class="row justify-content-center my-3">
+    <div class="col-12 col-md-8">
+      <div class="section-title section-title--2 text-center">
+        <span class="sub-title">Verify Affiliated Designer</span>
+        <h1 class="title rbt-section-title">
+          <span class="text-white">Our Designers</span>
+        </h1>
+        <p class="grey fw-bold mx-auto" style="max-width: 430px;">
+          Verify Our Affiliated Designers And Get The Work Done By The
+          Professional Designers
+        </p>
+      </div>
+      <input
+        type="text"
+        class="form-control bg-transparent text-white fw-medium"
+        (input)="searchUsers()"
+        placeholder="Search..."
+        [(ngModel)]="searchQuery"
+        style="padding-top: .75rem; padding-bottom: .75rem;"
+      />
+    </div>
+  </div>
+  <div class="row justify-content-center">
+    <div class="col-12 col-md-8">
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th>Username</th>
+            <th>
+              Affiliated
+              <i class="bi bi-check-circle-fill"></i>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Display empty rows when there's no search query -->
+          <ng-container *ngIf="searchQuery.length === 0">
+            <tr>
+              <td colspan="2">&nbsp;</td>
+            </tr>
+          </ng-container>
+
+          <!-- Display user data -->
+          <ng-container *ngIf="searchQuery.length > 0">
+            <tr *ngFor="let user of filteredUsers">
+              <td>{{ user.username }}</td>
+              <td>
+                {{ user.affiliated }}
+                <i class="bi bi-check-circle-fill"></i>
+              </td>
+            </tr>
+
+            <!-- No records found message -->
+            <tr *ngIf="!hasResults">
+              <td colspan="2" class="text-center">No records found</td>
+            </tr>
+          </ng-container>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

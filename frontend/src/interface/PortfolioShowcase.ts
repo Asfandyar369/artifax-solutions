@@ -14,4 +14,6 @@ export interface PortfolioShowcaseCard {
   altText: string | null | undefined;
   title: string | null | undefined;
   description: string | null | undefined;
+  width?: number;
+  height?: number;
 }

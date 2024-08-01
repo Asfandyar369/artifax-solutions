@@ -11,6 +11,9 @@ import { CartComponent } from './pages/shop/cart/cart.component';
 import { CheckoutComponent } from './pages/shop/checkout/checkout.component';
 import { AboutComponent } from './pages/about/about.component';
 import { CustomersComponent } from './pages/about/customers/customers.component';
+import { BlogsComponent } from './pages/blogs/blogs.component';
+import { ContactComponent } from './pages/contact/contact.component';
+import { VerifyDesignersComponent } from './pages/verify-designers/verify-designers.component';
 const routes = {
   home: 'home',
   portfolio: 'portfolio',
@@ -24,6 +27,9 @@ const routes = {
   checkout: 'checkout',
   about: 'about',
   customers: 'customers',
+  blogs: 'blogs',
+  contact: 'contact',
+  verifyDesigners: 'verify-designers'
 };
 export const appRoutes: Routes = [
   {
@@ -78,6 +84,18 @@ export const appRoutes: Routes = [
   {
     path: routes.customers,
     component: CustomersComponent
+  },
+  {
+    path: routes.blogs,
+    component: BlogsComponent
+  },
+  {
+    path: routes.contact,
+    component: ContactComponent
+  },
+  {
+    path: routes.verifyDesigners,
+    component: VerifyDesignersComponent
   },
   {
     path: '**', redirectTo: '/home'

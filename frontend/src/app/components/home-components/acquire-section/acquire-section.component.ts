@@ -1,13 +1,14 @@
 import { Component, OnInit } from '@angular/core';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { NgFor, NgIf } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import { NgbCarouselModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgFor, NgIf, NgOptimizedImage } from '@angular/common';
+import { RouterLink, RouterModule } from '@angular/router';
 import { AcquireSection } from '../../../../interface/AcquireSection';
+import { PortfolioImageLoaderComponent } from "../../common-components/portfolio-image-loader/portfolio-image-loader.component";
 
 @Component({
   selector: 'app-acquire-section',
   standalone: true,
-  imports: [NgbModule, NgFor, RouterModule, NgIf],
+  imports: [NgbCarouselModule, NgFor, RouterLink, NgIf, NgOptimizedImage, PortfolioImageLoaderComponent],
   templateUrl: './acquire-section.component.html',
   styleUrl: './acquire-section.component.css'
 })

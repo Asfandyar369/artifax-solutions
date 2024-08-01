@@ -1,14 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { PortfolioShowcase } from '../../../../interface/PortfolioShowcase';
-import { NgClass, NgFor, NgIf } from '@angular/common';
+import { NgClass, NgFor, NgIf, NgOptimizedImage } from '@angular/common';
 import { PortfolioShowcaseCard } from '../../../../interface/PortfolioShowcase';
 import { animate, style, transition, trigger } from '@angular/animations';
+import { PortfolioImageLoaderComponent } from "../../common-components/portfolio-image-loader/portfolio-image-loader.component";
 
 
 @Component({
   selector: 'app-portfolio-models',
   standalone: true,
-  imports: [NgIf, NgFor, NgClass],
+  imports: [NgIf, NgFor, NgClass, NgOptimizedImage, PortfolioImageLoaderComponent],
   templateUrl: './portfolio-models.component.html',
   styleUrl: './portfolio-models.component.css',
   animations: [
