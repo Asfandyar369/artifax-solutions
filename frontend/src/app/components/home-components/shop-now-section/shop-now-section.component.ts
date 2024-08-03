@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { NgFor, NgIf, NgOptimizedImage } from '@angular/common';
+import { NgFor, NgIf } from '@angular/common';
 import { ShopNowSection } from '../../../../interface/ShopNowSection';
+import { LazyLoadImageModule } from 'ng-lazyload-image';
 
 @Component({
   selector: 'app-shop-now-section',
   standalone: true,
-  imports: [RouterLink, NgIf, NgFor, NgOptimizedImage],
+  imports: [RouterLink, NgIf, NgFor, LazyLoadImageModule],
   templateUrl: './shop-now-section.component.html',
   styleUrl: './shop-now-section.component.css'
 })
@@ -32,8 +33,7 @@ export class ShopNowSectionComponent implements OnInit {
           "link": "https://streamerstation.com/product/twitch-banner/",
           "title": "Twitch Banner",
           "priceRange": "$70.00 - $1,200.00",
-          width: 300,
-          height: 169,
+
         },
         {
           "id": 2,
@@ -42,8 +42,6 @@ export class ShopNowSectionComponent implements OnInit {
           "link": "https://streamerstation.com/product/twitch-banner/",
           "title": "Emotes",
           "priceRange": "$60.00 - $300.00",
-          width: 300,
-          height: 300,
         },
         {
           "id": 3,
@@ -52,8 +50,6 @@ export class ShopNowSectionComponent implements OnInit {
           "link": "https://streamerstation.com/product/twitch-banner/",
           "title": "PFP",
           "priceRange": "$70.00 - $100.00",
-          width: 300,
-          height: 300,
         },
         {
           "id": 4,
@@ -62,8 +58,7 @@ export class ShopNowSectionComponent implements OnInit {
           "link": "https://streamerstation.com/product/twitch-banner/",
           "title": "Screen",
           "priceRange": "$70.00 - $100.00",
-          width: 300,
-          height: 169,
+
         },
         {
           "id": 5,
@@ -72,8 +67,7 @@ export class ShopNowSectionComponent implements OnInit {
           "link": "https://streamerstation.com/product/twitch-banner/",
           "title": "Twitch Banner",
           "priceRange": "$70.00 - $100.00",
-          width: 300,
-          height: 169,
+
         },
         {
           "id": 6,
@@ -82,8 +76,6 @@ export class ShopNowSectionComponent implements OnInit {
           "link": "https://streamerstation.com/product/twitch-banner/",
           "title": "Vtuber Design 2D",
           "priceRange": "$250.00 - $700.00",
-          width: 300,
-          height: 300,
         },
         {
           "id": 7,
@@ -92,8 +84,6 @@ export class ShopNowSectionComponent implements OnInit {
           "link": "https://streamerstation.com/product/twitch-banner/",
           "title": "Vtuber Design 3D",
           "priceRange": "$450.00 - $1,000.00",
-          width: 300,
-          height: 300,
         },
         {
           "id": 8,
@@ -102,8 +92,7 @@ export class ShopNowSectionComponent implements OnInit {
           "link": "https://streamerstation.com/product/twitch-banner/",
           "title": "3D Scene",
           "priceRange": "$70.00 - $100.00",
-          width: 300,
-          height: 169,
+
         }
       ]
     };

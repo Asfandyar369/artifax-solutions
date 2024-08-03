@@ -13,6 +13,7 @@ export interface AcquireSectionSlide {
   id: number | undefined | null;
   imageUrl: string | undefined | null;
   altText: string | undefined | null;
+  placeholder?: string | undefined | null;
 }
 
 export interface AcquireSectionUsefulLink {

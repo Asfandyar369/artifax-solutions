@@ -12,13 +12,11 @@
             *ngFor="let imageUrl of expertsSection.carouselImages"
           >
             <img
-              [ngSrc]="imageUrl"
-              decoding="async"
-              width="609"
-              height="609"
+              [defaultImage]="imageUrl.placeholder!"
+              [lazyLoad]="imageUrl.imageUrl!"
+              [alt]="imageUrl.altText!"
               class="img-fluid"
-              alt="Carousel Image"
-              priority
+              decoding="async"
             />
           </ng-template>
         </ngb-carousel>

@@ -1,19 +1,20 @@
 import { Component, OnInit } from '@angular/core';
-import { NgbCarouselModule, NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { NgFor, NgIf, NgOptimizedImage } from '@angular/common';
-import { RouterLink, RouterModule } from '@angular/router';
+import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
+import { NgClass, NgFor, NgIf } from '@angular/common';
+import { RouterLink } from '@angular/router';
 import { AcquireSection } from '../../../../interface/AcquireSection';
-import { PortfolioImageLoaderComponent } from "../../common-components/portfolio-image-loader/portfolio-image-loader.component";
+import { LazyLoadImageModule } from 'ng-lazyload-image';
 
 @Component({
   selector: 'app-acquire-section',
   standalone: true,
-  imports: [NgbCarouselModule, NgFor, RouterLink, NgIf, NgOptimizedImage, PortfolioImageLoaderComponent],
+  imports: [NgbCarouselModule, NgFor, RouterLink, NgIf, LazyLoadImageModule, NgClass],
   templateUrl: './acquire-section.component.html',
   styleUrl: './acquire-section.component.css'
 })
 export class AcquireSectionComponent implements OnInit {
   acquireSection: AcquireSection | undefined | null;
+  activeLink: string | null = null;
 
   constructor() { }
 
@@ -29,18 +30,21 @@ export class AcquireSectionComponent implements OnInit {
       "carouselSlides": [
         {
           "id": 1,
-          "imageUrl": "https://cdn-gepmfkb.nitrocdn.com/WYEremhYGNlHzmKefSTYSkktLYZvoCNY/assets/images/optimized/rev-421e137/streamerstation.com/wp-content/uploads/2024/02/static-pfp-home-6.jpg",
-          "altText": "Static PFP Angry Dinosaur stand in front of sunset"
+          "imageUrl": "images/static-pfp-home-4.jpg",
+          "altText": "Static PFP Angry Dinosaur stand in front of sunset",
+          placeholder: "images/static-pfp-home-default-4.jpg"
         },
         {
           "id": 2,
-          "imageUrl": "https://cdn-gepmfkb.nitrocdn.com/WYEremhYGNlHzmKefSTYSkktLYZvoCNY/assets/images/optimized/rev-421e137/streamerstation.com/wp-content/uploads/2024/02/static-pfp-home-4.jpg",
-          "altText": "Static pfp A guy transform a ghost with dark scary background"
+          "imageUrl": "images/static-pfp-home-5.jpg",
+          "altText": "Static pfp A guy transform a ghost with dark scary background",
+          placeholder: "images/static-pfp-home-default-5.jpg"
         },
         {
           "id": 3,
-          "imageUrl": "https://cdn-gepmfkb.nitrocdn.com/WYEremhYGNlHzmKefSTYSkktLYZvoCNY/assets/images/optimized/rev-421e137/streamerstation.com/wp-content/uploads/2024/02/static-pfp-home-5.jpg",
-          "altText": "Static pfp A guy with glasses reading a book in library"
+          "imageUrl": "images/static-pfp-home-6.jpg",
+          "altText": "Static pfp A guy with glasses reading a book in library",
+          placeholder: "images/static-pfp-home-default-6.jpg"
         }
       ],
       "usefulLinks": [
@@ -69,4 +73,9 @@ export class AcquireSectionComponent implements OnInit {
       ]
     };
   }
+
+  public setActiveLink(linkText: string): void {
+    this.activeLink = linkText;
+  }
+
 }

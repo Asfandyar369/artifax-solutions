@@ -42,8 +42,9 @@
                       class="img-fluid w-100"
                       [alt]="item.altText"
                       decoding="async"
-                      width="350"
+                      [priority]="i === 0"
                       height="196"
+                      width="350"
                     />
                     <figcaption class="mt-3 ms-3">
                       <h5 class="text-white">{{ item.title }}</h5>

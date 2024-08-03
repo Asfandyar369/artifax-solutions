@@ -7,17 +7,24 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
+    background-position: center;
   "
 >
-  <div class="row justify-content-evenly py-5">
+  <div class="row py-5 justify-content-center">
     <div
-      class="col-12 col-sm-6 col-md-4 col-lg-2 mb-4 text-center"
-      *ngFor="let counter of counterCardsSection.counterCards"
+      class="col-6 col-md-4 col-lg-2 mb-4 text-center"
+      *ngFor="let counter of counters; let i = index"
+      style="padding-right: 19rem"
     >
-      <div class="card bg-dark text-white py-5 h-100">
-        <i class="{{ counter.icon }} fs-1"></i>
-        <h2 class="counter text-white">{{ counter.countValue }}</h2>
-        <p class="text-secondary">{{ counter.label }}</p>
+      <div
+        class="card bg-dark text-white d-flex flex-column align-items-center py-5 h-100 rounded-3"
+        style="width: 18rem"
+      >
+        <i class="{{ counter.icon }} fs-1 mb-3 elementor-heading-title"></i>
+        <h1 class="counter text-white mb-2 title">
+          {{ counter.currentValue + "+" }}
+        </h1>
+        <p class="text-secondary mb-0 fs-5 fw-medium">{{ counter.label }}</p>
       </div>
     </div>
   </div>

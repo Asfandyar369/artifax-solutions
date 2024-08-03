@@ -16,13 +16,11 @@
             *ngFor="let slide of acquireSection?.carouselSlides; let i = index"
           >
             <img
-              [ngSrc]="slide.imageUrl!"
+              [defaultImage]="slide.placeholder!"
+              [lazyLoad]="slide.imageUrl!"
               [alt]="slide.altText"
-              [priority]="i === 0"
               class="img-fluid"
               decoding="async"
-              width="600"
-              height="600"
             />
           </ng-template>
         </ngb-carousel>
@@ -30,7 +28,7 @@
     </div>
     <div class="col-lg-5 ps-4">
       <div class="elementor-widget-wrap">
-        <div class="elementor-element">
+        <div class="elementor-element mb-5">
           <div class="section-title mb-4">
             <span class="sub-title">{{ acquireSection.subTitle }}</span>
             <h1 class="text-white text-capitalize mt-5">
@@ -39,18 +37,22 @@
             <p class="grey mt-5">{{ acquireSection.description }}</p>
           </div>
         </div>
-        <div class="row my-5" *ngFor="let link of acquireSection?.usefulLinks">
-          <a [href]="link.url" class="text-white green-line fw-bold">{{
-            link.linkText
-          }}</a>
+        <div class="row my-3" *ngFor="let link of acquireSection?.usefulLinks">
+          <button
+            class="text-white green-line fw-bold border-0 bg-transparent text-start"
+            [ngClass]="{ active: link.linkText === activeLink }"
+            (click)="setActiveLink(link.linkText!)"
+          >
+            {{ link.linkText }}
+          </button>
         </div>
         <div class="mt-5" *ngFor="let button of acquireSection?.callToActions">
-          <button
-            class="btn rounded-pill btn-dark text-white fw-bolder border px-4 py-3 text-uppercase"
+          <a
+            class="btn rounded-pill btn-dark text-white fw-bolder border py-3 text-uppercase"
             [routerLink]="button.buttonUrl"
           >
             {{ button.buttonText }}
-          </button>
+          </a>
         </div>
       </div>
     </div>

@@ -6,14 +6,15 @@
   >
     <!-- Image Element using NgOptimizedImage -->
     <img
-      [ngSrc]="headerBanner.imageUrl!"
       class="img-fluid position-absolute top-0 start-0 h-100 w-100"
+      [ngSrc]="headerBanner.imageUrl!"
       fill
+      (load)="onLoad(headerBanner.imageUrl!)"
       priority
       decoding="async"
       [alt]="headerBanner.title"
     />
-
+    <app-loader *ngIf="isLoading" class="position-absolute top-50 start-50"></app-loader>
     <!-- Overlay -->
     <div
       class="overlay position-absolute top-0 start-0 w-100 h-100"
@@ -23,7 +24,7 @@
     <!-- Large Screen Title -->
     <div class="row justify-content-center position-relative d-none d-lg-flex">
       <div class="col-12 text-center" style="padding-top: 3rem; z-index: 2">
-        <h1 class="elementor-heading-title fw-bold display-1 text-white">
+        <h1 class="elementor-heading-title fw-bold display-1">
           {{ headerBanner.title }}
         </h1>
       </div>
@@ -32,7 +33,7 @@
     <!-- Small Screen Title -->
     <div class="row justify-content-center position-relative d-lg-none d-flex">
       <div class="col-12 text-center" style="padding-top: 6rem; z-index: 2">
-        <h1 class="elementor-heading-title fw-bold display-4 text-white">
+        <h1 class="elementor-heading-title fw-bold display-4">
           {{ headerBanner.title }}
         </h1>
       </div>

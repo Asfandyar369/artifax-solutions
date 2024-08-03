@@ -14,6 +14,5 @@ export interface ShopNowCardSection {
   link: string | null | undefined;
   title: string | null | undefined;
   priceRange: string | null | undefined;
-  width: number | null | undefined;
-  height: number | null | undefined;
+  placeholder?: string | null | undefined;
 }

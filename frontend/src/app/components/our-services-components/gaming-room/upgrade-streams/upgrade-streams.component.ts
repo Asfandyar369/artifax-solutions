@@ -69,7 +69,11 @@ export class UpgradeStreamsComponent implements OnInit {
         "subTitle": "Get To Know",
         "description": "We're a team of passionate individuals dedicated to helping streamers succeed. Our goal is to provide you with the tools and support you need to thrive in the world of streaming.",
         "carouselImages": [
-          "https://streamerstation.com/wp-content/uploads/2024/02/static-pfp-about-2-1024x1024.jpg"
+          {
+            "id": 1,
+            "altText": "Streamer Station About Us Banner",
+            "imageUrl": "https://streamerstation.com/wp-content/uploads/2024/02/static-pfp-about-2-1024x1024.jpg",
+          }
         ],
         "buttonText": null,
         "buttonLink": null,
@@ -82,7 +86,7 @@ export class UpgradeStreamsComponent implements OnInit {
           "We understand the unique challenges of building a successful streaming experience. We take the time to get to know our clients and understand their needs, so we can create a customized solution that works for them.",
         ],
       };
-      this.image = this.upgradeStreams?.carouselImages![0];
+      this.image = this.upgradeStreams.carouselImages![0].imageUrl!;
     }
     // Initialize textVisible with the same number of elements as headings
     this.textVisible = this.upgradeStreams?.headings!.map(() => false) || [];

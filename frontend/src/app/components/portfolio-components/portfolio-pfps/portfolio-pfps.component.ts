@@ -50,49 +50,49 @@ export class PortfolioPFPsComponent implements OnInit {
       "showCaseCardList": [
         {
           "id": 1,
-          "imageUrl": "https://streamerstation.com/wp-content/uploads/2024/02/static-pfp-portfolio-4.jpg",
+          "imageUrl": "https://cdn-gepmfkb.nitrocdn.com/WYEremhYGNlHzmKefSTYSkktLYZvoCNY/assets/images/optimized/rev-421e137/streamerstation.com/wp-content/uploads/2024/02/static-pfp-portfolio-4.jpg",
           "altText": "Static pfp",
           "title": "PFP",
           "description": "Static"
         },
         {
           "id": 2,
-          "imageUrl": "https://streamerstation.com/wp-content/uploads/2024/02/static-pfp-portfolio-1.jpg",
+          "imageUrl": "https://cdn-gepmfkb.nitrocdn.com/WYEremhYGNlHzmKefSTYSkktLYZvoCNY/assets/images/optimized/rev-421e137/streamerstation.com/wp-content/uploads/2024/02/static-pfp-portfolio-1.jpg",
           "altText": "Static pfp",
           "title": "PFP",
           "description": "Static"
         },
         {
           "id": 3,
-          "imageUrl": "https://streamerstation.com/wp-content/uploads/2024/02/static-pfp-portfolio-3.jpg",
+          "imageUrl": "https://cdn-gepmfkb.nitrocdn.com/WYEremhYGNlHzmKefSTYSkktLYZvoCNY/assets/images/optimized/rev-421e137/streamerstation.com/wp-content/uploads/2024/02/static-pfp-portfolio-3.jpg",
           "altText": "Static pfp",
           "title": "PFP",
           "description": "Static"
         },
         {
           "id": 4,
-          "imageUrl": "https://streamerstation.com/wp-content/uploads/2024/02/static-pfp-portfolio-2.jpg",
+          "imageUrl": "https://cdn-gepmfkb.nitrocdn.com/WYEremhYGNlHzmKefSTYSkktLYZvoCNY/assets/images/optimized/rev-421e137/streamerstation.com/wp-content/uploads/2024/02/static-pfp-portfolio-2.jpg",
           "altText": "Static pfp",
           "title": "PFP",
           "description": "Static"
         },
         {
           "id": 5,
-          "imageUrl": "https://streamerstation.com/wp-content/uploads/2024/02/animated-2d-full-body-model-portfolio-1.gif",
+          "imageUrl": "https://cdn-gepmfkb.nitrocdn.com/WYEremhYGNlHzmKefSTYSkktLYZvoCNY/assets/images/optimized/rev-421e137/streamerstation.com/wp-content/uploads/2024/02/animated-2d-full-body-model-portfolio-1.gif",
           "altText": "Animated pfp",
           "title": "PFP",
           "description": "Animated"
         },
         {
           "id": 6,
-          "imageUrl": "https://streamerstation.com/wp-content/uploads/2024/02/animated-2d-full-body-model-portfolio-2.gif",
+          "imageUrl": "https://cdn-gepmfkb.nitrocdn.com/WYEremhYGNlHzmKefSTYSkktLYZvoCNY/assets/images/optimized/rev-421e137/streamerstation.com/wp-content/uploads/2024/02/animated-2d-full-body-model-portfolio-2.gif",
           "altText": "Animated pfp",
           "title": "PFP",
           "description": "Animated"
         },
         {
           "id": 7,
-          "imageUrl": "https://streamerstation.com/wp-content/uploads/2024/02/animated-2d-full-body-model-portfolio-3.gif",
+          "imageUrl": "https://cdn-gepmfkb.nitrocdn.com/WYEremhYGNlHzmKefSTYSkktLYZvoCNY/assets/images/optimized/rev-421e137/streamerstation.com/wp-content/uploads/2024/02/animated-2d-full-body-model-portfolio-3.gif",
           "altText": "Animated pfp",
           "title": "PFP",
           "description": "Animated"

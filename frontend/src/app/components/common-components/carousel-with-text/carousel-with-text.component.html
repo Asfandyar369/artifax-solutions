@@ -44,13 +44,13 @@
           </div>
         </div>
         <div class="mt-4" [ngClass]="{ 'mt-5': carousel?.graphicDesign || carousel?.vtuberModel }">
-          <button
+          <a
             class="btn rounded-pill btn-dark text-white fw-bolder border col-6 col-md-3 col-lg-4 py-3 text-uppercase"
             [ngClass]="{ 'col-lg-5 col-8': carousel?.graphicDesign }"
             [routerLink]="data.buttonLink"
           >
             {{ data.buttonText }}
-          </button>
+          </a>
         </div>
       </div>
     </div>

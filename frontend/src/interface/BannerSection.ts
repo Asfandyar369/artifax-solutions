@@ -7,6 +7,7 @@ export interface Carousel {
 export interface CarouselItem {
   id: number
   imageUrl: string;
+  placeholderUrl: string;
   title: string;
   description: string;
   buttonText: string;

@@ -6,6 +6,7 @@ export interface BackgroundImage {
 }
 export interface CounterCardsSection {
   id: number | undefined | null
+  currentValue: number | undefined | null
   countValue: number | undefined | null;
   icon: string | undefined | null;
   label: string | undefined | null;

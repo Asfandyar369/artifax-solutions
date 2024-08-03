@@ -5,11 +5,11 @@
     <div class="col-12 col-md-10 col-lg-5">
       <div class="d-flex align-items-center mb-4">
         <img
-          [ngSrc]="socialSection.profileImageUrl!"
+          [lazyLoad]="socialSection.profileImageUrl!"
           [alt]="socialSection.profileImageAltText"
-          class="img-fluid rounded-circle"
-          width="80"
-          height="80"
+          class="img-fluid rounded-3"
+          width="35"
+          height="35"
         />
         <span class="h4 text-white ms-3">{{ socialSection.title }}</span>
       </div>
@@ -19,12 +19,11 @@
           class="col-6 col-sm-4 col-md-3 mb-2"
         >
           <img
+            [defaultImage]="post.placeholder!"
+            [lazyLoad]="post.imageUrl!"
             class="img-fluid rounded"
-            [ngSrc]="post.imageUrl!"
             [alt]="post.altText"
             decoding="async"
-            width="134.25"
-            height="134.25"
           />
         </div>
       </div>

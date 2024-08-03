@@ -1,6 +1,8 @@
+import { AcquireSectionSlide } from "./AcquireSection";
+
 export interface StreamerSection {
   id: number | undefined | null;
-  carouselImages?: string[] | undefined | null;
+  carouselImages?: undefined | null | AcquireSectionSlide[];
   videoUrl?: string[] | undefined | null | string;
   title: string | undefined | null;
   subTitle: string | undefined | null;

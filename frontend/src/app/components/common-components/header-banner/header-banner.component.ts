@@ -2,15 +2,17 @@ import { NgClass, NgIf, NgOptimizedImage } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { PortfolioShowcase } from '../../../../interface/PortfolioShowcase';
 import { DynamicSelection } from '../../../../interface/DynamicSelection';
+import { LoaderComponent } from "../loader/loader.component";
 
 @Component({
   selector: 'app-header-banner',
   standalone: true,
-  imports: [NgIf, NgOptimizedImage, NgClass],
+  imports: [NgIf, NgOptimizedImage, NgClass, LoaderComponent],
   templateUrl: './header-banner.component.html',
   styleUrl: './header-banner.component.css'
 })
 export class HeaderBannerComponent {
+  isLoading: boolean = true;
   headerBanner: PortfolioShowcase | undefined | null;
   @Input() headerBannerComponent: DynamicSelection | undefined | null;
   constructor() { }
@@ -30,21 +32,21 @@ export class HeaderBannerComponent {
         "id": 1,
         "title": "Our Services",
         "altText": "Cyber Ninja banner",
-        "imageUrl": "https://streamerstation.com/wp-content/uploads/2024/02/services-header-banner.jpg"
+        "imageUrl": "https://cdn-gepmfkb.nitrocdn.com/WYEremhYGNlHzmKefSTYSkktLYZvoCNY/assets/images/optimized/rev-421e137/streamerstation.com/wp-content/uploads/2024/02/services-header-banner.jpg"
       };
     } else if (this.headerBannerComponent?.gamingRoom) {
       this.headerBanner = {
         "id": 1,
         "title": "3D Scenes & Gaming Room",
         "altText": "Gaming Room Banner",
-        "imageUrl": "https://streamerstation.com/wp-content/uploads/2024/02/home-3d-scenes-gaming-room-banner.jpg"
+        "imageUrl": "https://cdn-gepmfkb.nitrocdn.com/WYEremhYGNlHzmKefSTYSkktLYZvoCNY/assets/images/optimized/rev-421e137/streamerstation.com/wp-content/uploads/2024/02/home-3d-scenes-gaming-room-banner.jpg"
       }
     } else if (this.headerBannerComponent?.graphicDesign) {
       this.headerBanner = {
         "id": 1,
         "title": "Streaming Graphics Design",
         "altText": "Streaming Graphics Design Banner",
-        "imageUrl": "https://streamerstation.com/wp-content/uploads/2024/02/home-streaming-graphics-design-banner.jpg"
+        "imageUrl": "https://cdn-gepmfkb.nitrocdn.com/WYEremhYGNlHzmKefSTYSkktLYZvoCNY/assets/images/optimized/rev-421e137/streamerstation.com/wp-content/uploads/2024/02/home-streaming-graphics-design-banner.jpg"
       }
     } else if (this.headerBannerComponent?.vtuberModel) {
       this.headerBanner = {
@@ -65,21 +67,21 @@ export class HeaderBannerComponent {
         "id": 1,
         "title": "My Account",
         "altText": "Account Banner",
-        "imageUrl": "https://streamerstation.com/wp-content/uploads/2024/02/my-account-header-banner.jpg"
+        "imageUrl": "images/my-account-header-banner.jpg"
       }
     } else if (this.headerBannerComponent?.cart) {
       this.headerBanner = {
         id: 1,
         title: "Cart",
         altText: "Cart Banner",
-        imageUrl: "https://streamerstation.com/wp-content/uploads/2024/02/Cart-Header-Banner.jpeg"
+        imageUrl: "images/Cart-Header-Banner.jpeg"
       }
     } else if (this.headerBannerComponent?.checkout) {
       this.headerBanner = {
         id: 1,
         title: "Checkout",
         altText: "Checkout Banner",
-        imageUrl: "https://streamerstation.com/wp-content/uploads/2024/02/Checkout-Header-Banner-scaled.jpg"
+        imageUrl: "images/Checkout-Header-Banner-scaled.jpg"
       }
     } else if (this.headerBannerComponent?.about) {
       this.headerBanner = {
@@ -93,23 +95,26 @@ export class HeaderBannerComponent {
         id: 1,
         title: "Customers",
         altText: "Customers Banner",
-        imageUrl: "https://streamerstation.com/wp-content/uploads/2024/02/customers-header-banner.jpg"
+        imageUrl: "https://cdn-gepmfkb.nitrocdn.com/WYEremhYGNlHzmKefSTYSkktLYZvoCNY/assets/images/optimized/rev-421e137/streamerstation.com/wp-content/uploads/2024/02/customers-header-banner.jpg"
       }
     } else if (this.headerBannerComponent?.contact) {
       this.headerBanner = {
         id: 1,
         title: "Contact",
         altText: "Contact Banner",
-        imageUrl: "https://streamerstation.com/wp-content/uploads/2024/02/contact-header-banner.jpg"
+        imageUrl: "https://cdn-gepmfkb.nitrocdn.com/WYEremhYGNlHzmKefSTYSkktLYZvoCNY/assets/images/optimized/rev-421e137/streamerstation.com/wp-content/uploads/2024/02/contact-header-banner.jpg"
       }
     } else if (this.headerBannerComponent?.verifyDesigners) {
       this.headerBanner = {
         id: 1,
         title: "Affiliated Designers",
         altText: "Verify Designers Banner",
-        imageUrl: "https://streamerstation.com/wp-content/uploads/2024/02/affiliated-designers-header-banner.jpg"
+        imageUrl: "https://cdn-gepmfkb.nitrocdn.com/WYEremhYGNlHzmKefSTYSkktLYZvoCNY/assets/images/optimized/rev-421e137/streamerstation.com/wp-content/uploads/2024/02/affiliated-designers-header-banner.jpg"
       }
     }
+  }
+  public onLoad(src: string): void {
+    this.isLoading = false;
   }
 }
 

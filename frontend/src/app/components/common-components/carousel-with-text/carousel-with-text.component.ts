@@ -50,9 +50,9 @@ export class CarouselWithTextComponent implements OnInit {
         "subTitle": "Dive Into 3D Animated Realms",
         "description": "Step into the realm of captivating streams with Streamer Station's dynamic 3D animations. We're all about making your channel stand out from the crowd.",
         "carouselImages": [
-          "https://streamerstation.com/wp-content/uploads/2024/02/static-3d-room-3.jpg",
-          "https://streamerstation.com/wp-content/uploads/2024/02/static-3d-room-2.jpg",
-          "https://streamerstation.com/wp-content/uploads/2024/02/static-3d-room-1.jpg",
+          "https://cdn-gepmfkb.nitrocdn.com/WYEremhYGNlHzmKefSTYSkktLYZvoCNY/assets/images/optimized/rev-421e137/streamerstation.com/wp-content/uploads/2024/02/static-3d-room-2.jpg",
+          "https://cdn-gepmfkb.nitrocdn.com/WYEremhYGNlHzmKefSTYSkktLYZvoCNY/assets/images/optimized/rev-421e137/streamerstation.com/wp-content/uploads/2024/02/static-3d-room-2.jpg",
+          "https://cdn-gepmfkb.nitrocdn.com/WYEremhYGNlHzmKefSTYSkktLYZvoCNY/assets/images/optimized/rev-421e137/streamerstation.com/wp-content/uploads/2024/02/static-3d-room-1.jpg",
         ],
         "buttonText": "Get It Now",
         "buttonLink": "/shop",

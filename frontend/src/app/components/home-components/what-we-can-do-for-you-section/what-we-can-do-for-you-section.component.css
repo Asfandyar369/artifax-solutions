@@ -1,0 +1,59 @@
+/* what-we-can-do-for-you-section.component.css */
+.container-fluid {
+  padding-top: 9rem;
+}
+
+.section-title {
+  margin-bottom: 2rem;
+}
+
+.section-title .sub-title {
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: #f8f9fa;
+}
+
+.title {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.row {
+  display: flex; /* Ensure the row uses flexbox for consistent alignment */
+  flex-wrap: wrap;
+}
+
+.card {
+  transition: transform 0.3s, box-shadow 0.3s;
+  cursor: pointer;
+  border: none;
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* Ensure card takes full height */
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.card-title {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+.card-text {
+  font-size: 1rem;
+  color: #ccc;
+}
+
+.text-muted {
+  color: #6c757d !important;
+}

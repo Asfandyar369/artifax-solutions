@@ -4,6 +4,7 @@ export interface PortfolioShowcase {
   title?: string | null | undefined;
   description?: string | null | undefined;
   imageUrl?: string | undefined | null;
+  placeholder?: string | undefined | null;
   altText?: string | undefined | null;
   filterOptions?: string[] | undefined | null;
   showCaseCardList?: PortfolioShowcaseCard[] | undefined | null;

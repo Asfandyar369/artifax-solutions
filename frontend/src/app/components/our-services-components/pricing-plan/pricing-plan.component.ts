@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Pricing } from '../../../../interface/Pricing';
 import { NgClass, NgFor, NgIf } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-pricing-plan',
   standalone: true,
-  imports: [NgIf, NgFor, NgClass],
+  imports: [NgIf, NgFor, NgClass, RouterLink],
   templateUrl: './pricing-plan.component.html',
   styleUrl: './pricing-plan.component.css'
 })

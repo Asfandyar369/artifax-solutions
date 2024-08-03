@@ -9,5 +9,6 @@ export interface StreamerFeatureSection {
 export interface Card {
   icon: string | undefined | null;
   title: string | undefined | null;
+  link: string | undefined | null;
   description: string | undefined | null;
 }

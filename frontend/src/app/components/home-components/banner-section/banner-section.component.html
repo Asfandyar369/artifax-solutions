@@ -23,7 +23,8 @@
         [ngClass]="{ active: i === 0 }"
       >
         <img
-          [src]="item.imageUrl"
+          [lazyLoad]="item.imageUrl"
+          [defaultImage]="item.placeholderUrl"
           class="d-block w-100 carousel-image position-absolute"
           alt="home banner"
           decoding="async"

@@ -82,7 +82,7 @@ export class BlogHubSectionComponent implements OnInit {
         },
         {
           "id": 7,
-          "imageUrl": "https://cdn-gepmfkb.nitrocdn.com/WYEremhYGNlHzmKefSTYSkktLYZvoCNY/assets/images/optimized/rev-421e137/streamerstation.com/wp-content/uploads/2024/05/over-the-shoulder-view-of-person-editing-video-300x169.png",
+          "imageUrl": "https://cdn-gepmfkb.nitrocdn.com/WYEremhYGNlHzmKefSTYSkktLYZvoCNY/assets/images/optimized/rev-421e137/streamerstation.com/wp-content/uploads/2024/05/A-streamer-ranking-graph-growing-up-on-number-1-300x169.png",
           "altText": "Over-the-shoulder view of person editing video",
           "title": "The Evolution of Stream Graphics: From Basic to High-Tech",
           "content": "Stream graphics have evolved significantly over the years, moving from basic overlays to sophisticated, high-tech designs. This blog takes you on a journey through the evolution of stream graphics, highlighting key milestones and the technologies that have shaped the industry. Discover how streamers are now using advanced tools and techniques to create...",
@@ -90,7 +90,7 @@ export class BlogHubSectionComponent implements OnInit {
         },
         {
           "id": 8,
-          "imageUrl": "https://cdn-gepmfkb.nitrocdn.com/WYEremhYGNlHzmKefSTYSkktLYZvoCNY/assets/images/optimized/rev-421e137/streamerstation.com/wp-content/uploads/2024/05/stylish-banner-300x169.png",
+          "imageUrl": "https://cdn-gepmfkb.nitrocdn.com/WYEremhYGNlHzmKefSTYSkktLYZvoCNY/assets/images/optimized/rev-421e137/streamerstation.com/wp-content/uploads/2024/05/man-wearing-vr-300x169.png",
           "altText": "Stylish banner",
           "title": "Best Practices for Creating Consistent Stream Branding",
           "content": "Consistent stream branding is crucial for establishing a strong and recognizable presence in the streaming community. This blog outlines best practices for creating cohesive branding across all your stream elements, including overlays, alerts, and transitions. Learn how to develop a unique brand identity that resonates with your audience and sets you apart from the competition...",
@@ -98,7 +98,7 @@ export class BlogHubSectionComponent implements OnInit {
         },
         {
           "id": 9,
-          "imageUrl": "https://cdn-gepmfkb.nitrocdn.com/WYEremhYGNlHzmKefSTYSkktLYZvoCNY/assets/images/optimized/rev-421e137/streamerstation.com/wp-content/uploads/2024/05/colorful-digital-graphics-on-a-screen-300x169.png",
+          "imageUrl": "https://cdn-gepmfkb.nitrocdn.com/WYEremhYGNlHzmKefSTYSkktLYZvoCNY/assets/images/optimized/rev-421e137/streamerstation.com/wp-content/uploads/2024/05/virtual-reality-charachter-300x169.png",
           "altText": "Colorful digital graphics on a screen.",
           "title": "The Importance of Visual Storytelling in Streaming",
           "content": "Visual storytelling is a powerful tool for streamers looking to connect with their audience on a deeper level. This blog explores the importance of using visuals to tell compelling stories during your streams, from creating engaging thumbnails to designing immersive stream overlays. Learn how to leverage visual storytelling techniques to enhance your...",

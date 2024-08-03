@@ -33,7 +33,9 @@
             <h1 class="text-white text-capitalize mt-4">
               {{ customizedServices.title }}
             </h1>
-            <p class="grey fw-bold mt-4">{{ customizedServices.description }}</p>
+            <p class="grey fw-bold mt-4">
+              {{ customizedServices.description }}
+            </p>
           </div>
         </div>
         <div *ngIf="customizedServices.benefitList?.length">
@@ -50,12 +52,12 @@
             class="mt-5"
             *ngFor="let button of customizedServices?.callToActions"
           >
-            <button
+            <a
               class="btn rounded-pill btn-dark text-white fw-bolder border col-7 col-md-4 py-3 text-uppercase"
               [routerLink]="button.buttonUrl"
             >
               {{ button.buttonText }}
-            </button>
+            </a>
           </div>
         </div>
       </div>

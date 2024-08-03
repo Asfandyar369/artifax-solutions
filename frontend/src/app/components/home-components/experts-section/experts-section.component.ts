@@ -1,12 +1,13 @@
-import { NgFor, NgIf, NgOptimizedImage } from '@angular/common';
+import { NgFor, NgIf } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { NgbCarouselModule } from '@ng-bootstrap/ng-bootstrap';
 import { ExpertSection } from '../../../../interface/ExpertSection';
+import { LazyLoadImageModule } from 'ng-lazyload-image';
 
 @Component({
   selector: 'app-experts-section',
   standalone: true,
-  imports: [NgbCarouselModule, NgIf, NgFor, NgOptimizedImage],
+  imports: [NgbCarouselModule, NgIf, NgFor, LazyLoadImageModule],
   templateUrl: './experts-section.component.html',
   styleUrl: './experts-section.component.css'
 })
@@ -23,9 +24,24 @@ export class ExpertsSectionComponent implements OnInit {
     this.expertsSection = {
       "id": 1,
       "carouselImages": [
-        "https://cdn-gepmfkb.nitrocdn.com/WYEremhYGNlHzmKefSTYSkktLYZvoCNY/assets/images/optimized/rev-421e137/streamerstation.com/wp-content/uploads/2024/02/static-pfp-home-7.jpg",
-        "https://cdn-gepmfkb.nitrocdn.com/WYEremhYGNlHzmKefSTYSkktLYZvoCNY/assets/images/optimized/rev-421e137/streamerstation.com/wp-content/uploads/2024/02/static-pfp-home-9.jpg",
-        "https://cdn-gepmfkb.nitrocdn.com/WYEremhYGNlHzmKefSTYSkktLYZvoCNY/assets/images/optimized/rev-421e137/streamerstation.com/wp-content/uploads/2024/02/static-pfp-home-8.jpg"
+        {
+          "id": 1,
+          "imageUrl": "images/static-pfp-home-7.jpg",
+          "altText": "Carousel Image",
+          placeholder: "images/static-pfp-home-7-default.jpg"
+        },
+        {
+          "id": 2,
+          "imageUrl": "images/static-pfp-home-8.jpg",
+          "altText": "Carousel Image",
+          placeholder: "images/static-pfp-home-8-default.jpg"
+        },
+        {
+          "id": 3,
+          "imageUrl": "images/static-pfp-home-9.jpg",
+          "altText": "Carousel Image",
+          placeholder: "images/static-pfp-home-9-default.jpg"
+        }
       ],
       "subtitle": "We Are",
       "title": "Experts!",

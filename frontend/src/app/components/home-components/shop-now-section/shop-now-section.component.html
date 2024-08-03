@@ -21,13 +21,11 @@
     >
       <div class="card bg-transparent py-4 h-100">
         <img
+          [defaultImage]="item.placeholder!"
+          [lazyLoad]="item.imageUrl!"
           class="img-fluid rounded"
-          [ngSrc]="item.imageUrl!"
-          [height]="item.height"
           [alt]="item.altText"
-          [width]="item.width"
           decoding="async"
-          [priority]="item.altText === '2D MODEL'"
         />
         <h5 class="mt-3">
           <a

@@ -9,7 +9,9 @@
         <h2 class="title text-white">
           {{ pricing.title }}
         </h2>
-        <p class="text-secondary mt-3 fs-5 fw-bold">{{ pricing.description }}</p>
+        <p class="text-secondary mt-3 fs-5 fw-bold">
+          {{ pricing.description }}
+        </p>
       </div>
     </div>
   </div>
@@ -26,9 +28,7 @@
           <div class="pricing-header text-center mb-3 border-bottom pb-3">
             <h3 class="text-white">{{ card.title }}</h3>
             <div class="pricing">
-              <h1 class="title price fw-bold">
-                ${{ card.price }}
-              </h1>
+              <h1 class="title price fw-bold">${{ card.price }}</h1>
               <p class="text-secondary fw-bold mb-4">{{ card.description }}</p>
             </div>
           </div>
@@ -44,11 +44,12 @@
             </ul>
           </div>
           <div class="pricing-footer text-center mt-4">
-            <button
-              class="btn rounded-pill btn-dark text-white fw-bold px-4 py-2 text-uppercase pricing-button"
+            <a
+              class="btn rounded-pill btn-dark text-white fw-bold px-5 py-3 text-uppercase pricing-button"
+              [routerLink]="card.buttonLink"
             >
               {{ card.buttonText }}
-            </button>
+            </a>
           </div>
         </div>
       </div>

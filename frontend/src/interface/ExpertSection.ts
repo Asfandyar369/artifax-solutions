@@ -1,6 +1,8 @@
+import { AcquireSectionSlide } from "./AcquireSection";
+
 export interface ExpertSection {
   id: number | undefined | null;
-  carouselImages: string[] | undefined | null;
+  carouselImages: AcquireSectionSlide[] | undefined | null;
   subtitle: string | undefined | null;
   title: string | undefined | null;
   description: string | undefined | null;

@@ -10,12 +10,14 @@
 .progressing-card li {
   color: white !important;
 }
-.progressing-card button {
+a{
+  transition: all 0.5s ease;
+}
+.progressing-card a {
   background-color: white !important;
   color: #32ed22 !important;
-  transition: all 0.3s ease;
 }
-.card button:hover {
+.card a:hover {
   transform: translateY(-5px); /* Lift the button */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add a shadow for depth */
 }

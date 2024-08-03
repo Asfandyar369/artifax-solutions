@@ -49,84 +49,84 @@ export class PortfolioModelsComponent implements OnInit {
       "showCaseCardList": [
         {
           "id": 1,
-          "imageUrl": "https://streamerstation.com/wp-content/uploads/2024/02/static-2d-half-body-model-portfolio-3.jpg",
+          "imageUrl": "https://cdn-gepmfkb.nitrocdn.com/WYEremhYGNlHzmKefSTYSkktLYZvoCNY/assets/images/optimized/rev-421e137/streamerstation.com/wp-content/uploads/2024/02/static-2d-half-body-model-portfolio-3.jpg",
           "altText": "static 2d half body model",
           "title": "Static",
           "description": "2D Models"
         },
         {
           "id": 2,
-          "imageUrl": "https://streamerstation.com/wp-content/uploads/2024/02/static-2d-half-body-model-portfolio-2.jpg",
+          "imageUrl": "https://cdn-gepmfkb.nitrocdn.com/WYEremhYGNlHzmKefSTYSkktLYZvoCNY/assets/images/optimized/rev-421e137/streamerstation.com/wp-content/uploads/2024/02/static-2d-half-body-model-portfolio-2.jpg",
           "altText": "static 2d half body model",
           "title": "Static",
           "description": "2D Models"
         },
         {
           "id": 3,
-          "imageUrl": "https://streamerstation.com/wp-content/uploads/2024/02/static-2d-half-body-model-portfolio-1.jpg",
+          "imageUrl": "https://cdn-gepmfkb.nitrocdn.com/WYEremhYGNlHzmKefSTYSkktLYZvoCNY/assets/images/optimized/rev-421e137/streamerstation.com/wp-content/uploads/2024/02/static-2d-half-body-model-portfolio-1.jpg",
           "altText": "static 2d half body model",
           "title": "Static",
           "description": "2D Models"
         },
         {
           "id": 4,
-          "imageUrl": "https://streamerstation.com/wp-content/uploads/2024/02/animated-2d-full-body-model-portfolio-3.gif",
+          "imageUrl": "https://cdn-gepmfkb.nitrocdn.com/WYEremhYGNlHzmKefSTYSkktLYZvoCNY/assets/images/optimized/rev-421e137/streamerstation.com/wp-content/uploads/2024/02/animated-2d-full-body-model-portfolio-3.gif",
           "altText": "2D ANIMATED",
           "title": "Animated",
           "description": "2D Models"
         },
         {
           "id": 5,
-          "imageUrl": "https://streamerstation.com/wp-content/uploads/2024/02/animated-2d-full-body-model-portfolio-2.gif",
+          "imageUrl": "https://cdn-gepmfkb.nitrocdn.com/WYEremhYGNlHzmKefSTYSkktLYZvoCNY/assets/images/optimized/rev-421e137/streamerstation.com/wp-content/uploads/2024/02/animated-2d-full-body-model-portfolio-2.gif",
           "altText": "2D ANIMATED",
           "title": "Animated",
           "description": "2D Models"
         },
         {
           "id": 6,
-          "imageUrl": "https://streamerstation.com/wp-content/uploads/2024/02/animated-2d-full-body-model-portfolio-1.gif",
+          "imageUrl": "https://cdn-gepmfkb.nitrocdn.com/WYEremhYGNlHzmKefSTYSkktLYZvoCNY/assets/images/optimized/rev-421e137/streamerstation.com/wp-content/uploads/2024/02/animated-2d-full-body-model-portfolio-1.gif",
           "altText": "2D ANIMATED",
           "title": "Animated",
           "description": "2D Models"
         },
         {
           "id": 7,
-          "imageUrl": "https://streamerstation.com/wp-content/uploads/2024/02/static-3d-full-body-model-portfolio-3.jpg",
+          "imageUrl": "https://cdn-gepmfkb.nitrocdn.com/WYEremhYGNlHzmKefSTYSkktLYZvoCNY/assets/images/optimized/rev-421e137/streamerstation.com/wp-content/uploads/2024/02/static-3d-full-body-model-portfolio-3.jpg",
           "altText": "static 3d full body model",
           "title": "Static",
           "description": "3D Models"
         },
         {
           "id": 8,
-          "imageUrl": "https://streamerstation.com/wp-content/uploads/2024/02/static-3d-full-body-model-portfolio-2.jpg",
+          "imageUrl": "https://cdn-gepmfkb.nitrocdn.com/WYEremhYGNlHzmKefSTYSkktLYZvoCNY/assets/images/optimized/rev-421e137/streamerstation.com/wp-content/uploads/2024/02/static-3d-full-body-model-portfolio-2.jpg",
           "altText": "static 3d full body model",
           "title": "Static",
           "description": "3D Models"
         },
         {
           "id": 9,
-          "imageUrl": "https://streamerstation.com/wp-content/uploads/2024/02/static-3d-full-body-model-portfolio-1.jpg",
+          "imageUrl": "https://cdn-gepmfkb.nitrocdn.com/WYEremhYGNlHzmKefSTYSkktLYZvoCNY/assets/images/optimized/rev-421e137/streamerstation.com/wp-content/uploads/2024/02/static-3d-full-body-model-portfolio-1.jpg",
           "altText": "static 3d full body model",
           "title": "Static",
           "description": "3D Models"
         },
         {
           "id": 10,
-          "imageUrl": "https://streamerstation.com/wp-content/uploads/2024/02/animated-3d-full-body-model-portfolio-3.gif",
+          "imageUrl": "https://cdn-gepmfkb.nitrocdn.com/WYEremhYGNlHzmKefSTYSkktLYZvoCNY/assets/images/optimized/rev-421e137/streamerstation.com/wp-content/uploads/2024/02/animated-3d-full-body-model-portfolio-3.gif",
           "altText": "3D ANIMATED",
           "title": "Animated",
           "description": "3D Models"
         },
         {
           "id": 11,
-          "imageUrl": "https://streamerstation.com/wp-content/uploads/2024/02/animated-3d-full-body-model-portfolio-2.gif",
+          "imageUrl": "https://cdn-gepmfkb.nitrocdn.com/WYEremhYGNlHzmKefSTYSkktLYZvoCNY/assets/images/optimized/rev-421e137/streamerstation.com/wp-content/uploads/2024/02/animated-3d-full-body-model-portfolio-2.gif",
           "altText": "3D ANIMATED",
           "title": "Animated",
           "description": "3D Models"
         },
         {
           "id": 12,
-          "imageUrl": "https://streamerstation.com/wp-content/uploads/2024/02/animated-3d-full-body-model-portfolio-1.gif",
+          "imageUrl": "https://cdn-gepmfkb.nitrocdn.com/WYEremhYGNlHzmKefSTYSkktLYZvoCNY/assets/images/optimized/rev-421e137/streamerstation.com/wp-content/uploads/2024/02/animated-3d-full-body-model-portfolio-1.gif",
           "altText": "3D ANIMATED",
           "title": "Animated",
           "description": "3D Models"
