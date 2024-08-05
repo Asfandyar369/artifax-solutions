@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { HeaderBannerComponent } from "../../components/common-components/header-banner/header-banner.component";
-import { ContactFormComponent } from "../../components/contact-components/contact-form/contact-form.component";
+import { HeaderBannerComponent } from "../../shared/components/common/header-banner/header-banner.component";
+import { ContactFormComponent } from "../../shared/components/contact-components/contact-form/contact-form.component";
 
 @Component({
   selector: 'app-contact',

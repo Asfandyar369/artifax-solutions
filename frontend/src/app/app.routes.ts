@@ -1,3 +1,5 @@
+// src/app/app.routes.ts
+
 import { Routes } from '@angular/router';
 import { HomeComponent } from './pages/home/home.component';
 import { PortfolioComponent } from './pages/portfolio/portfolio.component';
@@ -14,23 +16,10 @@ import { CustomersComponent } from './pages/about/customers/customers.component'
 import { BlogsComponent } from './pages/blogs/blogs.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { VerifyDesignersComponent } from './pages/verify-designers/verify-designers.component';
-const routes = {
-  home: 'home',
-  portfolio: 'portfolio',
-  ourServices: 'our-services',
-  threeDScenes: '3d-scenes-gaming-room',
-  streamingGraphicsDesign: "streaming-graphics-design",
-  vtuberModel: "vtuber-model",
-  shop: 'shop',
-  myAccount: 'my-account',
-  cart: 'cart',
-  checkout: 'checkout',
-  about: 'about',
-  customers: 'customers',
-  blogs: 'blogs',
-  contact: 'contact',
-  verifyDesigners: 'verify-designers'
-};
+// Constants
+import { routes } from './constants/routes';
+import { meta } from './constants/meta';
+
 export const appRoutes: Routes = [
   {
     path: '',
@@ -39,65 +28,81 @@ export const appRoutes: Routes = [
   },
   {
     path: routes.home,
-    component: HomeComponent
+    component: HomeComponent,
+    data: meta.home
   },
   {
     path: routes.portfolio,
-    component: PortfolioComponent
+    component: PortfolioComponent,
+    data: meta.ourPortfolio
   },
   {
     path: routes.ourServices,
-    component: OurServicesComponent
+    component: OurServicesComponent,
+    data: meta.ourServices
   },
   {
     path: `${routes.ourServices}/${routes.threeDScenes}`,
-    component: ThreeDScenesGamingRoomComponent
+    component: ThreeDScenesGamingRoomComponent,
+    data: meta.threeDScenes
   },
   {
     path: `${routes.ourServices}/${routes.streamingGraphicsDesign}`,
-    component: StreamingGraphicsDesignComponent
+    component: StreamingGraphicsDesignComponent,
+    data: meta.streamingGraphicsDesign
   },
   {
     path: `${routes.ourServices}/${routes.vtuberModel}`,
-    component: VtuberModelComponent
+    component: VtuberModelComponent,
+    data: meta.vtuberModel
   },
   {
     path: `${routes.shop}`,
-    component: ShopComponent
+    component: ShopComponent,
+    data: meta.shop
   },
   {
     path: routes.myAccount,
-    component: MyAccountComponent
+    component: MyAccountComponent,
+    data: meta.myAccount
   },
   {
     path: routes.cart,
-    component: CartComponent
+    component: CartComponent,
+    data: meta.cart
   },
   {
     path: routes.checkout,
-    component: CheckoutComponent
+    component: CheckoutComponent,
+    data: meta.checkout
   },
   {
     path: routes.about,
-    component: AboutComponent
+    component: AboutComponent,
+    data: meta.about
   },
   {
     path: routes.customers,
-    component: CustomersComponent
+    component: CustomersComponent,
+    data: meta.customers
   },
   {
     path: routes.blogs,
-    component: BlogsComponent
+    component: BlogsComponent,
+    data: meta.blogs
   },
   {
     path: routes.contact,
-    component: ContactComponent
+    component: ContactComponent,
+    data: meta.contact
   },
   {
     path: routes.verifyDesigners,
-    component: VerifyDesignersComponent
+    component: VerifyDesignersComponent,
+    data: meta.verifyDesigners
   },
   {
-    path: '**', redirectTo: '/home'
+    path: '**',
+    redirectTo: routes.home
   }
 ];

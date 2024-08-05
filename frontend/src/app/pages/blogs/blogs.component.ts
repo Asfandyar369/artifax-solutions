@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { HeaderBannerComponent } from "../../components/common-components/header-banner/header-banner.component";
-import { TimlineComponent } from "../../components/blogs-components/timline/timline.component";
+import { HeaderBannerComponent } from "../../shared/components/common/header-banner/header-banner.component";
+import { TimlineComponent } from "../../shared/components/blogs-components/timline/timline.component";
 
 @Component({
   selector: 'app-blogs',

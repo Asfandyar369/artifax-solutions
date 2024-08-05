@@ -1,8 +1,8 @@
 import { Component } from '@angular/core';
-import { HeaderBannerComponent } from "../../../components/common-components/header-banner/header-banner.component";
-import { QuestionsComponent } from "../../../components/shop-components/checkout/questions/questions.component";
-import { BillingDetailsComponent } from "../../../components/shop-components/checkout/billing-details/billing-details.component";
-import { AdditionalInformationComponent } from "../../../components/shop-components/checkout/additional-information/additional-information.component";
+import { HeaderBannerComponent } from "../../../shared/components/common/header-banner/header-banner.component";
+import { QuestionsComponent } from "../../../shared/components/shop-components/checkout/questions/questions.component";
+import { BillingDetailsComponent } from "../../../shared/components/shop-components/checkout/billing-details/billing-details.component";
+import { AdditionalInformationComponent } from "../../../shared/components/shop-components/checkout/additional-information/additional-information.component";
 
 @Component({
   selector: 'app-checkout',

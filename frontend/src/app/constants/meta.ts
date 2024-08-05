@@ -1,0 +1,203 @@
+// src/app/constants/meta.ts
+
+import { environment } from "../../environments/environment";
+
+// src/app/constants/meta.ts
+
+export const meta = {
+  home: {
+    title: 'Artifax Solutions | Home',
+    description: 'Discover innovative solutions with Artifax. Your gateway to cutting-edge design and technology.',
+    keywords: 'Artifax Solutions, home, innovative solutions, design technology',
+    'og:title': 'Artifax Solutions | Home',
+    'og:description': 'Discover innovative solutions with Artifax. Your gateway to cutting-edge design and technology.',
+    'og:image': `${environment.apiUrl}/favicon-darker.png`,
+    'og:url': `${environment.apiUrl}`,
+    'twitter:card': 'summary_large_image',
+    'twitter:title': 'Artifax Solutions | Home',
+    'twitter:description': 'Discover innovative solutions with Artifax. Your gateway to cutting-edge design and technology.',
+    'twitter:image': `${environment.apiUrl}/favicon-darker.png`
+  },
+  ourPortfolio: {
+    title: 'Artifax Solutions | Portfolio',
+    description: 'Explore our portfolio showcasing our innovative design solutions and successful projects.',
+    keywords: 'Artifax Solutions portfolio, design solutions, successful projects, creative work',
+    'og:title': 'Artifax Solutions | Portfolio',
+    'og:description': 'Explore our portfolio showcasing our innovative design solutions and successful projects.',
+    'og:image': `${environment.apiUrl}/favicon-darker.png`,
+    'og:url': `${environment.apiUrl}/portfolio`,
+    'twitter:card': 'summary_large_image',
+    'twitter:title': 'Artifax Solutions | Portfolio',
+    'twitter:description': 'Explore our portfolio showcasing our innovative design solutions and successful projects.',
+    'twitter:image': `${environment.apiUrl}/favicon-darker.png`
+  },
+  ourServices: {
+    title: 'Artifax Solutions | Our Services',
+    description: 'Learn about our services, including 3D scenes, graphic design, and Vtuber modeling.',
+    keywords: 'Artifax services, 3D scenes, graphic design, Vtuber modeling, service offerings',
+    'og:title': 'Artifax Solutions | Our Services',
+    'og:description': 'Learn about our services, including 3D scenes, graphic design, and Vtuber modeling.',
+    'og:image': `${environment.apiUrl}/favicon-darker.png`,
+    'og:url': `${environment.apiUrl}/our-services`,
+    'twitter:card': 'summary_large_image',
+    'twitter:title': 'Artifax Solutions | Our Services',
+    'twitter:description': 'Learn about our services, including 3D scenes, graphic design, and Vtuber modeling.',
+    'twitter:image': `${environment.apiUrl}/favicon-darker.png`
+  },
+  threeDScenes: {
+    title: 'Artifax Solutions | 3D Scenes',
+    description: 'Immerse yourself in our 3D scenes and gaming room design services.',
+    keywords: '3D scenes, gaming room design, immersive experiences, Artifax 3D design',
+    'og:title': 'Artifax Solutions | 3D Scenes',
+    'og:description': 'Immerse yourself in our 3D scenes and gaming room design services.',
+    'og:image': `${environment.apiUrl}/favicon-darker.png`,
+    'og:url': `${environment.apiUrl}/three-d-scenes`,
+    'twitter:card': 'summary_large_image',
+    'twitter:title': 'Artifax Solutions | 3D Scenes',
+    'twitter:description': 'Immerse yourself in our 3D scenes and gaming room design services.',
+    'twitter:image': `${environment.apiUrl}/favicon-darker.png`
+  },
+  streamingGraphicsDesign: {
+    title: 'Artifax Solutions | Streaming Graphics Design',
+    description: 'High-quality streaming graphics design services tailored to your needs.',
+    keywords: 'streaming graphics, graphic design services, high-quality design, Artifax streaming graphics',
+    'og:title': 'Artifax Solutions | Streaming Graphics Design',
+    'og:description': 'High-quality streaming graphics design services tailored to your needs.',
+    'og:image': `${environment.apiUrl}/favicon-darker.png`,
+    'og:url': `${environment.apiUrl}/our-services/streaming-graphics-design`,
+    'twitter:card': 'summary_large_image',
+    'twitter:title': 'Artifax Solutions | Streaming Graphics Design',
+    'twitter:description': 'High-quality streaming graphics design services tailored to your needs.',
+    'twitter:image': `${environment.apiUrl}/favicon-darker.png`
+  },
+  vtuberModel: {
+    title: 'Artifax Solutions | Vtuber Model',
+    description: 'Expert Vtuber model design to bring your virtual persona to life.',
+    keywords: 'Vtuber model, virtual persona, Artifax Vtuber design, virtual modeling',
+    'og:title': 'Artifax Solutions | Vtuber Model',
+    'og:description': 'Expert Vtuber model design to bring your virtual persona to life.',
+    'og:image': `${environment.apiUrl}/favicon-darker.png`,
+    'og:url': `${environment.apiUrl}/our-services/vtuber-model`,
+    'twitter:card': 'summary_large_image',
+    'twitter:title': 'Artifax Solutions | Vtuber Model',
+    'twitter:description': 'Expert Vtuber model design to bring your virtual persona to life.',
+    'twitter:image': `${environment.apiUrl}/favicon-darker.png`
+  },
+  shop: {
+    title: 'Artifax Solutions | Shop',
+    description: 'Shop for innovative products and services at Artifax Solutions.',
+    keywords: 'Artifax shop, products, services, innovative shopping',
+    'og:title': 'Artifax Solutions | Shop',
+    'og:description': 'Shop for innovative products and services at Artifax Solutions.',
+    'og:image': `${environment.apiUrl}/favicon-darker.png`,
+    'og:url': `${environment.apiUrl}/shop`,
+    'twitter:card': 'summary_large_image',
+    'twitter:title': 'Artifax Solutions | Shop',
+    'twitter:description': 'Shop for innovative products and services at Artifax Solutions.',
+    'twitter:image': `${environment.apiUrl}/favicon-darker.png`
+  },
+  myAccount: {
+    title: 'Artifax Solutions | My Account',
+    description: 'Manage your Artifax account and track your orders and services.',
+    keywords: 'My account, Artifax account management, order tracking',
+    'og:title': 'Artifax Solutions | My Account',
+    'og:description': 'Manage your Artifax account and track your orders and services.',
+    'og:image': `${environment.apiUrl}/favicon-darker.png`,
+    'og:url': `${environment.apiUrl}/shop/my-account`,
+    'twitter:card': 'summary_large_image',
+    'twitter:title': 'Artifax Solutions | My Account',
+    'twitter:description': 'Manage your Artifax account and track your orders and services.',
+    'twitter:image': `${environment.apiUrl}/favicon-darker.png`
+  },
+  cart: {
+    title: 'Artifax Solutions | Cart',
+    description: 'View and manage the items in your shopping cart before checkout.',
+    keywords: 'shopping cart, manage cart, Artifax cart, checkout preparation',
+    'og:title': 'Artifax Solutions | Cart',
+    'og:description': 'View and manage the items in your shopping cart before checkout.',
+    'og:image': `${environment.apiUrl}/favicon-darker.png`,
+    'og:url': `${environment.apiUrl}/shop/cart`,
+    'twitter:card': 'summary_large_image',
+    'twitter:title': 'Artifax Solutions | Cart',
+    'twitter:description': 'View and manage the items in your shopping cart before checkout.',
+    'twitter:image': `${environment.apiUrl}/favicon-darker.png`
+  },
+  checkout: {
+    title: 'Artifax Solutions | Checkout',
+    description: 'Secure checkout process for your Artifax purchases.',
+    keywords: 'checkout, secure payment, Artifax purchases, payment process',
+    'og:title': 'Artifax Solutions | Checkout',
+    'og:description': 'Secure checkout process for your Artifax purchases.',
+    'og:image': `${environment.apiUrl}/favicon-darker.png`,
+    'og:url': `${environment.apiUrl}/shop/checkout`,
+    'twitter:card': 'summary_large_image',
+    'twitter:title': 'Artifax Solutions | Checkout',
+    'twitter:description': 'Secure checkout process for your Artifax purchases.',
+    'twitter:image': `${environment.apiUrl}/favicon-darker.png`
+  },
+  about: {
+    title: 'Artifax Solutions | About Us',
+    description: 'Learn about Artifax Solutions and our commitment to excellence in design and technology.',
+    keywords: 'About Artifax, company information, design excellence, technology solutions',
+    'og:title': 'Artifax Solutions | About Us',
+    'og:description': 'Learn about Artifax Solutions and our commitment to excellence in design and technology.',
+    'og:image': `${environment.apiUrl}/favicon-darker.png`,
+    'og:url': `${environment.apiUrl}/about`,
+    'twitter:card': 'summary_large_image',
+    'twitter:title': 'Artifax Solutions | About Us',
+    'twitter:description': 'Learn about Artifax Solutions and our commitment to excellence in design and technology.',
+    'twitter:image': `${environment.apiUrl}/favicon-darker.png`
+  },
+  customers: {
+    title: 'Artifax Solutions | Our Customers',
+    description: 'Meet our customers and learn how we have helped them achieve success.',
+    keywords: 'Artifax customers, customer success, client stories, testimonials',
+    'og:title': 'Artifax Solutions | Our Customers',
+    'og:description': 'Meet our customers and learn how we have helped them achieve success.',
+    'og:image': `${environment.apiUrl}/favicon-darker.png`,
+    'og:url': `${environment.apiUrl}/about/customers`,
+    'twitter:card': 'summary_large_image',
+    'twitter:title': 'Artifax Solutions | Our Customers',
+    'twitter:description': 'Meet our customers and learn how we have helped them achieve success.',
+    'twitter:image': `${environment.apiUrl}/favicon-darker.png`
+  },
+  blogs: {
+    title: 'Artifax Solutions | Blogs',
+    description: 'Read our latest blog posts on design, technology, and innovation.',
+    keywords: 'Artifax blog, design insights, technology news, innovation stories',
+    'og:title': 'Artifax Solutions | Blogs',
+    'og:description': 'Read our latest blog posts on design, technology, and innovation.',
+    'og:image': `${environment.apiUrl}/favicon-darker.png`,
+    'og:url': `${environment.apiUrl}/blogs`,
+    'twitter:card': 'summary_large_image',
+    'twitter:title': 'Artifax Solutions | Blogs',
+    'twitter:description': 'Read our latest blog posts on design, technology, and innovation.',
+    'twitter:image': `${environment.apiUrl}/favicon-darker.png`
+  },
+  contact: {
+    title: 'Artifax Solutions | Contact Us',
+    description: 'Get in touch with Artifax Solutions for inquiries and support.',
+    keywords: 'Contact Artifax, support, inquiries, customer service',
+    'og:title': 'Artifax Solutions | Contact Us',
+    'og:description': 'Get in touch with Artifax Solutions for inquiries and support.',
+    'og:image': `${environment.apiUrl}/favicon-darker.png`,
+    'og:url': `${environment.apiUrl}/contact`,
+    'twitter:card': 'summary_large_image',
+    'twitter:title': 'Artifax Solutions | Contact Us',
+    'twitter:description': 'Get in touch with Artifax Solutions for inquiries and support.',
+    'twitter:image': `${environment.apiUrl}/favicon-darker.png`
+  },
+  verifyDesigners: {
+    title: 'Artifax Solutions | Verify Designers',
+    description: 'Verify the credentials of our designers at Artifax Solutions.',
+    keywords: 'verify designers, Artifax design verification, designer credentials',
+    'og:title': 'Artifax Solutions | Verify Designers',
+    'og:description': 'Verify the credentials of our designers at Artifax Solutions.',
+    'og:image': `${environment.apiUrl}/favicon-darker.png`,
+    'og:url': `${environment.apiUrl}/verify-designers`,
+    'twitter:card': 'summary_large_image',
+    'twitter:title': 'Artifax Solutions | Verify Designers',
+    'twitter:description': 'Verify the credentials of our designers at Artifax Solutions.',
+    'twitter:image': `${environment.apiUrl}/favicon-darker.png`
+  }
+};

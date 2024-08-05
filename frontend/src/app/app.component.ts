@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { HomeComponent } from "./pages/home/home.component";
-import { HeaderComponent } from './components/common-components/header/header.component';
-import { FooterSectionComponent } from './components/common-components/footer-section/footer-section.component';
+import { HeaderComponent } from './shared/components/common/header/header.component';
+import { FooterSectionComponent } from './shared/components/common/footer-section/footer-section.component';
+import { MetaService } from './shared/services/meta-service/meta.service';
 
 @Component({
   selector: 'app-root',
@@ -17,5 +18,5 @@ import { FooterSectionComponent } from './components/common-components/footer-se
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'artifax-solutions';
+  constructor(private metaService: MetaService) { }
 }

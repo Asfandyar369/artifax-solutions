@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl: 'http://artifact-solutions.com'
+  apiUrl: 'https://artifaxsolutions.com/home'
 };

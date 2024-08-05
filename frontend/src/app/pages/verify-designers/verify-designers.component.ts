@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
-import { HeaderBannerComponent } from "../../components/common-components/header-banner/header-banner.component";
-import { VerifyComponent } from "../../components/verify-designer-components/verify/verify.component";
+import { HeaderBannerComponent } from "../../shared/components/common/header-banner/header-banner.component";
+import { VerifyComponent } from "../../shared/components/verify-designer-components/verify/verify.component";
 
 @Component({
   selector: 'app-verify-designers',
