@@ -25,7 +25,7 @@ export class HeaderBannerComponent {
         "id": 1,
         "title": "Our Portfolio",
         "altText": "Banner Image",
-        "imageUrl": "images/portfolio-header-banner.webp"
+        "imageUrl": "https://midlinesolution.com/wp-content/uploads/2024/07/bbg-1-1-scaled.jpg"
       };
     } else if (this.headerBannerComponent?.services) {
       this.headerBanner = {

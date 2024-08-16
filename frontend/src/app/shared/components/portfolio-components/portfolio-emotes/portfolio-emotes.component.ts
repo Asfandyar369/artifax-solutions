@@ -1,10 +1,12 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,ViewChild,ElementRef } from '@angular/core';
 import { PortfolioShowcase } from '../../../../models/PortfolioShowcase';
 import { animate, style, transition, trigger } from '@angular/animations';
 import { NgClass, NgFor, NgIf, NgOptimizedImage } from '@angular/common';
 import { PortfolioShowcaseCard } from '../../../../models/PortfolioShowcase';
 import { PortfolioImageLoaderComponent } from "../../common/portfolio-image-loader/portfolio-image-loader.component";
-
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { ToastrService } from 'ngx-toastr';
+import { ModalComponent } from '../../common/modal/modal.component';
 
 @Component({
   selector: 'app-portfolio-emotes',
@@ -27,22 +29,31 @@ import { PortfolioImageLoaderComponent } from "../../common/portfolio-image-load
 export class PortfolioEmotesComponent implements OnInit {
   portfolioEmote: PortfolioShowcase | undefined | null;
   filteredCardList: PortfolioShowcaseCard[] | undefined | null;
-  activeFilter: string = 'All Emotes';
+  activeFilter: string = 'All Banner';
+  @ViewChild('fileInput') fileInput!: ElementRef<HTMLInputElement>;
+  uploadedImageNames: Set<string> = new Set();
 
-  constructor() { }
+
+  constructor(
+    private modalService: NgbModal,
+    private toastr: ToastrService
+  ) { }
 
   ngOnInit(): void {
     this.getPortfolioEmote();
   }
 
   private getPortfolioEmote(): void {
+    const savedShowcase = localStorage.getItem('portfolioEmote');
+    if (savedShowcase) {
+      this.portfolioEmote = JSON.parse(savedShowcase);
+    } else {
     this.portfolioEmote = {
       "id": 1,
-      "subTitle": "Emotes",
-      "title": "Enhance your stream's look with unique banner emotes that bring character and charm.",
-      "description": "Discover unique and stylish emote frames tailored to your taste.",
+      "subTitle": "Banner",
+      "description": "Upgrade your stream with our eye-catching banners.",
       "filterOptions": [
-        "All Emotes",
+        "All Banner",
         "Static",
         "Animated"
       ],
@@ -133,12 +144,13 @@ export class PortfolioEmotesComponent implements OnInit {
         }
       ]
     };
-    this.filteredCardList = this.portfolioEmote.showCaseCardList;
+  }
+    this.filteredCardList = this.portfolioEmote?.showCaseCardList;
   }
 
   filterCards(option: string): void {
     this.activeFilter = option;
-    if (option === 'All Emotes') {
+    if (option === 'All Banner') {
       this.filteredCardList = this.portfolioEmote?.showCaseCardList;
     } else {
       debugger
@@ -146,6 +158,80 @@ export class PortfolioEmotesComponent implements OnInit {
         ?.filter(
           (card: PortfolioShowcaseCard) => card.title === option
         );
+    }
+  }
+  onDeleteImage(index: number): void {
+    this.portfolioEmote?.showCaseCardList?.splice(index, 1);
+    this.savePortfolioShowcase(); // Save after deletion
+  }
+
+  openDeleteModal(index: number) {
+    const modalRef = this.modalService.open(ModalComponent);
+
+    modalRef.componentInstance.onConfirm.subscribe((password: string) => {
+      if (this.validatePassword(password)) {
+        this.onDeleteImage(index);
+        this.toastr.success('Card deleted successfully!', 'Toastr Success');
+      } else {
+        this.toastr.error('Invalid password. Please try again.', 'Toastr Error');
+      }
+    });
+  }
+
+  validatePassword(password: string): boolean {
+    // Replace this with actual password validation logic
+    return password === '@123';
+  }
+
+  triggerFileInput(): void {
+    this.fileInput.nativeElement.click(); // Programmatically click the hidden file input
+  }
+
+  onFileSelected(event: Event): void {
+    const input = event.target as HTMLInputElement;
+    if (input.files && input.files.length > 0) {
+      const file = input.files[0];
+      const fileNameWithoutExtension = file.name.replace(/\.[^/.]+$/, "");
+
+      if (this.uploadedImageNames.has(fileNameWithoutExtension)) {
+        this.toastr.info('File already uploaded!', 'Toastr Info');
+        return;
+      }
+
+      this.uploadedImageNames.add(fileNameWithoutExtension);
+
+      const reader = new FileReader();
+      reader.onload = (e: ProgressEvent<FileReader>) => {
+        const img = new Image();
+        img.onload = () => {
+
+          const newCard: PortfolioShowcaseCard = {
+            id: this.generateId(),
+            imageUrl: URL.createObjectURL(file),
+            altText: file.name,
+            title: fileNameWithoutExtension,
+            description: "Static",
+          };
+
+          this.portfolioEmote?.showCaseCardList?.push(newCard);
+          this.filterCards(this.activeFilter);
+          this.savePortfolioShowcase();
+        };
+        img.src = e.target?.result as string;
+      };
+      reader.readAsDataURL(file);
+    }
+  }
+
+
+
+  private generateId(): number {
+    // Generate a unique ID for the new card (adjust logic as needed)
+    return Math.max(0, ...(this.portfolioEmote?.showCaseCardList?.map(c => c.id!) || [])) + 1;
+  }
+  private savePortfolioShowcase(): void {
+    if (this.portfolioEmote) {
+      localStorage.setItem('portfolioEmote', JSON.stringify(this.portfolioEmote));
     }
   }
 }

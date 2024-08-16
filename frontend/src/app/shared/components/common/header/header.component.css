@@ -4,3 +4,41 @@
     justify-content: flex-end;
   }
 }
+
+.animate {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  color: var(--color-primary);
+  transition: color 0.3s ease-in-out;
+}
+
+.animate::before {
+  content: attr(data-hover); /* Use the content from the data-hover attribute */
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: #32ed22;
+  transform: translateY(100%);
+  transition: transform 0.3s ease-in-out;
+}
+
+.animate:hover::before {
+  transform: translateY(0);
+  transition-delay: 0s, 0.3s; /* Delay to reset */
+}
+
+.animate:hover::before {
+  transform: translateY(-80%);
+}
+
+.animate:hover span {
+  transform: translateY(-150%);
+}
+
+.animate span {
+  display: block;
+  transition: transform 0.3s ease-in-out;
+}

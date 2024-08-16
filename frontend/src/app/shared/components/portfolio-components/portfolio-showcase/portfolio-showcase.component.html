@@ -1,5 +1,5 @@
 <!-- Portfolio Showcase -->
-<div class="container-fluid bg-black py-5" *ngIf="portfolioShowcase">
+<div class="container-fluid bg-gradient py-5" *ngIf="portfolioShowcase">
   <!-- Section Title -->
   <div class="row justify-content-center">
     <div class="col-12 col-lg-8">
@@ -10,20 +10,45 @@
         <h2 class="title rbt-section-title">
           <span class="text-white">{{ portfolioShowcase.title }}</span>
         </h2>
-        <p class="text-secondary">{{ portfolioShowcase.description }}</p>
+        <p class="grey mx-auto mt-5">{{ portfolioShowcase.description }}</p>
       </div>
     </div>
   </div>
 
+  <!-- Filter Options -->
+  <div class="row justify-content-center mt-3">
+    <div class="col-auto">
+      <button
+        *ngFor="let option of portfolioShowcase.filterOptions"
+        (click)="filterCards(option)"
+        class="btn-none border-0 fw-bolder fs-5 text-white"
+        [ngClass]="{
+          'text-white': activeFilter !== option,
+          'elementor-heading-title': activeFilter === option
+        }"
+      >
+        {{ option }}
+      </button>
+    </div>
+  </div>
+
+  <!-- Upload Button -->
+  <div class="row justify-content-center mt-3">
+    <div class="col-auto">
+      <button class="btn border text-white btn-opposite" (click)="triggerFileInput()">
+        Upload <i class="bi bi-upload"></i>
+      </button>
+      <input type="file" #fileInput hidden (change)="onFileSelected($event)" />
+    </div>
+  </div>
+
   <!-- Showcase Cards -->
-  <div
-    class="container mt-5 pb-5"
-    *ngIf="portfolioShowcase.showCaseCardList?.length"
-  >
+  <div class="container mt-5 pb-5" *ngIf="filteredCardList?.length">
     <div class="row justify-content-center">
       <div
-        class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4"
-        *ngFor="let card of portfolioShowcase.showCaseCardList"
+        class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4 me-lg-3"
+        *ngFor="let card of filteredCardList; let i = index"
+        [@cardAnimation]
       >
         <div class="card bg-dark text-white">
           <ng-container *ngIf="card.imageUrl">
@@ -32,6 +57,7 @@
               [alt]="card.altText!"
               [width]="card.width!"
               [height]="card.height!"
+              (delete)="onDeleteImage(i)"
             ></app-portfolio-image-loader>
           </ng-container>
           <div class="card-body">

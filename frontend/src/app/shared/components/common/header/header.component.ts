@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,ViewChild, ElementRef } from '@angular/core';
 import { NgFor, NgIf, NgSwitch, NgSwitchCase, SlicePipe } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { Logo, Navbar } from '../../../../models/Navbar';
@@ -11,6 +11,7 @@ import { Logo, Navbar } from '../../../../models/Navbar';
   styleUrl: './header.component.css'
 })
 export class HeaderComponent implements OnInit {
+  @ViewChild('navbarCollapse') navbarCollapse!: ElementRef;
   navbar: Logo | undefined | null;
   buttonItem: Navbar | undefined;
 
@@ -24,7 +25,7 @@ export class HeaderComponent implements OnInit {
   private getNavbar(): void {
     this.navbar = {
       id: 1,
-      url: 'images/White-and-Light-Blue.png',
+      url: 'images/removebg-preview.png',
       navbarMenus: [
         { id: 8, name: 'Home', link: '/', nestedMenus: [] },
         { id: 9, name: 'Our Portfolio', link: '/portfolio', nestedMenus: [] },
@@ -48,7 +49,7 @@ export class HeaderComponent implements OnInit {
           ]
         },
         { id: 13, name: 'Blogs', link: '/blogs', nestedMenus: [] },
-        { id: 14, name: 'Contact', link: '/contact', nestedMenus: [] },
+        { id: 14, name: 'Contact Us', link: '/contact', nestedMenus: [] },
         { id: 15, name: 'bi bi-cart green', link: '/cart', nestedMenus: [] },
         { id: 16, name: 'Verify Designers', link: '/verify-designers', nestedMenus: [] }
       ]
@@ -68,5 +69,10 @@ export class HeaderComponent implements OnInit {
       left: menus.slice(0, 4), // First 4 items
       right: menus.slice(4, 8) // Next 4 items
     };
+  }
+  closeMenu() {
+    if (this.navbarCollapse.nativeElement.classList.contains('show')) {
+      this.navbarCollapse.nativeElement.classList.remove('show');
+    }
   }
 }

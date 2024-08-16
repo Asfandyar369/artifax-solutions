@@ -1,4 +1,4 @@
-import { Component, Input, HostListener } from '@angular/core';
+import { Component, Input, Output, EventEmitter, HostListener } from '@angular/core';
 import { NgClass, NgIf, NgOptimizedImage, NgStyle } from '@angular/common';
 import { LoaderComponent } from '../loader/loader.component';
 
@@ -9,25 +9,50 @@ import { LoaderComponent } from '../loader/loader.component';
   template: `
     <ng-container *ngIf="src">
       <div
-        class="d-flex justify-content-center align-items-center"
+        class="image-container d-flex justify-content-center align-items-center"
         style="position: relative;"
       >
         <!-- Loader -->
         <app-loader *ngIf="!isLoaded" class="position-absolute"></app-loader>
 
         <!-- Image -->
+
+        <!-- Conditionally apply ngSrc or src -->
+        <ng-container *ngIf="!isBlobUrl(src); else useSrc">
         <img
           [alt]="alt"
           [ngSrc]="src"
           [width]="width"
           [height]="height"
           decoding="async"
-          class="img-fluid w-100 h-100"
+          class="img-fluid w-100 h-100 zoomable-image"
           (load)="onLoad()"
           (error)="onError()"
           (click)="showPopover($event)"
           style="cursor: pointer;"
         />
+        </ng-container>
+        <!-- Fallback to using src attribute for blob URLs -->
+        <ng-template #useSrc>
+          <img
+            [alt]="alt"
+            [src]="src"
+            [width]="width"
+            [height]="height"
+            decoding="async"
+            class="img-fluid w-100 h-100 zoomable-image"
+            (load)="onLoad()"
+            (error)="onError()"
+            (click)="showPopover($event)"
+            style="cursor: pointer;"
+          />
+        </ng-template>
+        <!-- Delete Icon -->
+        <div class="icon-container">
+          <button class="bg-transparent border-0 text-danger">
+            <i class="bi bi-trash-fill fs-4" (click)="onDelete($event)"></i>
+          </button>
+        </div>
       </div>
     </ng-container>
 
@@ -48,11 +73,31 @@ import { LoaderComponent } from '../loader/loader.component';
     </div>
   `,
   styles: [`
-    .loading {
-      position: relative;
-    }
     .position-absolute {
       position: absolute;
+    }
+    .image-container {
+      position: relative;
+      overflow: hidden;
+    }
+    .zoomable-image {
+      transition: transform 0.3s ease;
+    }
+    .image-container:hover .zoomable-image {
+      transform: scale(1.05);
+    }
+    .icon-container {
+      position: absolute;
+      top: 0;
+      right: 0;
+      display: flex;
+      gap: 10px;
+      padding: 5px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    .image-container:hover .icon-container {
+      opacity: 1;
     }
     .popover-container {
       position: fixed;
@@ -68,33 +113,35 @@ import { LoaderComponent } from '../loader/loader.component';
     }
     .popover-content {
       position: relative;
-      width: 50vw; /* Set image to be 50% of the viewport width */
-      max-width: 90vw;  /* Ensures responsiveness on very small screens */
-      max-height: 90vh; /* Ensures responsiveness on very small screens */
+      width: 50vw;
+      max-width: 90vw;
+      max-height: 90vh;
       display: flex;
       justify-content: center;
       align-items: center;
     }
     .popover-image {
       width: 50%;
-      height: auto; /* Maintains aspect ratio */
-      max-height: 90vh; /* Ensures the image does not exceed viewport height */
+      height: auto;
+      max-height: 90vh;
     }
     @media(max-width: 425px) {
       .popover-image {
-      width: 100%;
-    }
-    .popover-content {
-      width: 100vw;
-    }
+        width: 100%;
+      }
+      .popover-content {
+        width: 100vw;
+      }
     }
   `]
 })
 export class PortfolioImageLoaderComponent {
   @Input() src!: string;
   @Input() alt: string = '';
-  @Input() width: number = 414;
-  @Input() height: number = 414;
+  @Input() width: number | undefined;
+  @Input() height: number | undefined;
+
+  @Output() delete = new EventEmitter<void>();
 
   isLoaded: boolean = false;
   isPopoverVisible: boolean = false;
@@ -117,9 +164,17 @@ export class PortfolioImageLoaderComponent {
     this.isPopoverVisible = false;
   }
 
-  // Optionally close the popover when the 'Escape' key is pressed
+  onDelete(event: MouseEvent): void {
+    event.stopPropagation();
+    this.delete.emit(); // Emit the delete event
+  }
+
   @HostListener('document:keydown.escape', ['$event'])
   onEscKeyPress(event: KeyboardEvent): void {
     this.hidePopover();
+  }
+
+  isBlobUrl(url: string): boolean {
+    return url.startsWith('blob:');
   }
 }
